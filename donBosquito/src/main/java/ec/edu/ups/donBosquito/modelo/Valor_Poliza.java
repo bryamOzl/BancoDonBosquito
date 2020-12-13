@@ -3,7 +3,7 @@ package ec.edu.ups.donBosquito.modelo;
 public class Valor_Poliza {
 
 	private int valor_id;
-	private String tiempo;
+	private String plazo;
 	private int tasa_interes;
 
 	public int getValor_id() {
@@ -14,12 +14,12 @@ public class Valor_Poliza {
 		this.valor_id = valor_id;
 	}
 
-	public String getTiempo() {
-		return tiempo;
+	public String getPlazo() {
+		return plazo;
 	}
 
-	public void setTiempo(String tiempo) {
-		this.tiempo = tiempo;
+	public void setPlazo(String plazo) {
+		this.plazo = plazo;
 	}
 
 	public int getTasa_interes() {
@@ -32,7 +32,7 @@ public class Valor_Poliza {
 
 	@Override
 	public String toString() {
-		return "Valor_Poliza [valor_id=" + valor_id + ", tiempo=" + tiempo + ", tasa_interes=" + tasa_interes + "]";
+		return "Valor_Poliza [valor_id=" + valor_id + ", plazo=" + plazo + ", tasa_interes=" + tasa_interes + "]";
 	}
 
 }
