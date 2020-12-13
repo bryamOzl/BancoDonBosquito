@@ -1,8 +1,6 @@
 package ec.edu.ups.donBosquito.DAO;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.ejb.Stateless;
@@ -24,7 +22,7 @@ public class PersonaDAO {
 	 * Metodo para crear una Persona utilizando JPA
 	 * 
 	 * @param entity
-	 * @return 
+	 * @return
 	 * @throws SQLException
 	 */
 	public boolean insertPersona(Persona entity) throws SQLException {
@@ -34,33 +32,36 @@ public class PersonaDAO {
 
 	/**
 	 * Metodo para leer una Persona mediante la cedula con JPA
+	 * 
 	 * @param cedula
 	 * @return
 	 * @throws SQLException
 	 */
-	public Persona readPersona(String cedula) throws SQLException{
+	public Persona readPersona(String cedula) throws SQLException {
 		Persona persona = em.find(Persona.class, cedula);
 		return persona;
 	}
 
 	/**
 	 * Metodo para actualizar una persona con JPA
+	 * 
 	 * @param persona
 	 * @return
 	 * @throws SQLException
 	 */
-	public boolean updatePersona(Persona persona) throws SQLException{
+	public boolean updatePersona(Persona persona) throws SQLException {
 		em.merge(persona);
 		return true;
 	}
 
 	/**
 	 * Metodo para eliminar una persona mediante la cedula
+	 * 
 	 * @param cedula
 	 * @return
 	 * @throws SQLException
 	 */
-	public boolean deletePersona(String cedula) throws SQLException{
+	public boolean deletePersona(String cedula) throws SQLException {
 		em.remove(readPersona(cedula));
 		return true;
 	}
