@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 
 public class Resources {
 
-	String dsName = "java:jboss/datasources/parqueaderoDS";
+	String dsName = "java:jboss/datasources/donbosquitoDS";
 
     @Produces
     private Connection createConnection() throws SQLException, NamingException {

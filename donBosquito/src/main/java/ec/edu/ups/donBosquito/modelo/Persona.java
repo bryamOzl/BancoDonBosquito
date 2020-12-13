@@ -1,11 +1,26 @@
 package ec.edu.ups.donBosquito.modelo;
 
-import java.awt.Image;
+import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
 
-public class Persona {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+
+@Entity
+@Table(name = "Persona", schema ="public")
+public class Persona implements Serializable {
+
+
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@Column(name= "persona_id")
 	private int persona_id;
+	
 	private String cedula;
 	private String nombre;
 	private String apellido;
@@ -13,7 +28,9 @@ public class Persona {
 	private String telefono;
 	private Date fecha_nacimiento;
 	private String correo;
-	private Image foto;
+	
+	@Column(name ="foto")
+	private byte[] image;
 
 	public int getPersona_id() {
 		return persona_id;
@@ -79,19 +96,21 @@ public class Persona {
 		this.correo = correo;
 	}
 
-	public Image getFoto() {
-		return foto;
+	public byte[] getImage() {
+		return image;
 	}
 
-	public void setFoto(Image foto) {
-		this.foto = foto;
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
 
 	@Override
 	public String toString() {
 		return "Persona [persona_id=" + persona_id + ", cedula=" + cedula + ", nombre=" + nombre + ", apellido="
 				+ apellido + ", direccion=" + direccion + ", telefono=" + telefono + ", fecha_nacimiento="
-				+ fecha_nacimiento + ", correo=" + correo + ", foto=" + foto + "]";
+				+ fecha_nacimiento + ", correo=" + correo + ", image=" + Arrays.toString(image) + "]";
 	}
+
+	
 
 }
