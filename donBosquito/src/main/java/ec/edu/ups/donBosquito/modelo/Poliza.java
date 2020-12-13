@@ -1,10 +1,25 @@
 package ec.edu.ups.donBosquito.modelo;
 
-import java.awt.Image;
+import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
 
-public class Poliza {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
+@Entity
+public class Poliza implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name = "poliza_id")
 	private int poliza_id;
 	private double capital;
 	private Date fecha_creacion;
@@ -14,8 +29,15 @@ public class Poliza {
 	private Double interes;
 	private Double valor_neto;
 	private String estado;
-	private Image imagen_cedula;
-	private Image imagen_plantilla;
+
+	@Column(name = "imagen_cedula")
+	private byte[] imagen_cedula;
+
+	@Column(name = "imagen_plantilla")
+	private byte[] imagen_plantilla;
+
+	@ManyToOne
+	@JoinColumn(name = "cuenta_id")
 	private Cuenta cuenta;
 
 	public int getPoliza_id() {
@@ -90,19 +112,19 @@ public class Poliza {
 		this.estado = estado;
 	}
 
-	public Image getImagen_cedula() {
+	public byte[] getImagen_cedula() {
 		return imagen_cedula;
 	}
 
-	public void setImagen_cedula(Image imagen_cedula) {
+	public void setImagen_cedula(byte[] imagen_cedula) {
 		this.imagen_cedula = imagen_cedula;
 	}
 
-	public Image getImagen_plantilla() {
+	public byte[] getImagen_plantilla() {
 		return imagen_plantilla;
 	}
 
-	public void setImagen_plantilla(Image imagen_plantilla) {
+	public void setImagen_plantilla(byte[] imagen_plantilla) {
 		this.imagen_plantilla = imagen_plantilla;
 	}
 
@@ -119,7 +141,8 @@ public class Poliza {
 		return "Poliza [poliza_id=" + poliza_id + ", capital=" + capital + ", fecha_creacion=" + fecha_creacion
 				+ ", plazo=" + plazo + ", tasa_interez=" + tasa_interez + ", fecha_vencimiento=" + fecha_vencimiento
 				+ ", interes=" + interes + ", valor_neto=" + valor_neto + ", estado=" + estado + ", imagen_cedula="
-				+ imagen_cedula + ", imagen_plantilla=" + imagen_plantilla + ", cuenta=" + cuenta + "]";
+				+ Arrays.toString(imagen_cedula) + ", imagen_plantilla=" + Arrays.toString(imagen_plantilla)
+				+ ", cuenta=" + cuenta + "]";
 	}
 
 }

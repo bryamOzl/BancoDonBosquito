@@ -1,20 +1,37 @@
 package ec.edu.ups.donBosquito.modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Historial_Acceso {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
-	private int hist_acceso;
+@Entity
+public class Historial_Acceso implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
+	@Column(name = "hist_acceso_id")
+	private int hist_acceso_id;
 	private Date fecha_acceso;
 	private String tipo_acceso;
+	
+	@ManyToOne
+	@JoinColumn(name="registro_id")
 	private Registro registro;
 
-	public int getHist_acceso() {
-		return hist_acceso;
+	public int getHist_acceso_id() {
+		return hist_acceso_id;
 	}
 
-	public void setHist_acceso(int hist_acceso) {
-		this.hist_acceso = hist_acceso;
+	public void setHist_acceso_id(int hist_acceso_id) {
+		this.hist_acceso_id = hist_acceso_id;
 	}
 
 	public Date getFecha_acceso() {
@@ -43,8 +60,8 @@ public class Historial_Acceso {
 
 	@Override
 	public String toString() {
-		return "historial_acceso [hist_acceso=" + hist_acceso + ", fecha_acceso=" + fecha_acceso + ", tipo_acceso="
-				+ tipo_acceso + ", registro=" + registro + "]";
+		return "Historial_Acceso [hist_acceso_id=" + hist_acceso_id + ", fecha_acceso=" + fecha_acceso
+				+ ", tipo_acceso=" + tipo_acceso + ", registro=" + registro + "]";
 	}
 
 }
