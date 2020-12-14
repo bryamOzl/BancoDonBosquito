@@ -1,12 +1,31 @@
 package ec.edu.ups.donBosquito.modelo;
 
-public class Registro {
+import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Registro implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@Column(name= "registro_id")
 	private int registro_id;
 	private String usuario;
 	private String contrasenia;
 	private String rol;
 	private String estado;
+	
+	@ManyToOne
+	@JoinColumn(name="persona_id")
 	private Persona persona;
 
 	public int getRegistro_id() {

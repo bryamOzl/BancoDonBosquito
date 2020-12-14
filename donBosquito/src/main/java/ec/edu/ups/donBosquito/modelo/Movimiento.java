@@ -1,13 +1,31 @@
 package ec.edu.ups.donBosquito.modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Movimiento {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
+@Entity
+public class Movimiento implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name = "movimiento_id")
 	private int movimiento_id;
 	private String tipo_movimiento;
 	private Double cantidad;
 	private Date fecha;
+
+	@ManyToOne
+	@JoinColumn(name = "cuenta_id")
 	private Cuenta cuenta;
 
 	public int getMovimiento_id() {

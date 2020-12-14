@@ -1,13 +1,31 @@
 package ec.edu.ups.donBosquito.modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Cuenta {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
+@Entity
+public class Cuenta implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name = "cuenta_id")
 	private int cuenta_id;
 	private String tipo_cuenta;
 	private Date fecha_apertura;
 	private Double saldo;
+
+	@ManyToOne
+	@JoinColumn(name = "hist_acceso_id")
 	private Registro registro;
 
 	public int getCuenta_id() {

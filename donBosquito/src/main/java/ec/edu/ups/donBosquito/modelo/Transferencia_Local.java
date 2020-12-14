@@ -1,13 +1,34 @@
 package ec.edu.ups.donBosquito.modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Transferencia_Local {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
+@Entity
+public class Transferencia_Local implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name = "transferencia_id")
 	private int transferencial_id;
 	private Double monto;
 	private Date fecha;
+
+	@ManyToOne
+	@JoinColumn(name = "cuenta_destino")
 	private Cuenta cuenta_destino;
+
+	@ManyToOne
+	@JoinColumn(name = "cuenta_origen")
 	private Cuenta cuenta_origen;
 
 	public int getTransferencial_id() {
