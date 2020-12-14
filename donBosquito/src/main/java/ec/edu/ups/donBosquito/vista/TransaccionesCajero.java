@@ -19,6 +19,7 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.table.DefaultTableModel;
 
 public class TransaccionesCajero extends JFrame {
 
@@ -120,6 +121,17 @@ public class TransaccionesCajero extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		
 		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+			},
+			new String[] {
+				"# CUENTA", "CEDULA", "NOMBRE", "TIPO CUENTA", "TOTAL"
+			}
+		));
 		scrollPane.setViewportView(table);
 		GroupLayout gl_panelCuentaCliente = new GroupLayout(panelCuentaCliente);
 		gl_panelCuentaCliente.setHorizontalGroup(
