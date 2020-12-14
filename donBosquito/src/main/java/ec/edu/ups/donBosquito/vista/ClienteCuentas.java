@@ -15,6 +15,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.EtchedBorder;
+import javax.swing.JScrollPane;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class ClienteCuentas extends JFrame {
 
@@ -23,6 +27,7 @@ public class ClienteCuentas extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -98,9 +103,8 @@ public class ClienteCuentas extends JFrame {
 		GroupLayout gl_panelDatos = new GroupLayout(panelDatos);
 		gl_panelDatos.setHorizontalGroup(
 			gl_panelDatos.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 699, Short.MAX_VALUE)
 				.addGroup(gl_panelDatos.createSequentialGroup()
-					.addContainerGap(526, Short.MAX_VALUE)
+					.addContainerGap(522, Short.MAX_VALUE)
 					.addGroup(gl_panelDatos.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblDatosDelCajero, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_panelDatos.createParallelGroup(Alignment.TRAILING, false)
@@ -110,7 +114,6 @@ public class ClienteCuentas extends JFrame {
 		);
 		gl_panelDatos.setVerticalGroup(
 			gl_panelDatos.createParallelGroup(Alignment.TRAILING)
-				.addGap(0, 87, Short.MAX_VALUE)
 				.addGroup(gl_panelDatos.createSequentialGroup()
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(lblDatosDelCajero, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
@@ -125,6 +128,26 @@ public class ClienteCuentas extends JFrame {
 		panelCuentas.setBorder(new TitledBorder(null, "Cuentas del Cliente", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panelCuentas.setBounds(12, 277, 699, 121);
 		contentPane.add(panelCuentas);
+		panelCuentas.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 21, 679, 90);
+		panelCuentas.add(scrollPane);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+			},
+			new String[] {
+				"# CUENTA", "TIPO CUENTA", "FECHA ULTIMA TRANSACCION", "SALDO"
+			}
+		));
+		table.getColumnModel().getColumn(2).setPreferredWidth(153);
+		scrollPane.setViewportView(table);
 		
 		JPanel panelPolizas = new JPanel();
 		panelPolizas.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null), "Cuentas del Polizas", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));

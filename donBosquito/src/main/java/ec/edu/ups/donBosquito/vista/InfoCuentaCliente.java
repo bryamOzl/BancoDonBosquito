@@ -17,6 +17,9 @@ import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.border.EtchedBorder;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class InfoCuentaCliente extends JFrame {
 
@@ -27,6 +30,8 @@ public class InfoCuentaCliente extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JTable table;
+	private JTable table_1;
 
 	/**
 	 * Launch the application.
@@ -150,6 +155,40 @@ public class InfoCuentaCliente extends JFrame {
 		JButton btnNewButton = new JButton("Consultar");
 		btnNewButton.setBounds(519, 118, 117, 29);
 		panel.add(btnNewButton);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(27, 34, 609, 43);
+		panel.add(scrollPane);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null},
+			},
+			new String[] {
+				"# CUENTA", "TIPO CUENTA", "FECHA_TRANSACCION", "SALDO"
+			}
+		));
+		table.getColumnModel().getColumn(2).setPreferredWidth(119);
+		scrollPane.setViewportView(table);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(37, 178, 598, 88);
+		panel.add(scrollPane_1);
+		
+		table_1 = new JTable();
+		table_1.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+			},
+			new String[] {
+				"FECHA", "MOVIMIENTO", "VALOR", "SALDO"
+			}
+		));
+		scrollPane_1.setViewportView(table_1);
 		
 		JPanel panelInformacion = new JPanel();
 		panelInformacion.setLayout(null);

@@ -19,6 +19,9 @@ import javax.swing.JButton;
 import javax.swing.JMenu;
 import java.awt.Component;
 import javax.swing.SwingConstants;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class PolizasAdministrador extends JFrame {
 
@@ -29,6 +32,7 @@ public class PolizasAdministrador extends JFrame {
 	private JPanel contentPane;
 	private JTextField textTiempo;
 	private JTextField textField_1;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -134,11 +138,6 @@ public class PolizasAdministrador extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblImagenValores = new JLabel("");
-		lblImagenValores.setIcon(new ImageIcon("/Users/fernandosanchez/Documents/DonBosquito/BancoDonBosquito/Imagenes/Imagen 1_opt.png"));
-		lblImagenValores.setBounds(193, 20, 300, 165);
-		panel.add(lblImagenValores);
-		
 		JLabel lblTiempo = new JLabel("Tiempo:");
 		lblTiempo.setBounds(130, 197, 51, 16);
 		panel.add(lblTiempo);
@@ -147,10 +146,6 @@ public class PolizasAdministrador extends JFrame {
 		textTiempo.setBounds(192, 197, 130, 26);
 		panel.add(textTiempo);
 		textTiempo.setColumns(10);
-		
-		JLabel lblTasaI = new JLabel("Tasa de Interés:");
-		lblTasaI.setBounds(319, 197, 104, 16);
-		panel.add(lblTasaI);
 		
 		textField_1 = new JTextField();
 		textField_1.setBounds(435, 197, 130, 26);
@@ -174,6 +169,31 @@ public class PolizasAdministrador extends JFrame {
 		panelFondo.setBackground(new Color(240, 230, 140));
 		panelFondo.setBounds(114, 184, 464, 94);
 		panel.add(panelFondo);
+		panelFondo.setLayout(null);
+		
+		JLabel lblTasaI = new JLabel("Tasa de Interés:");
+		lblTasaI.setBounds(239, 10, 104, 16);
+		panelFondo.add(lblTasaI);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(114, 25, 462, 120);
+		panel.add(scrollPane);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{"", "", null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+			},
+			new String[] {
+				"VALOR_ID", "TIEMPO DIAS", "TASA DE INTERES"
+			}
+		));
+		scrollPane.setViewportView(table);
 		
 		JPanel panelInformacion = new JPanel();
 		panelInformacion.setLayout(null);
