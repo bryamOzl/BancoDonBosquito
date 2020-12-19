@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:rich="http://richfaces.org/rich">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Banco Don Bosquito</title>
+	<style type="text/css" media="all">
+@import "globa.css";
+
+@import "Label.css";
+
+@import "IniciarSesion.css";
+</style>
+</h:head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="headimg"></div>
+		</div>
+		<div id="topnavi">
+			<div id="top">
+				<ul>
+					<li class="selected"><a href="#" title="itemUsuarios">Cajero</a></li>
+					<li class="select"><a href="#" title="itemCerrarSesion">Cerrar
+							Sesion</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="sistemaTransacciones">
+
+		<div id="tituloSistemaTransaccioones">
+			<h1>Sistema de Transacciones</h1>
+		</div>
+		<div id="sistemaTransaccionesCuadro">
+
+			<div class="izquierdaSistemaTransaccional">
+				<label for="txtcontrasena" id="col-md-12"># Cuenta: </label>
+				<h:inputText id="txtNCuenta" class="form__cuenta"
+					value="#{clientesBean.newCliente.dni}" />
+				<h:message for="txtUsuario" />
+				<h:commandButton class="btn8" action="#{clientesBean.doGuardar()}"
+					value="Buscar Cuenta" />
+
+			</div>
+
+			<div id="cuadroCuentaCliente">
+				<div id="tituloSistemaTr">
+					<h1>Sistema de Transacciones</h1>
+				</div>
+				<div>
+
+					<h:form>
+						<p:dataTable var="car" value="#{dtBasicView.cars}"
+							style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
+							<p:column headerText="N. Cuenta"
+								style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+								<h:outputText value="#{car.id}" />
+							</p:column>
+							<p:column headerText="Cédula"
+								style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+								<h:outputText value="#{car.year}" />
+							</p:column>
+
+							<p:column headerText="Nombre"
+								style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+								<h:outputText value="#{car.brand}" />
+							</p:column>
+
+							<p:column headerText="T. Cuenta"
+								style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+								<h:outputText value="#{car.color}" />
+							</p:column>
+							<p:column headerText="Estado"
+								style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+								<h:outputText value="#{car.color}" />
+							</p:column>
+							<p:column headerText="Saldo"
+								style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+								<h:outputText value="#{car.color}" />
+							</p:column>
+
+						</p:dataTable>
+					</h:form>
+				</div>
+			</div>
+
+			<div id="bodybox4">
+				<div id="tituloSistemaTr">
+					<h1>Operaciones</h1>
+				</div>
+				<h:form>
+					<div id="OperacionesDerecha">
+						<div id="Operacioninput">
+							<h:inputText class="form__operaciones"
+								value="#{clientesBean.newCliente.dni}" />
+							<h:message for="txtUsuario" />
+						</div>
+						<div>
+							<label for="txtUsuario" id="col__operaciones">Ingrese el
+								Monto </label>
+						</div>
+
+					</div>
+					<div id="OperacionesIzquierda">
+						<div id="OperacionButon">
+							<h:commandButton class="btn10"
+								action="#{clientesBean.doGuardar()}" value="Realizar Deposito" />
+						</div>
+						<div id="OperacionButon1">
+							<h:commandButton class="btn10"
+								action="#{clientesBean.doGuardar()}" value="Realizar Retiro" />
+						</div>
+						<div id="OperacionButon1">
+							<h:commandButton class="btn10"
+								action="#{clientesBean.doGuardar()}" value="Limpiar" />
+						</div>
+
+					</div>
+				</h:form>
+
+
+			</div>
+		</div>
+	</div>
+
+	<div id="footer1">
+		<div id="derechosAutor1">
+			<h3>© Banco Don Bosquito Todos los derechos reservados.</h3>
+		</div>
+	</div>
+
+</body>
+</html>

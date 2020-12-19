@@ -11,6 +11,29 @@
 	border-left: 2px solid black;
 }
 
+#sistemaTransacciones {
+	width: 97.5%;
+	overflow: hidden;
+	margin: 3px 10px;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+
+#sistemaTransaccionesCuadro {
+	width: 97.5%;
+	overflow: hidden;
+	margin: 10px 10px;
+	background-color: #ffff;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+
+
 
 #valoresPolizas {
 	width: 99.5%;
@@ -26,6 +49,31 @@
 #iniciarSesionTitulo {
 	width: 96.7%;
 }
+#tituloSistemaTransaccioones{
+	width: 100%;
+}
+
+#tituloSistemaTransaccioones h1{
+	margin: 20px;
+	font-family: "Times New Roman", Times, serif;
+	font-style: normal;
+	font-size: 40px;
+	color: black;
+}
+
+#tituloSistemaTr{
+	width: 100%;
+}
+
+#tituloSistemaTr h1{
+	margin: 10px;
+	text-align: left;
+	font-family: "Times New Roman", Times, serif;
+	font-style: normal;
+	font-size: 30px;
+	color: black;
+}
+
 
 #iniciarSesionTitulo h1 {
 	margin: 20px;
@@ -80,9 +128,83 @@
 	border-radius: 10px 10px 10px 10px;
 }
 
+#cuadroOperacionesCliente {
+	width: 50%;
+	margin: 1%;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#cuadroCuentaCliente {
+	width: 97%;
+	margin: 1%;
+	height: 150px;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#cuadroCuentasClienteB {
+	width: 99.7%;
+	height: 150px;
+	text-align: center;
+	color: black;
+	background-color: #ffff;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+#cuadroCuentasClientec {
+	width: 99.7%;
+	text-align: center;
+	color: black;
+	background-color: #ffff;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+#cuadroCuentasCliente{
+	width: 99.7%;
+	height: 150px;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+
+
 #polizasCuadro {
-	width: 90%;
-	margin: 15px  auto 10px;
+	width:100%;
+	margin: 15px  20px 10px;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#Registro {
+	width: 100%;
+	margin: auto  10px 10px;
 	text-align: center;
 	color: black;
 	background-color: #ffd966;

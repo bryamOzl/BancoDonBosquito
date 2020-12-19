@@ -5,12 +5,11 @@ html {
 }
 
 body {
-	background-color: #8db5cb;
+	background-color: white;
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11px;
-	color: #757575;
-	background-image: url('img/bg_body.jpg');
+	color: black;
 	background-repeat: repeat-x;
 }
 
@@ -287,6 +286,21 @@ body {
 	background-color: #FFFFFF;
 }
 
+#bodybox4 {
+	width: 55%;
+	margin: 1%;
+	height: 200px;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-radius: 10px 10px 10px 10px;
+	background-color: #ffd966;
+
+}
+
+
 #bodybox1 {
 	width: 99.7%;
 	height: 280px;
@@ -297,6 +311,8 @@ body {
 	border-left: 2px solid black;
 	background-color: #FFFFFF;
 }
+
+
 
 #bodybox2 {
 	width: 99.7%;
@@ -365,6 +381,25 @@ body {
 	color: black;
 }
 
+#fotoCrearUsuario {
+     float: left;
+     width: 30%;
+     text-align: left;
+     margin: -20px 0px;
+     display: inline;
+     background-color: #FFFFFF;
+}
+
+#formularioCrearUsuario {
+     float: left;
+     width: 70%;
+     text-align: left;
+     margin: -20px 0px;
+     display: inline;
+     background-color: #FFFFFF;
+}
+
+
 #Mision {
      float: left;
      width: 50%;
@@ -374,6 +409,21 @@ body {
      background-color: #FFFFFF;
 }
 
+#OperacionesDerecha {
+     float: left;
+     width: 50%;
+     text-align: left;
+     margin: -20px 0px;
+     display: inline;
+}
+
+#OperacionesIzquierda{
+     float: left;
+     width: 50%;
+     text-align: left;
+     margin: -20px 0px;
+     display: inline;
+}
 
 #Mision h1 {
 	width: 100%;
@@ -428,7 +478,8 @@ body {
 
 #footer1 {
 	float: left;
-	width: 99.7%;
+	width: 97.5%;
+	margin: 3px 10px;
 	border-top: 2px solid black;
 	border-right: 2px solid black;
 	border-bottom: 2px solid black;
@@ -524,6 +575,7 @@ body {
 	margin: 5px auto;
 	font-style: normal;
 	font-weight: normal;
+	font-size: 17px;
 	color: black;
 }
 
@@ -576,11 +628,12 @@ body {
 	font-weight: normal;
 	color: black;
 }
+
 #CrearRegistro {
      float: left;
      width: 35%;
      text-align: left;
-     margin: -20px 0px;
+     margin: -5px auto 0px 55px;
      display: inline;
      background-color: #FFFFFF;
 }
@@ -598,4 +651,18 @@ body {
 	font-style: normal;
 	font-weight: normal;
 	color: black;
+}
+
+.ui-selectonemenu {
+    display: inline-block;
+    position: relative;
+    width: 10%;
+    zoom: 1;
+    cursor: pointer;
+    padding-right: 22px;
+    vertical-align: top;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
 }
