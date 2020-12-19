@@ -1,6 +1,8 @@
 package ec.edu.ups.donBosquito.DAO;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.ejb.Stateless;
@@ -65,4 +67,17 @@ public class PersonaDAO {
 		em.remove(readPersona(cedula));
 		return true;
 	}
+	
+	 
+	 public int contarPersona() throws SQLException{
+		int s;
+		 String sql = "SELECT MAX (persona_id) FROM Persona";
+		 PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet res = ps.executeQuery();
+			res.next();
+			s = res.getInt(1)+1;
+			ps.execute();
+			ps.close();
+		 return s;
+	 }
 }
