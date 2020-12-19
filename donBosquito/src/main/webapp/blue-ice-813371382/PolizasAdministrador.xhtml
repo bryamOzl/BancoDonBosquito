@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Banco Don Bosquito</title>
+	<style type="text/css" media="all">
+@import "globa.css";
+
+@import "Label.css";
+
+@import "IniciarSesion.css";
+</style>
+</h:head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="headimg"></div>
+		</div>
+
+		<div id="topnavi">
+			<div id="top">
+				<ul>
+					<li class="selected"><a href="#" title="itemUsuarios">Administrador</a></li>
+					<li class="select"><a href="#" title="itemCerrarSesion">Cerrar
+							Sesion</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="datosUsuario">
+
+			<div id="datos1">
+				<h1>Datos del Administrador</h1>
+			</div>
+			<div id="datos2">
+				<h2>
+					<h:inputText class="txtUsuario"
+						value="#{clientesBean.newCliente.dni}" />
+				</h2>
+			</div>
+			<div id="datos3">
+				<h2>
+					<h:inputText class="txtEmail"
+						value="#{clientesBean.newCliente.dni}" />
+				</h2>
+			</div>
+		</div>
+
+		<div id="valoresPolizas">
+
+			<div id="ivaloresPolizasTitulo">
+				<h1>Tabla de Valores de Polizas</h1>
+			</div>
+			<div id="table">
+
+				<table style="margin: 0 auto;" border="1" WIDTH="30%">
+					<tr>
+						<th id="txtTable">Tiempo</th>
+						<th id="txtTable">Tasa de Interes</th>
+					</tr>
+					<tr class="fila_impar">
+						<td id="txtTable">30 - 59</td>
+						<td id="txtTable">5,50%</td>
+					</tr>
+					<tr class="fila_impar">
+						<td id="txtTable">60 - 89</td>
+						<td id="txtTable">5,75%</td>
+					</tr>
+					<tr class="fila_impar">
+						<td id="txtTable">90 - 179</td>
+						<td id="txtTable">6,25%</td>
+					</tr>
+					<tr class="fila_impar">
+						<td id="txtTable">180 - 269</td>
+						<td id="txtTable">7,00%</td>
+					</tr>
+					<tr class="fila_impar">
+						<td id="txtTable">270 - 359</td>
+						<td id="txtTable">7,50%</td>
+					</tr>
+					<tr class="fila_impar">
+						<td id="txtTable">Mas de 360</td>
+						<td id="txtTable">8,50%</td>
+					</tr>
+
+				</table>
+
+			</div>
+			<div id="polizasCuadro">
+				<h:form>
+					<div>
+						<label for="txtUsuario" id="col-md-12">Tiempo:
+						</label>
+
+						<h:inputText id="txtUsuario" class="form__field1"
+							value="#{clientesBean.newCliente.dni}" />
+						<h:message for="txtUsuario" />
+					
+						<label for="txtcontrasena" id="col-md-12">Tasa de Interes: </label>
+						<h:inputText id="txtcontrasena" class="form__field1"
+							value="#{clientesBean.newCliente.nombre}" />
+						<h:message for="txtcontrasena" />
+					</div>
+					<div>
+						<div>
+							<h:commandButton class="btn2"
+								action="#{clientesBean.doGuardar()}" value="Ingresa" />
+							<h:commandButton class="btn2"
+								action="#{clientesBean.doGuardar()}" value="Actualizar" />
+							<h:commandButton class="btn2"
+								action="#{clientesBean.doGuardar()}" value="Eliminar" />
+						</div>
+					</div>
+				</h:form>
+			</div>
+		</div>
+
+		<div id="footer1">
+			<div id="derechosAutor1">
+				<h3>© Banco Don Bosquito Todos los derechos reservados.</h3>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+
+
+.form__field {
+  width: 50%;
+  font-family: "Times New Roman", Times, serif;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  font-size: 1.3rem;
+  color: black;
+  margin: 10px 20px;
+  text-align: left;
+}
+
+.form__field1 {
+  width: 25%;
+  font-family: "Times New Roman", Times, serif;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  font-size: 1.3rem;
+  color: black;
+  margin: 10px 20px;
+  text-align: left;
+}
+
+.form__field2 {
+  width: 80%;
+  font-family: "Times New Roman", Times, serif;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  font-size: 1.0rem;
+  color: black;
+  text-align: left;
+}
+
+
+
+
+.btn1 {
+      background-color: white; 
+      width: 30%;
+      color: black; 
+      border: 2px solid black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.3rem;
+}
+/* Al poner el curso encima (hover) */
+.btn1:hover {
+	font-family: "Times New Roman", Times, serif;
+      background-color: #171AB4;
+      color: white;
+      font-size: 1.3rem;
+ }
+
+.btn2 {
+      background-color: white; 
+      width: 25%;
+      margin: 5px 5px 5px 5px;
+      color: black; 
+      border: 2px solid black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.3rem;
+}
+/* Al poner el curso encima (hover) */
+.btn2:hover {
+	font-family: "Times New Roman", Times, serif;
+      background-color: #171AB4;
+      color: white;
+      font-size: 1.3rem;
+ }
+
+
+.btn3 {
+      background-color: white; 
+      width: 35%;
+      margin: 5px 5px 5px 5px;
+      color: black; 
+      border: 2px solid black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.3rem;
+}
+/* Al poner el curso encima (hover) */
+.btn3:hover {
+	font-family: "Times New Roman", Times, serif;
+      background-color: #171AB4;
+      color: white;
+      font-size: 1.3rem;
+ }
