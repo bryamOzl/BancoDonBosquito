@@ -374,6 +374,7 @@ body {
      background-color: #FFFFFF;
 }
 
+
 #Mision h1 {
 	width: 100%;
 	margin-top: auto;
@@ -555,7 +556,7 @@ body {
      float: left;
      width: 65%;
      text-align: left;
-     margin: -20px 0px;
+     margin: -20px -30px;
      display: inline;
      background-color: #FFFFFF;
 }
