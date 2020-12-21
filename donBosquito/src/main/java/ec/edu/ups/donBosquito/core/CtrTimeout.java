@@ -5,7 +5,7 @@ import javax.faces.bean.RequestScoped;
 
 /**
  *
- * @author Ing Diego
+ * @author Bryam
  */
 @ManagedBean
 @RequestScoped
