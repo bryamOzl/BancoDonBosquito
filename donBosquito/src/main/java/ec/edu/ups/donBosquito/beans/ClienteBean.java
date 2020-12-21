@@ -52,7 +52,6 @@ public class ClienteBean {
 	}
 
 	public void movimiento(Cuenta cuenta) {
-		System.out.println(cuenta.getCuenta_id());
 		FacesUtils.redirect("/blue-ice-813371382/InformacionCuentasCliente.jsf?cuenta=" + cuenta.getCuenta_id());
 	}
 

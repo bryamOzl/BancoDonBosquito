@@ -102,4 +102,22 @@ public class CuentaDAO {
 		ps.close();
 		return s;
 	}
+	
+	public Cuenta buscarCuenta(String numero_cuenta) throws SQLException {
+		Cuenta cuenta = new Cuenta();
+		String sql = "SELECT * FROM Cuenta WHERE  numero_cuenta=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, numero_cuenta);
+		ResultSet res = ps.executeQuery();
+		res.next();
+		cuenta.setCuenta_id(res.getInt("cuenta_id"));
+		cuenta.setFecha_apertura(res.getDate("fecha_apertura"));
+		cuenta.setNumero_cuenta(res.getString("numero_cuenta"));
+		cuenta.setSaldo(res.getDouble("saldo"));
+		cuenta.setTipo_cuenta(res.getString("tipo_cuenta"));
+		cuenta.setRegistro(new Registro());
+		ps.execute();
+		ps.close();
+		return cuenta;
+	}
 }

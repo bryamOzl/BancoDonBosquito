@@ -113,7 +113,8 @@
 			<div style="margin-bottom: 40px;">
 				<h:form>
 					<p:dataTable var="car" value="#{movimientoBean.listaMovimiento}"
-						style="width:97.5%; height: 30px; margin: 20px 20px 20px 10px;">
+						scrollable="true" scrollHeight="50"
+						style="margin: 20px 20px 20px 10px;">
 						<p:column headerText="Fecha"
 							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
 							<h:outputText value="#{car.fecha}" />

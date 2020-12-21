@@ -18,7 +18,7 @@ public class Valor_Poliza implements Serializable {
 	@Column(name = "valor_id")
 	private int valor_id;
 	private String plazo;
-	private int tasa_interes;
+	private Double tasa_interes;
 
 	public int getValor_id() {
 		return valor_id;
@@ -36,11 +36,11 @@ public class Valor_Poliza implements Serializable {
 		this.plazo = plazo;
 	}
 
-	public int getTasa_interes() {
+	public Double getTasa_interes() {
 		return tasa_interes;
 	}
 
-	public void setTasa_interes(int tasa_interes) {
+	public void setTasa_interes(Double tasa_interes) {
 		this.tasa_interes = tasa_interes;
 	}
 
