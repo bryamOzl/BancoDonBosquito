@@ -38,18 +38,18 @@
 					<div >
 						<label for="txtUsuario" id="col-md-12">&nbsp; &nbsp; &nbsp;Usuario: </label>	
 						
-							<h:inputText id="txtUsuario"  class="form__field" value="#{clientesBean.newCliente.dni}" />
+							<h:inputText id="txtUsuario"  class="form__field" value="#{loginBean.username}" />
 							<h:message for="txtUsuario" />
 					</div>
 					<div >
 						<label for="txtcontrasena" id="col-md-12">Contraseña: </label>
-							<h:inputText id="txtcontrasena"  class="form__field"
-								value="#{clientesBean.newCliente.nombre}" />
+							<h:inputText type="password" id="txtcontrasena"  class="form__field"
+								value="#{loginBean.password}" />
 							<h:message for="txtcontrasena" />
 					</div>
 					<div >
 						<div >
-							<h:commandButton class ="btn1" action="#{clientesBean.doGuardar()}" 
+							<h:commandButton class ="btn1" action="#{loginBean.login()}" 
 								value="Login" />
 						</div>
 					</div>

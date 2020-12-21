@@ -57,77 +57,82 @@
 							<div class="panel" id="one-panel">
 								<div id="CrearUsuario">
 									<div id="polizasCuadro">
-										<h:form>
-											<div id="ivaloresPolizasTitulo">
-												<h1>Crear Usuario</h1>
-											</div>
-											<h:panelGrid columns="4" cellpadding="5">
-												<p:outputLabel for="@next" value="CEDULA:"
-													style="float: right;" />
-												<h:inputText class="form__field2 "
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="" />
-
-												<p:outputLabel for="@next" value="NOMBRE:"
-													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="" />
-
-												<p:outputLabel for="@next" value="APELLIDO:"
-													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="" />
-
-												<p:outputLabel for="@next" value="DIRECCION:"
-													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="" />
-
-												<p:outputLabel for="@next" value="TELEFONO:"
-													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="#{beanValidationView.pattern}" />
-
-												<p:outputLabel for="@next" value="FECHA DE NACIMIENTO:"
-													style="float: right;" />
-												<p:calendar id="button" showOn="button" />
-												<p:message for="@previous" />
-												<h:outputText />
-
-												<p:outputLabel for="@next" value="E-mail:"
-													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="#{beanValidationView.pattern}" />
-
-												<p:outputLabel for="@next" value="FOTO"
-													style="float: right;" />
-												<h:commandButton class="btn4"
-													action="#{clientesBean.doGuardar()}" value="Cargar Foto" />
-												<p:message for="@previous" />
-												<h:outputText />
+										<!-- 										<h:form> -->
+										<div id="ivaloresPolizasTitulo">
+											<h1>Crear Usuario</h1>
+										</div>
+										<h:panelGrid columns="4" cellpadding="5">
+											<p:outputLabel for="@next" value="CEDULA:"
+												style="float: right;" />
 
 
-												<h:outputText />
-												<h:inputText class="foto_carga"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText />
 
-											</h:panelGrid>
-											<h:commandButton class="btn3"
-												action="#{clientesBean.doGuardar()}" value="Crear Usuario" />
-										</h:form>
+											<h:inputText class="form__field2 "
+												value="#{administracionBean.persona.cedula}" />
+											<p:message for="@previous" />
+											<h:outputText  />
+
+											<p:commandButton value="Buscar Cedula" type="submit"
+												update="form"
+												actionListener="#{administracionBean.buscarCedula()}">
+											</p:commandButton>
+
+											<p:outputLabel for="@next" value="NOMBRE:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{administracionBean.persona.nombre}" />
+											<p:message for="@previous" />
+											<h:outputText  />
+
+											<p:outputLabel for="@next" value="APELLIDO:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{administracionBean.persona.apellido}" />
+											<p:message for="@previous" />
+											<h:outputText  />
+
+											<p:outputLabel for="@next" value="DIRECCION:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{administracionBean.persona.direccion}" />
+											<p:message for="@previous" />
+											<h:outputText  />
+
+											<p:outputLabel for="@next" value="TELEFONO:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{administracionBean.persona.telefono}" />
+											<p:message for="@previous" />
+											<h:outputText  />
+
+											<p:outputLabel for="@next" value="FECHA DE NACIMIENTO:"
+												style="float: right;" />
+											<p:calendar id="button" showOn="button"
+												value="#{administracionBean.persona.fecha_nacimiento}" />
+											<p:message for="@previous" />
+											<h:outputText />
+
+											<p:outputLabel for="@next" value="E-mail:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{administracionBean.persona.correo}" />
+											<p:message for="@previous" />
+											<h:outputText value="#{beanValidationView.pattern}" />
+
+											<p:outputLabel for="@next" value="FOTO" style="float: right;" />
+											<h:commandButton class="btn4"  value="Cargar Foto" />
+											<p:message for="@previous" />
+											<h:outputText />
+
+
+											<h:outputText />
+											<h:inputText class="foto_carga"  />
+											<p:message for="@previous" />
+											<h:outputText />
+
+										</h:panelGrid>
+										<p:commandButton  class="btn3"  value="Crear Usuario"  actionListener="#{administracionBean.registraPersona()}" update="@form" />
+										<!-- 										</h:form> -->
 									</div>
 
 								</div>
@@ -142,35 +147,32 @@
 												<h:panelGrid columns="4" cellpadding="5">
 													<p:outputLabel for="@next" value="Usuario:"
 														style="float: right;" />
-													<h:inputText class="form__field2 "
-														value="#{clientesBean.newCliente.nombre}" />
+													<h:inputText class="form__field2 "  value="#{administracionBean.registro.usuario}"/>
 													<p:message for="@previous" />
-													<h:outputText value="" />
+													<h:outputText  />
 
 													<p:outputLabel for="@next" value="Contraseña:"
 														style="float: right;" />
-													<h:inputText class="form__field2"
-														value="#{clientesBean.newCliente.nombre}" />
+													<h:inputText class="form__field2"  value="#{administracionBean.registro.contrasenia}"/>
 													<p:message for="@previous" />
-													<h:outputText value="" />
+													<h:outputText  />
 
 													<p:outputLabel for="@next" value="ROL:"
 														style="float: right;" />
 													<p:selectOneMenu id="console"
-														value="#{selectOneMenuView.console}" style="width:69%">
+														style="width:69%" value="#{administracionBean.registro.rol}">
 														<f:selectItem itemLabel="Cajero" itemValue="Cajero" />
 														<f:selectItem itemLabel="Asistente de Captaciones"
 															itemValue="Asistente de Captaciones" />
 														<f:selectItem itemLabel="Administrador"
 															itemValue="AdministradorWii U" />
-														<f:selectItem itemLabel="Cliente" itemValue="Cliente" />
 													</p:selectOneMenu>
 													<p:message for="@previous" />
-													<h:outputText value="" />
+													<h:outputText  />
 
 												</h:panelGrid>
-												<h:commandButton class="btn5"
-													action="#{clientesBean.doGuardar()}" value="Crear Registro" />
+<!-- 												<h:commandButton class="btn5"  -->
+<!-- 													value="Crear Registro" /> -->
 											</div>
 
 
@@ -178,8 +180,7 @@
 									</div>
 									<div class="center">
 										<h:form>
-											<h:commandButton class="btn6"
-												action="#{clientesBean.doGuardar()}" value="Limpiar" />
+											<h:commandButton class="btn6"  value="Limpiar" />
 
 										</h:form>
 									</div>
@@ -195,36 +196,31 @@
 											<h:panelGrid columns="4" cellpadding="5">
 												<p:outputLabel for="@next" value="CEDULA:"
 													style="float: right;" />
-												<h:inputText class="form__field2 "
-													value="#{clientesBean.newCliente.nombre}" />
+												<h:inputText class="form__field2 "  />
 												<p:message for="@previous" />
-												<h:outputText value="" />
+												<h:outputText  />
 
 												<p:outputLabel for="@next" value="NOMBRE:"
 													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
+												<h:inputText class="form__field2"  />
 												<p:message for="@previous" />
-												<h:outputText value="" />
+												<h:outputText  />
 
 												<p:outputLabel for="@next" value="APELLIDO:"
 													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
+												<h:inputText class="form__field2"  />
 												<p:message for="@previous" />
-												<h:outputText value="" />
+												<h:outputText  />
 
 												<p:outputLabel for="@next" value="DIRECCION:"
 													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
+												<h:inputText class="form__field2"  />
 												<p:message for="@previous" />
-												<h:outputText value="" />
+												<h:outputText  />
 
 												<p:outputLabel for="@next" value="TELEFONO:"
 													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
+												<h:inputText class="form__field2"  />
 												<p:message for="@previous" />
 												<h:outputText value="#{beanValidationView.pattern}" />
 
@@ -236,22 +232,19 @@
 
 												<p:outputLabel for="@next" value="E-mail:"
 													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
+												<h:inputText class="form__field2"  />
 												<p:message for="@previous" />
-												<h:outputText value="#{beanValidationView.pattern}" />
+												<h:outputText  />
 
 												<p:outputLabel for="@next" value="FOTO"
 													style="float: right;" />
-												<h:commandButton class="btn4"
-													action="#{clientesBean.doGuardar()}" value="Cargar Foto" />
+												<h:commandButton class="btn4"  value="Cargar Foto" />
 												<p:message for="@previous" />
 												<h:outputText />
 
 
 												<h:outputText />
-												<h:inputText class="foto_carga"
-													value="#{clientesBean.newCliente.nombre}" />
+												<h:inputText class="foto_carga"  />
 												<p:message for="@previous" />
 												<h:outputText />
 
@@ -271,17 +264,15 @@
 												<h:panelGrid columns="4" cellpadding="5">
 													<p:outputLabel for="@next" value="Usuario:"
 														style="float: right;" />
-													<h:inputText class="form__field2 "
-														value="#{clientesBean.newCliente.nombre}" />
+													<h:inputText class="form__field2 "  />
 													<p:message for="@previous" />
-													<h:outputText value="" />
+													<h:outputText  />
 
 													<p:outputLabel for="@next" value="Contraseña:"
 														style="float: right;" />
-													<h:inputText class="form__field2"
-														value="#{clientesBean.newCliente.nombre}" />
+													<h:inputText class="form__field2"  />
 													<p:message for="@previous" />
-													<h:outputText value="" />
+													<h:outputText  />
 
 													<p:outputLabel for="@next" value="ROL:"
 														style="float: right;" />
@@ -295,7 +286,7 @@
 														<f:selectItem itemLabel="Cliente" itemValue="Cliente" />
 													</p:selectOneMenu>
 													<p:message for="@previous" />
-													<h:outputText value="" />
+													<h:outputText  />
 
 												</h:panelGrid>
 											</div>
@@ -305,19 +296,15 @@
 									</div>
 									<div class="center">
 										<h:form>
-											<h:commandButton class="btn7"
-												action="#{clientesBean.doGuardar()}" value="Buscar" />
-											<h:commandButton class="btn7"
-												action="#{clientesBean.doGuardar()}" value="Actualizar" />
+											<h:commandButton class="btn7"  value="Buscar" />
+											<h:commandButton class="btn7"  value="Actualizar" />
 
 										</h:form>
 									</div>
 									<div class="center">
 										<h:form>
-											<h:commandButton class="btn7"
-												action="#{clientesBean.doGuardar()}" value="Editar" />
-											<h:commandButton class="btn7"
-												action="#{clientesBean.doGuardar()}" value="Limpiar" />
+											<h:commandButton class="btn7"  value="Editar" />
+											<h:commandButton class="btn7"  value="Limpiar" />
 
 										</h:form>
 									</div>

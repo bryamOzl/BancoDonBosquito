@@ -32,344 +32,191 @@
 		</div>
 		<div id="panel">
 
-			<h:form id="form">
-				<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
+			<!--  			<h:form id="form"> -->
 
-				<h3 id="titulo">Administrar Usuarios</h3>
+			<h3 id="titulo">Administrar Usuarios</h3>
 
-				<div>
-					<div class="warppers">
-						<input class="radio" id="one" name="group" type="radio"
-							checked="checked" /> <input class="radio" id="two" name="group"
-							type="radio" /> <input class="radio" id="three" name="group"
-							type="radio" /> <input class="radio" id="four" name="group"
-							type="radio" />
+			<div>
+				<div class="warppers">
+					<input class="radio" id="one" name="group" type="radio"
+						checked="checked" /> <input class="radio" id="two" name="group"
+						type="radio" /> <input class="radio" id="three" name="group"
+						type="radio" /> <input class="radio" id="four" name="group"
+						type="radio" />
 
-						<div class="tabs">
-							<label class="tab" id="one-tab" for="one">Registrar</label> <label
-								class="tab" id="two-tab" for="two">Actualizar</label> <label
-								class="tab" id="three-tab" for="three">Eliminar</label> <label
-								class="tab" id="four-tab" for="four">Listar</label>
-						</div>
-						<div class="panels">
-							<div class="panel" id="one-panel">
-								<div id="CrearUsuario">
-									<div id="polizasCuadro">
-										<h:form>
-											<div id="ivaloresPolizasTitulo">
-												<h1>Usuario</h1>
-											</div>
-											<h:panelGrid columns="4" cellpadding="5">
-												<p:outputLabel for="@next" value="CEDULA:"
-													style="float: right;" />
-												<h:inputText class="form__field2 "
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="" />
-
-												<p:outputLabel for="@next" value="NOMBRE:"
-													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="" />
-
-												<p:outputLabel for="@next" value="APELLIDO:"
-													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="" />
-
-												<p:outputLabel for="@next" value="DIRECCION:"
-													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="" />
-
-												<p:outputLabel for="@next" value="TELEFONO:"
-													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="#{beanValidationView.pattern}" />
-
-												<p:outputLabel for="@next" value="FECHA DE NACIMIENTO:"
-													style="float: right;" />
-												<p:calendar id="button" showOn="button" />
-												<p:message for="@previous" />
-												<h:outputText />
-
-												<p:outputLabel for="@next" value="E-mail:"
-													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="#{beanValidationView.pattern}" />
-
-
-											</h:panelGrid>
-											<h:commandButton class="btn3"
-												action="#{clientesBean.doGuardar()}" value="Buscar" />
-											<h:commandButton class="btn3"
-												action="#{clientesBean.doGuardar()}" value="Limpiar" />
-										</h:form>
-									</div>
-
-								</div>
-								<div id="CrearRegistro">
-									<div id="Registro">
-										<h:form>
-											<div id="ivaloresPolizasTitulo">
-												<h1>Registro Cliente</h1>
-											</div>
-											<div>
-
-												<h:panelGrid columns="4" cellpadding="5">
-													<p:outputLabel for="@next" value="USUARIO:"
-														style="float: right;" />
-													<h:inputText class="form__field2 "
-														value="#{clientesBean.newCliente.nombre}" />
-													<p:message for="@previous" />
-													<h:outputText value="" />
-
-													<p:outputLabel for="@next" value="CONTRASEÑA:"
-														style="float: right;" />
-													<p:password class="form__field2"
-														value="#{clientesBean.newCliente.nombre}"
-														style="width: 77%;
-														border-bottom: 1px solid black;
-														border-left: 1px solid black;
-														border-right: 1px solid black;
-														border-top: 1px solid black;
-														font-size: 0.7rem;
-														color: black;
-														text-align: left;" />
-													<p:message for="@previous" />
-													<h:outputText value="" />
-
-												</h:panelGrid>
-											</div>
-
-										</h:form>
-									</div>
-									<div id="Registro">
-										<h:form>
-											<div id="ivaloresPolizasTitulo">
-												<h1>Cuenta Bancaria</h1>
-											</div>
-											<div>
-
-												<h:panelGrid columns="4" cellpadding="5">
-													<p:outputLabel for="@next" value="NUMERO CUENTA:"
-														style="float: right;" />
-													<h:inputText class="form__field2 "
-														value="#{clientesBean.newCliente.nombre}" />
-													<p:message for="@previous" />
-													<h:outputText value="" />
-
-													<p:outputLabel for="@next" value="TIPO:"
-														style="float: right;" />
-													<p:selectOneMenu id="console"
-														value="#{selectOneMenuView.console}" style="width:69%">
-														<f:selectItem itemLabel="Cuenta Corriente"
-															itemValue="Cuenta Corriente" />
-														<f:selectItem itemLabel="Cuenta Ahorros"
-															itemValue="Cuenta Ahorros" />
-													</p:selectOneMenu>
-													<p:message for="@previous" />
-													<h:outputText value="" />
-
-													<p:outputLabel for="@next" value="FECHA APERTURA:"
-														style="float: right;" />
-													<p:calendar id="button" showOn="button" />
-													<p:message for="@previous" />
-													<h:outputText />
-
-												</h:panelGrid>
-												<h:commandButton class="btn5"
-													action="#{clientesBean.doGuardar()}" value="Crear Cuenta" />
-											</div>
-
-
-										</h:form>
-									</div>
-								</div>
-							</div>
-							<div class="panel" id="two-panel">
-								<div id="CrearUsuario">
-									<div id="polizasCuadro">
-										<h:form>
-											<div id="ivaloresPolizasTitulo">
-												<h1> Usuario</h1>
-											</div>
-											<h:panelGrid columns="4" cellpadding="5">
-												<p:outputLabel for="@next" value="CEDULA:"
-													style="float: right;" />
-												<h:inputText class="form__field2 "
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="" />
-
-												<p:outputLabel for="@next" value="NOMBRE:"
-													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="" />
-
-												<p:outputLabel for="@next" value="APELLIDO:"
-													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="" />
-
-												<p:outputLabel for="@next" value="DIRECCION:"
-													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="" />
-
-												<p:outputLabel for="@next" value="TELEFONO:"
-													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="#{beanValidationView.pattern}" />
-
-												<p:outputLabel for="@next" value="FECHA DE NACIMIENTO:"
-													style="float: right;" />
-												<p:calendar id="button" showOn="button" />
-												<p:message for="@previous" />
-												<h:outputText />
-
-												<p:outputLabel for="@next" value="E-mail:"
-													style="float: right;" />
-												<h:inputText class="form__field2"
-													value="#{clientesBean.newCliente.nombre}" />
-												<p:message for="@previous" />
-												<h:outputText value="#{beanValidationView.pattern}" />
-
-
-											</h:panelGrid>
-										</h:form>
-										
-									</div>
-									<div class="center">
-										<h:form>
-											<h:commandButton class="btn7"
-												action="#{clientesBean.doGuardar()}" value="Buscar" />
-											<h:commandButton class="btn7"
-												action="#{clientesBean.doGuardar()}" value="Actualizar" />
-
-										</h:form>
-									</div>
-									<div class="center">
-										<h:form>
-											<h:commandButton class="btn7"
-												action="#{clientesBean.doGuardar()}" value="Editar" />
-											<h:commandButton class="btn7"
-												action="#{clientesBean.doGuardar()}" value="Limpiar" />
-
-										</h:form>
-									</div>
-
-								</div>
-								<div id="CrearRegistro">
-									<div id="Registro">
-										<h:form>
-											<div id="ivaloresPolizasTitulo">
-												<h1>Registro Cliente</h1>
-											</div>
-											<div>
-
-												<h:panelGrid columns="4" cellpadding="5">
-													<p:outputLabel for="@next" value="USUARIO:"
-														style="float: right;" />
-													<h:inputText class="form__field2 "
-														value="#{clientesBean.newCliente.nombre}" />
-													<p:message for="@previous" />
-													<h:outputText value="" />
-
-													<p:outputLabel for="@next" value="CONTRASEÑA:"
-														style="float: right;" />
-													<p:password class="form__field2"
-														value="#{clientesBean.newCliente.nombre}"
-														style="width: 77%;
-														border-bottom: 1px solid black;
-														border-left: 1px solid black;
-														border-right: 1px solid black;
-														border-top: 1px solid black;
-														font-size: 0.7rem;
-														color: black;
-														text-align: left;" />
-													<p:message for="@previous" />
-													<h:outputText value="" />
-
-												</h:panelGrid>
-											</div>
-
-										</h:form>
-									</div>
-									<div id="Registro">
-										<h:form>
-											<div id="ivaloresPolizasTitulo">
-												<h1>Cuenta Bancaria</h1>
-											</div>
-											<div>
-
-												<h:panelGrid columns="4" cellpadding="5">
-													<p:outputLabel for="@next" value="NUMERO CUENTA:"
-														style="float: right;" />
-													<h:inputText class="form__field2 "
-														value="#{clientesBean.newCliente.nombre}" />
-													<p:message for="@previous" />
-													<h:outputText value="" />
-
-													<p:outputLabel for="@next" value="TIPO:"
-														style="float: right;" />
-													<p:selectOneMenu id="console"
-														value="#{selectOneMenuView.console}" style="width:69%">
-														<f:selectItem itemLabel="Cuenta Corriente"
-															itemValue="Cuenta Corriente" />
-														<f:selectItem itemLabel="Cuenta Ahorros"
-															itemValue="Cuenta Ahorros" />
-													</p:selectOneMenu>
-													<p:message for="@previous" />
-													<h:outputText value="" />
-
-													<p:outputLabel for="@next" value="FECHA APERTURA:"
-														style="float: right;" />
-													<p:calendar id="button" showOn="button" />
-													<p:message for="@previous" />
-													<h:outputText />
-
-												</h:panelGrid>
-											</div>
-
-
-										</h:form>
-									</div>
-								</div>
-							</div>
-							<div class="panel" id="three-panel">
-								<div class="panel-title">Note on Prerequisites</div>
-								<p>We recommend that you complete Learn HTML before learning
-									CSS.</p>
-							</div>
-						</div>
+					<div class="tabs">
+						<label class="tab" id="one-tab" for="one">Registrar</label> <label
+							class="tab" id="two-tab" for="two">Actualizar</label> <label
+							class="tab" id="three-tab" for="three">Eliminar</label> <label
+							class="tab" id="four-tab" for="four">Listar</label>
 					</div>
+					<div class="panels">
+						<div class="panel" id="one-panel">
+							<h:form>
+								<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
 
+								<div id="CrearUsuario">
+									<div id="polizasCuadro">
+										<!--  										<h:form>  -->
+										<div id="ivaloresPolizasTitulo">
+											<h1>Usuario</h1>
+										</div>
+										<h:panelGrid columns="4" cellpadding="5">
+											<p:outputLabel for="@next" value="CEDULA:"
+												style="float: right;" />
+											<h:inputText class="form__field2 "
+												value="#{cajeroBean.persona.cedula}" />
+											<p:message for="@previous" />
+											<h:outputText />
+
+											<p:outputLabel for="@next" value="NOMBRE:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{cajeroBean.persona.nombre}" />
+											<p:message for="@previous" />
+											<h:outputText />
+
+											<p:outputLabel for="@next" value="APELLIDO:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{cajeroBean.persona.apellido}" />
+											<p:message for="@previous" />
+											<h:outputText />
+
+											<p:outputLabel for="@next" value="DIRECCION:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{cajeroBean.persona.direccion}" />
+											<p:message for="@previous" />
+											<h:outputText />
+
+											<p:outputLabel for="@next" value="TELEFONO:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{cajeroBean.persona.telefono}" />
+											<p:message for="@previous" />
+											<h:outputText value="#{beanValidationView.pattern}" />
+
+											<p:outputLabel for="@next" value="FECHA DE NACIMIENTO:"
+												style="float: right;" />
+											<p:calendar id="button1" showOn="button"
+												value="#{cajeroBean.persona.fecha_nacimiento}" />
+											<p:message for="@previous" />
+											<h:outputText />
+
+											<p:outputLabel for="@next" value="E-mail:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{cajeroBean.persona.correo}" />
+											<p:message for="@previous" />
+											<h:outputText value="#{beanValidationView.pattern}" />
+
+
+										</h:panelGrid>
+										<p:commandButton class="btn3" value="Buscar"
+											actionListener="#{cajeroBean.buscarCedula()}" update="@form"
+											id="btnbuscar" />
+										<h:commandButton class="btn3" value="Limpiar" id="btnLimpiar" />
+										<!--  										</h:form> -->
+									</div>
+
+								</div>
+								<div id="CrearRegistro">
+									<div id="Registro">
+										<!-- 										<h:form>  -->
+										<div id="ivaloresPolizasTitulo">
+											<h1>Registro Cliente</h1>
+										</div>
+										<div>
+
+											<h:panelGrid columns="4" cellpadding="5">
+												<p:outputLabel for="@next" value="USUARIO:"
+													style="float: right;" />
+												<h:inputText class="form__field2 "
+													value="#{cajeroBean.registro.usuario}" />
+												<p:message for="@previous" />
+												<h:outputText />
+
+												<p:outputLabel for="@next" value="CONTRASEÑA:"
+													style="float: right;" />
+												<p:password class="form__field2"
+													value="#{cajeroBean.registro.contrasenia}"
+													style="width: 77%;
+														border-bottom: 1px solid black;
+														border-left: 1px solid black;
+														border-right: 1px solid black;
+														border-top: 1px solid black;
+														font-size: 0.7rem;
+														color: black;
+														text-align: left;" />
+												<p:message for="@previous" />
+												<h:outputText />
+
+											</h:panelGrid>
+										</div>
+
+										<!-- 										</h:form> -->
+									</div>
+									<div id="Registro">
+										<!-- 										<h:form> -->
+										<div id="ivaloresPolizasTitulo">
+											<h1>Cuenta Bancaria</h1>
+										</div>
+										<div>
+
+											<h:panelGrid columns="4" cellpadding="5">
+												<p:outputLabel for="@next" value="NUMERO CUENTA:"
+													style="float: right;" />
+												<h:inputText class="form__field2 "
+													value="#{cajeroBean.cuenta.numero_cuenta}" />
+												<p:message for="@previous" />
+												<h:outputText />
+
+												<p:outputLabel for="@next" value="TIPO:"
+													style="float: right;" />
+												<p:selectOneMenu id="console"
+													value="#{cajeroBean.cuenta.tipo_cuenta}" style="width:69%">
+													<f:selectItem itemLabel="Cuenta Corriente"
+														itemValue="Cuenta Corriente" />
+													<f:selectItem itemLabel="Cuenta Ahorros"
+														itemValue="Cuenta Ahorros" />
+												</p:selectOneMenu>
+												<p:message for="@previous" />
+												<h:outputText />
+
+												<p:outputLabel for="@next" value="FECHA APERTURA:"
+													style="float: right;" />
+												<p:calendar id="button" showOn="button"
+													value="#{cajeroBean.cuenta.fecha_apertura}" />
+												<p:message for="@previous" />
+												<h:outputText />
+
+											</h:panelGrid>
+											<p:commandButton class="btn5"
+												actionListener="#{cajeroBean.registraPersona()}"
+												value="Crear Cuenta" update="@form" id="btnRegistrar" />
+										</div>
+
+
+										<!-- 										</h:form> -->
+									</div>
+								</div>
+							</h:form>
+						</div>
+
+						<div class="panel-title">Note on Prerequisites</div>
+						<p>We recommend that you complete Learn HTML before learning
+							CSS.</p>
+					</div>
 				</div>
-			</h:form>
-		</div>
-		<div id="footer1">
-			<div id="derechosAutor1">
-				<h3>© Banco Don Bosquito Todos los derechos reservados.</h3>
 			</div>
+
+		</div>
+		<!-- 			</h:form> -->
+	</div>
+	<div id="footer1">
+		<div id="derechosAutor1">
+			<h3>© Banco Don Bosquito Todos los derechos reservados.</h3>
 		</div>
 	</div>
 

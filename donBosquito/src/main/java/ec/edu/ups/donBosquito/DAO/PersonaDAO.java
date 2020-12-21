@@ -39,8 +39,33 @@ public class PersonaDAO {
 	 * @return
 	 * @throws SQLException
 	 */
-	public Persona readPersona(String cedula) throws SQLException {
-		Persona persona = em.find(Persona.class, cedula);
+	public Persona readPersona(String persona_id) throws SQLException {
+		Persona persona = em.find(Persona.class, persona_id);
+		return persona;
+	}
+
+	public Persona buscarCedula(String cedula) {
+
+		Persona persona = new Persona();
+		String sql = "SELECT * FROM Persona WHERE cedula=?";
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, cedula);
+			ResultSet res = ps.executeQuery();
+			res.next();
+			persona.setPersona_id(res.getInt("persona_id"));
+			persona.setApellido(res.getString("apellido"));
+			persona.setCedula(res.getString("cedula"));
+			persona.setCorreo(res.getString("correo"));
+			persona.setDireccion(res.getString("correo"));
+			persona.setFecha_nacimiento(res.getDate("fecha_nacimiento"));
+			persona.setNombre(res.getString("nombre"));
+			persona.setTelefono(res.getString("telefono"));
+			ps.execute();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println("Erro al buscar a la persona por la cédula " + e.getMessage());
+		}
 		return persona;
 	}
 
@@ -67,17 +92,16 @@ public class PersonaDAO {
 		em.remove(readPersona(cedula));
 		return true;
 	}
-	
-	 
-	 public int contarPersona() throws SQLException{
+
+	public int contarPersona() throws SQLException {
 		int s;
-		 String sql = "SELECT MAX (persona_id) FROM Persona";
-		 PreparedStatement ps = con.prepareStatement(sql);
-			ResultSet res = ps.executeQuery();
-			res.next();
-			s = res.getInt(1)+1;
-			ps.execute();
-			ps.close();
-		 return s;
-	 }
+		String sql = "SELECT MAX (persona_id) FROM Persona";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ResultSet res = ps.executeQuery();
+		res.next();
+		s = res.getInt(1) + 1;
+		ps.execute();
+		ps.close();
+		return s;
+	}
 }

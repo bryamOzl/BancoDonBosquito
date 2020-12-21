@@ -56,6 +56,7 @@ public class MovimientoDAO {
 		movimiento.setCantidad(res.getDouble("cantidad"));
 		movimiento.setFecha(res.getDate("fecha"));
 		movimiento.setTipo_movimiento(res.getString("tipo_movimiento"));
+		movimiento.setSaldo(res.getDouble("saldo"));
 		movimiento.setCuenta(em.find(Cuenta.class, cuenta_id));
 		ps.execute();
 		ps.close();
@@ -77,6 +78,7 @@ public class MovimientoDAO {
 				movimiento.setCantidad(res.getDouble("cantidad"));
 				movimiento.setFecha(res.getDate("fecha"));
 				movimiento.setTipo_movimiento(res.getString("tipo_movimiento"));
+				movimiento.setSaldo(res.getDouble("saldo"));
 				movimiento.setCuenta(em.find(Cuenta.class, cuenta_id));
 				listarMovimiento.add(movimiento);
 			}

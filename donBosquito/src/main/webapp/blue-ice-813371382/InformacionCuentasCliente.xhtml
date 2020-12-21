@@ -31,8 +31,9 @@
 					<li class="selected"><a href="#" title="itemUsuarios">Polizas</a></li>
 					<li class="selected"><a href="#" title="itemPolizas">Historia
 							de Acceso</a></li>
-					<li class="select"><a href="#" title="itemCerrarSesion">Cerrar
-							Sesion</a></li>
+					<p:commandButton value="Logout" icon="pi pi-home"
+						action="#{ctrSession.logout()}" />
+
 				</ul>
 			</div>
 		</div>
@@ -61,25 +62,25 @@
 			</div>
 			<div style="margin-bottom: 40px;">
 				<h:form>
-					<p:dataTable var="car" value="#{dtBasicView.cars}"
+					<p:dataTable var="car" value="#{movimientoBean.listaCuentas}"
 						style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
 						<p:column headerText="N. Cuenta"
 							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-							<h:outputText value="#{car.id}" />
+							<h:outputText value="#{car.numero_cuenta}" />
 						</p:column>
 						<p:column headerText="Tipo de Cuenta"
 							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; ">
-							<h:outputText value="#{car.year}" />
+							<h:outputText value="#{car.tipo_cuenta}" />
 						</p:column>
 
 						<p:column headerText="Fecha de Ultima Transaccion"
 							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-							<h:outputText value="#{car.brand}" />
+							<h:outputText value="#{car.fecha_apertura}" />
 						</p:column>
 
 						<p:column headerText="Saldo"
 							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; width: 12%;">
-							<h:outputText value="#{car.color}" />
+							<h:outputText value="#{car.saldo}" />
 						</p:column>
 
 					</p:dataTable>
@@ -95,14 +96,14 @@
 						style="float: center;" />
 					<h:outputText value="" />
 
-					<p:selectOneMenu id="console" value="#{selectOneMenuView.console}"
+					<p:selectOneMenu id="console"
 						style="width:70% ;margin: auto 40px auto auto;;">
 						<f:selectItem itemLabel="Todos" itemValue="Todos" />
 						<f:selectItem itemLabel="Retiros" itemValue="Retiros" />
 						<f:selectItem itemLabel="Depositos" itemValue="Depositos" />
 					</p:selectOneMenu>
 					<p:calendar id="button1" showOn="button" style="width:100%; " />
-					<p:calendar id="button" showOn="button"  style="width:100%;"/>
+					<p:calendar id="button" showOn="button" style="width:100%;" />
 					<h:commandButton class="btn11" action="#{clientesBean.doGuardar()}"
 						value="Consultar" />
 
@@ -111,25 +112,25 @@
 			</div>
 			<div style="margin-bottom: 40px;">
 				<h:form>
-					<p:dataTable var="car" value="#{dtBasicView.cars}"
+					<p:dataTable var="car" value="#{movimientoBean.listaMovimiento}"
 						style="width:97.5%; height: 30px; margin: 20px 20px 20px 10px;">
 						<p:column headerText="Fecha"
 							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-							<h:outputText value="#{car.id}" />
+							<h:outputText value="#{car.fecha}" />
 						</p:column>
 						<p:column headerText="Movimiento"
 							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; ">
-							<h:outputText value="#{car.year}" />
+							<h:outputText value="#{car.tipo_movimiento}" />
 						</p:column>
 
 						<p:column headerText="Valor"
 							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; width: 18%;">
-							<h:outputText value="#{car.brand}" />
+							<h:outputText value="#{car.cantidad}" />
 						</p:column>
 
 						<p:column headerText="Saldo"
 							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; width: 18%;">
-							<h:outputText value="#{car.color}" />
+							<h:outputText value="#{car.saldo}" />
 						</p:column>
 
 					</p:dataTable>

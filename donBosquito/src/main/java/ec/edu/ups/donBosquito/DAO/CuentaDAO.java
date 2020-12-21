@@ -64,7 +64,10 @@ public class CuentaDAO {
 	public List<Cuenta> listarCuenta(int registro_id) {
 
 		List<Cuenta> listarCuenta = new ArrayList<>();
-		String sql = "SELECT * FROM Cuenta WHERE resgistro_id=? ORDER BY cuenta_id ASC";
+		String sql = "SELECT c.numero_cuenta, c.tipo_cuenta, c.cuenta_id,\r\n"
+				+ "(Select max(fecha) from movimiento m where m.cuenta_id=c.cuenta_id) as ultima, \r\n"
+				+ "c.saldo \r\n"
+				+ "FROM cuenta c WHERE c.registro_id=?";
 
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -73,7 +76,7 @@ public class CuentaDAO {
 			while (res.next()) {
 				Cuenta cuenta = new Cuenta();
 				cuenta.setCuenta_id(res.getInt("cuenta_id"));
-				cuenta.setFecha_apertura(res.getDate("fecha_apertura"));
+				cuenta.setFecha_apertura(res.getDate("ultima"));
 				cuenta.setNumero_cuenta(res.getString("numero_cuenta"));
 				cuenta.setSaldo(res.getDouble("saldo"));
 				cuenta.setTipo_cuenta(res.getString("tipo_cuenta"));

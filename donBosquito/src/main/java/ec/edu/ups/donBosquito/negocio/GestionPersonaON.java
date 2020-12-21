@@ -15,8 +15,8 @@ public class GestionPersonaON implements GestionPersonaONRemoto{
 	private PersonaDAO daoPersona;
 
 	public boolean registrarPersona(Persona persona) throws Exception {
-		//if (persona == null)
-		//	throw new Exception("Error en el Objeto Persona");
+		if (persona == null)
+			throw new Exception("Error en el Objeto Persona");
 		try {
 			daoPersona.insertPersona(persona);
 		} catch (SQLException e) {

@@ -23,6 +23,7 @@ public class Movimiento implements Serializable {
 	private String tipo_movimiento;
 	private Double cantidad;
 	private Date fecha;
+	private Double saldo;
 
 	@ManyToOne
 	@JoinColumn(name = "cuenta_id")
@@ -60,6 +61,14 @@ public class Movimiento implements Serializable {
 		this.fecha = fecha;
 	}
 
+	public Double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(Double saldo) {
+		this.saldo = saldo;
+	}
+
 	public Cuenta getCuenta() {
 		return cuenta;
 	}
@@ -71,7 +80,7 @@ public class Movimiento implements Serializable {
 	@Override
 	public String toString() {
 		return "Movimiento [movimiento_id=" + movimiento_id + ", tipo_movimiento=" + tipo_movimiento + ", cantidad="
-				+ cantidad + ", fecha=" + fecha + ", cuenta=" + cuenta + "]";
+				+ cantidad + ", fecha=" + fecha + ", saldo=" + saldo + ", cuenta=" + cuenta + "]";
 	}
 
 }

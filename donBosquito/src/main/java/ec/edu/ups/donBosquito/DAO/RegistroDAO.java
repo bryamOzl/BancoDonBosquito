@@ -45,13 +45,11 @@ public class RegistroDAO {
 	}
 
 	
-	public Registro login(String usuario , String contrasenia, String rol) throws SQLException {
+	public Registro leerNombre(String usuario) throws SQLException {
 		Registro registro = new Registro();
-		String sql = "SELECT * FROM registro r WHERE r.usuario = ? AND r.contrasenia = ? AND r.rol = ?";
+		String sql = "SELECT * FROM Registro WHERE  usuario=?";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, usuario);
-		ps.setString(2, contrasenia);
-		ps.setString(3, rol);
 		ResultSet res = ps.executeQuery();
 		res.next();
 		registro.setRegistro_id(res.getInt("registro_id"));
@@ -59,7 +57,24 @@ public class RegistroDAO {
 		registro.setEstado(res.getString("estado"));
 		registro.setRol(res.getString("rol"));
 		registro.setUsuario(res.getString("usuario"));
-		
+		ps.execute();
+		ps.close();
+		return registro;
+	}
+	
+	public Registro login(String usuario , String contrasenia) throws SQLException {
+		Registro registro = new Registro();
+		String sql = "SELECT * FROM registro r WHERE r.usuario = ? AND r.contrasenia = ?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, usuario);
+		ps.setString(2, contrasenia);
+		ResultSet res = ps.executeQuery();
+		res.next();
+		registro.setRegistro_id(res.getInt("registro_id"));
+		registro.setContrasenia(res.getString("contrasenia"));
+		registro.setEstado(res.getString("estado"));
+		registro.setRol(res.getString("rol"));
+		registro.setUsuario(res.getString("usuario"));
 		ps.execute();
 		ps.close();
 		return registro;
