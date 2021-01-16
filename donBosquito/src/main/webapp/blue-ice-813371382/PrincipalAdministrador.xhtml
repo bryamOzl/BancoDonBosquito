@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Banco Don Bosquito</title>
+	<style type="text/css" media="all">
+@import "/donBosquito/blue-ice-813371382/globa.css";
+
+@import "/donBosquito/blue-ice-813371382/Label.css";
+
+@import "/donBosquito/blue-ice-813371382/IniciarSesion.css";
+</style>
+</h:head>
+<body>
+
+	<div id="wrapper">
+		<div id="header">
+			<div id="headimg"></div>
+		</div>
+
+		<div id="topnavi">
+			<div id="top">
+				<ul>
+					<li class="selected"><a href="/donBosquito/blue-ice-813371382/CRUDAdministrador.jsf" title="itemUsuarios">Usuarios</a></li>
+					<li class="selected"><a href="/donBosquito/blue-ice-813371382/PolizasAdministrador.jsf" title="itemPolizas">Polizas</a></li>
+					<li class="select"><a href="#" title="itemCerrarSesion">Cerrar
+							Sesion</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="datosUsuario">
+
+			<div id="datos1">
+				<h1>Datos del Administrador</h1>
+			</div>
+			<div id="datos2">
+				<h2>
+					<h:inputText class="txtUsuario"
+						value="#{clientesBean.newCliente.dni}" />
+				</h2>
+			</div>
+			<div id="datos3">
+				<h2>
+					<h:inputText class="txtEmail"
+						value="#{clientesBean.newCliente.dni}" />
+				</h2>
+			</div>
+		</div>
+
+		<div id="bodybox1">
+
+			<div id="imagenAdministrador">
+				<h1>
+					<h:inputText class="txtFoto" value="#{clientesBean.newCliente.dni}" />
+				</h1>
+
+			</div>
+			<div id="descripcionAdministrador">
+				<h2>Somos un banco centrado en nuestros clientes, ofreciéndoles
+					una experiencia de banca digital altamente eficiente que logre
+					superar sus expectativas,por lo cual nos convertiremos en uno de
+					los bancos más importantes del Ecuador</h2>
+			</div>
+
+		</div>
+
+		<div id="footer1">
+			<div id="derechosAutor1">
+				<h3>© Banco Don Bosquito Todos los derechos reservados.</h3>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

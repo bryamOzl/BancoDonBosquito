@@ -1,10 +1,24 @@
 package ec.edu.ups.donBosquito.modelo;
 
-public class Valor_Poliza {
+import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Valor_Poliza implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name = "valor_id")
 	private int valor_id;
 	private String plazo;
-	private int tasa_interes;
+	private Double tasa_interes;
 
 	public int getValor_id() {
 		return valor_id;
@@ -22,11 +36,11 @@ public class Valor_Poliza {
 		this.plazo = plazo;
 	}
 
-	public int getTasa_interes() {
+	public Double getTasa_interes() {
 		return tasa_interes;
 	}
 
-	public void setTasa_interes(int tasa_interes) {
+	public void setTasa_interes(Double tasa_interes) {
 		this.tasa_interes = tasa_interes;
 	}
 

@@ -1,13 +1,32 @@
 package ec.edu.ups.donBosquito.modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Movimiento {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
+@Entity
+public class Movimiento implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name = "movimiento_id")
 	private int movimiento_id;
 	private String tipo_movimiento;
 	private Double cantidad;
 	private Date fecha;
+	private Double saldo;
+
+	@ManyToOne
+	@JoinColumn(name = "cuenta_id")
 	private Cuenta cuenta;
 
 	public int getMovimiento_id() {
@@ -42,6 +61,14 @@ public class Movimiento {
 		this.fecha = fecha;
 	}
 
+	public Double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(Double saldo) {
+		this.saldo = saldo;
+	}
+
 	public Cuenta getCuenta() {
 		return cuenta;
 	}
@@ -53,7 +80,7 @@ public class Movimiento {
 	@Override
 	public String toString() {
 		return "Movimiento [movimiento_id=" + movimiento_id + ", tipo_movimiento=" + tipo_movimiento + ", cantidad="
-				+ cantidad + ", fecha=" + fecha + ", cuenta=" + cuenta + "]";
+				+ cantidad + ", fecha=" + fecha + ", saldo=" + saldo + ", cuenta=" + cuenta + "]";
 	}
 
 }

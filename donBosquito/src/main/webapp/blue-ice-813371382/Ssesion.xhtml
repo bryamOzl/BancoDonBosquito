@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Banco Don Bosquito</title>
+	<style type="text/css" media="all">
+@import "globa.css";
+@import "Label.css";
+@import "IniciarSesion.css";
+</style>
+</h:head>
+<body>
+
+	<div id="wrapper">
+
+		<div id="header">
+			<div id="headimg"></div>
+		</div>
+
+		<div id="topnavi">
+			<div class="spacing1">
+				<ul>
+					<li class="selected"><a href="#" title="itemInicio">Inicio</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="iniciarSesion">
+
+			<div id="iniciarSesionTitulo">
+				<h1>Iniciar Sesion</h1>
+			</div>
+			<div id="iniciarSesionCuadro">
+				<h:form >
+					<div >
+						<label for="txtUsuario" id="col-md-12">&nbsp; &nbsp; &nbsp;Usuario: </label>	
+						
+							<h:inputText id="txtUsuario"  class="form__field" value="#{loginBean.username}" />
+							<h:message for="txtUsuario" />
+					</div>
+					<div >
+						<label for="txtcontrasena" id="col-md-12">Contraseña: </label>
+							<h:inputText type="password" id="txtcontrasena"  class="form__field"
+								value="#{loginBean.password}" />
+							<h:message for="txtcontrasena" />
+					</div>
+					<div >
+						<div >
+							<h:commandButton class ="btn1" action="#{loginBean.login()}" 
+								value="Login" />
+						</div>
+					</div>
+				</h:form>
+			</div>
+			<div id="imagenBanco">
+				<img src="img/imagenBanco.png" alt="" />
+			</div>
+		</div>
+		<div id="footer">
+			<div id="Contacto">
+
+				<div id="Ubiquenos">
+					<h1>UBIQUENOS</h1>
+
+					<h3>
+						<a><img src="img/icons8-parthenon.png" alt="" /></a> Miguel T.
+						Duran 1-112
+					</h3>
+					<h3>
+						<a><img src="img/icons8-new_post.png" alt="" /></a>
+						lsanchezs@est.ups.edu.ec
+					</h3>
+					<h3>
+						<a><img src="img/icons8-phone.png" alt="" /></a> 0996214346
+					</h3>
+
+
+				</div>
+				<div id="RedesSociales">
+					<h1>Redes Sociales</h1>
+					<h2>
+						<img src="img/icons8-facebook.png" alt="" /> <img
+							src="img/icons8-twitter.png" alt="" /> <img
+							src="img/icons8-play_button.png" alt="" />
+					</h2>
+				</div>
+
+			</div>
+
+
+			<div id="derechosAutor">
+				<h3>© Banco Don Bosquito Todos los derechos reservados.</h3>
+			</div>
+
+
+		</div>
+
+	</div>
+
+
+
+
+</body>
+</html>

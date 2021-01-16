@@ -1,13 +1,32 @@
 package ec.edu.ups.donBosquito.modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Cuenta {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
+@Entity
+public class Cuenta implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name = "cuenta_id")
 	private int cuenta_id;
+	private String numero_cuenta;
 	private String tipo_cuenta;
 	private Date fecha_apertura;
 	private Double saldo;
+
+	@ManyToOne
+	@JoinColumn(name = "registro_id")
 	private Registro registro;
 
 	public int getCuenta_id() {
@@ -16,6 +35,14 @@ public class Cuenta {
 
 	public void setCuenta_id(int cuenta_id) {
 		this.cuenta_id = cuenta_id;
+	}
+
+	public String getNumero_cuenta() {
+		return numero_cuenta;
+	}
+
+	public void setNumero_cuenta(String numero_cuenta) {
+		this.numero_cuenta = numero_cuenta;
 	}
 
 	public String getTipo_cuenta() {
@@ -50,10 +77,14 @@ public class Cuenta {
 		this.registro = registro;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public String toString() {
-		return "Cuenta [cuenta_id=" + cuenta_id + ", tipo_cuenta=" + tipo_cuenta + ", fecha_apertura=" + fecha_apertura
-				+ ", saldo=" + saldo + ", registro=" + registro + "]";
+		return "Cuenta [cuenta_id=" + cuenta_id + ", numero_cuenta=" + numero_cuenta + ", tipo_cuenta=" + tipo_cuenta
+				+ ", fecha_apertura=" + fecha_apertura + ", saldo=" + saldo + ", registro=" + registro + "]";
 	}
 
 }

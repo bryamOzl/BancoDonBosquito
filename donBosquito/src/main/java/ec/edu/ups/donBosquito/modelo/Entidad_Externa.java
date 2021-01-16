@@ -1,10 +1,29 @@
 package ec.edu.ups.donBosquito.modelo;
 
-public class Entidad_Externa {
+import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Entidad_Externa implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name = "entidad_id")
 	private int entidad_id;
 	private String nombre_entidad;
 	private String numero_cuenta_entidad;
+
+	@ManyToOne
+	@JoinColumn(name = "persona_id")
 	private Persona persona;
 
 	public int getEntidad_id() {
