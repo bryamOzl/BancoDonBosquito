@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Banco Don Bosquito</title>
+	<style type="text/css" media="all">
+@import "globa.css";
+
+@import "Label.css";
+
+@import "IniciarSesion.css";
+</style>
+</h:head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="headimg"></div>
+		</div>
+		<div id="topnavi">
+			<div id="top">
+				<ul>
+					<li class="selected"><a href="#" title="itemUsuarios">Cajero</a></li>
+					<li class="select"><a href="#" title="itemCerrarSesion">Cerrar
+							Sesion</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="panel">
+
+			<!--  			<h:form id="form"> -->
+
+			<h3 id="titulo">Administrar Usuarios</h3>
+
+			<div>
+				<div class="warppers">
+					<input class="radio" id="one" name="group" type="radio"
+						checked="checked" /> <input class="radio" id="two" name="group"
+						type="radio" /> <input class="radio" id="three" name="group"
+						type="radio" /> <input class="radio" id="four" name="group"
+						type="radio" />
+
+					<div class="tabs">
+						<label class="tab" id="one-tab" for="one">Registrar</label> <label
+							class="tab" id="two-tab" for="two">Actualizar</label> <label
+							class="tab" id="three-tab" for="three">Eliminar</label> <label
+							class="tab" id="four-tab" for="four">Listar</label>
+					</div>
+					<div class="panels">
+						<div class="panel" id="one-panel">
+							<h:form>
+								<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
+
+								<div id="CrearUsuario">
+									<div id="polizasCuadro">
+										<!--  										<h:form>  -->
+										<div id="ivaloresPolizasTitulo">
+											<h1>Usuario</h1>
+										</div>
+										<h:panelGrid columns="4" cellpadding="5">
+											<p:outputLabel for="@next" value="CEDULA:"
+												style="float: right;" />
+											<h:inputText class="form__field2 "
+												value="#{cajeroBean.persona.cedula}" />
+											<p:message for="@previous" />
+											<h:outputText />
+
+											<p:outputLabel for="@next" value="NOMBRE:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{cajeroBean.persona.nombre}" />
+											<p:message for="@previous" />
+											<h:outputText />
+
+											<p:outputLabel for="@next" value="APELLIDO:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{cajeroBean.persona.apellido}" />
+											<p:message for="@previous" />
+											<h:outputText />
+
+											<p:outputLabel for="@next" value="DIRECCION:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{cajeroBean.persona.direccion}" />
+											<p:message for="@previous" />
+											<h:outputText />
+
+											<p:outputLabel for="@next" value="TELEFONO:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{cajeroBean.persona.telefono}" />
+											<p:message for="@previous" />
+											<h:outputText value="#{beanValidationView.pattern}" />
+
+											<p:outputLabel for="@next" value="FECHA DE NACIMIENTO:"
+												style="float: right;" />
+											<p:calendar id="button1" showOn="button"
+												value="#{cajeroBean.persona.fecha_nacimiento}" />
+											<p:message for="@previous" />
+											<h:outputText />
+
+											<p:outputLabel for="@next" value="E-mail:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{cajeroBean.persona.correo}" />
+											<p:message for="@previous" />
+											<h:outputText value="#{beanValidationView.pattern}" />
+
+
+										</h:panelGrid>
+										<p:commandButton class="btn3" value="Buscar"
+											actionListener="#{cajeroBean.buscarCedula()}" update="@form"
+											id="btnbuscar" />
+										<h:commandButton class="btn3" value="Limpiar" id="btnLimpiar" />
+										<!--  										</h:form> -->
+									</div>
+
+								</div>
+								<div id="CrearRegistro">
+									<div id="Registro">
+										<!-- 										<h:form>  -->
+										<div id="ivaloresPolizasTitulo">
+											<h1>Registro Cliente</h1>
+										</div>
+										<div>
+
+											<h:panelGrid columns="4" cellpadding="5">
+												<p:outputLabel for="@next" value="USUARIO:"
+													style="float: right;" />
+												<h:inputText class="form__field2 "
+													value="#{cajeroBean.registro.usuario}" />
+												<p:message for="@previous" />
+												<h:outputText />
+
+												<p:outputLabel for="@next" value="CONTRASEÑA:"
+													style="float: right;" />
+												<p:password class="form__field2"
+													value="#{cajeroBean.registro.contrasenia}"
+													style="width: 77%;
+														border-bottom: 1px solid black;
+														border-left: 1px solid black;
+														border-right: 1px solid black;
+														border-top: 1px solid black;
+														font-size: 0.7rem;
+														color: black;
+														text-align: left;" />
+												<p:message for="@previous" />
+												<h:outputText />
+
+											</h:panelGrid>
+										</div>
+
+										<!-- 										</h:form> -->
+									</div>
+									<div id="Registro">
+										<!-- 										<h:form> -->
+										<div id="ivaloresPolizasTitulo">
+											<h1>Cuenta Bancaria</h1>
+										</div>
+										<div>
+
+											<h:panelGrid columns="4" cellpadding="5">
+												<p:outputLabel for="@next" value="NUMERO CUENTA:"
+													style="float: right;" />
+												<h:inputText class="form__field2 "
+													value="#{cajeroBean.cuenta.numero_cuenta}" />
+												<p:message for="@previous" />
+												<h:outputText />
+
+												<p:outputLabel for="@next" value="TIPO:"
+													style="float: right;" />
+												<p:selectOneMenu id="console"
+													value="#{cajeroBean.cuenta.tipo_cuenta}" style="width:69%">
+													<f:selectItem itemLabel="Cuenta Corriente"
+														itemValue="Cuenta Corriente" />
+													<f:selectItem itemLabel="Cuenta Ahorros"
+														itemValue="Cuenta Ahorros" />
+												</p:selectOneMenu>
+												<p:message for="@previous" />
+												<h:outputText />
+
+												<p:outputLabel for="@next" value="FECHA APERTURA:"
+													style="float: right;" />
+												<p:calendar id="button" showOn="button"
+													value="#{cajeroBean.cuenta.fecha_apertura}" />
+												<p:message for="@previous" />
+												<h:outputText />
+
+											</h:panelGrid>
+											<p:commandButton class="btn5"
+												actionListener="#{cajeroBean.registraPersona()}"
+												value="Crear Cuenta" update="@form" id="btnRegistrar" />
+										</div>
+
+
+										<!-- 										</h:form> -->
+									</div>
+								</div>
+							</h:form>
+						</div>
+
+						<div class="panel-title">Note on Prerequisites</div>
+						<p>We recommend that you complete Learn HTML before learning
+							CSS.</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- 			</h:form> -->
+	</div>
+	<div id="footer1">
+		<div id="derechosAutor1">
+			<h3>© Banco Don Bosquito Todos los derechos reservados.</h3>
+		</div>
+	</div>
+
+</body>
+</html>

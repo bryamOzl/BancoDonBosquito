@@ -1,0 +1,300 @@
+
+
+.form__field {
+  width: 50%;
+  font-family: "Times New Roman", Times, serif;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  font-size: 1.3rem;
+  color: black;
+  margin: 10px 20px;
+  text-align: left;
+}
+
+.form__operaciones {
+	
+  width: 80%;
+  font-family: "Times New Roman", Times, serif;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  font-size: 1.1rem;
+  color: black;
+  margin: 30px  auto 10px 20px;
+  text-align: left;
+}
+
+#col__operaciones{
+	margin: 10px 50px;
+	font-size: 20px;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: normal;
+	text-align: left;
+	color: black;
+	
+	
+}
+
+#Operacioninput{
+	text-align: center;
+}
+
+#centerCuentaCliente{
+	text-align: center;
+	margin: 30px  30px 30px 30px;
+}
+#centerCuentaCliente1{
+	width: 100%;
+	margin: auto  auto auto 10px;
+	text-align: center;
+}
+
+#OperacionButon{
+	text-align: center;
+	margin: 30px  auto auto auto;
+}
+#OperacionButon1{
+	text-align: center;
+	margin: 5px  auto auto auto;
+}
+
+.form__cuenta {
+  width: 20%;
+  background-color: white; 
+  font-family: "Times New Roman", Times, serif;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  font-size: 1.3rem;
+  color: black;
+  margin: 10px 20px;
+  text-align: left;
+}
+
+.form__field1 {
+  width: 25%;
+  font-family: "Times New Roman", Times, serif;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  font-size: 1.3rem;
+  color: black;
+  margin: 10px 20px;
+  text-align: left;
+}
+
+.form__field2 {
+  width: 80%;
+  font-family: "Times New Roman", Times, serif;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  font-size: 1.0rem;
+  color: black;
+  text-align: left;
+}
+
+.foto_carga {
+  width: 80%;
+  height:120px;
+  font-family: "Times New Roman", Times, serif;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  font-size: 1.0rem;
+  color: black;
+  text-align: left;
+}
+
+
+
+.btn1 {
+      background-color: white; 
+      width: 30%;
+      color: black; 
+      border: 2px solid black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.3rem;
+}
+/* Al poner el curso encima (hover) */
+.btn1:hover {
+	font-family: "Times New Roman", Times, serif;
+      background-color: #171AB4;
+      color: white;
+      font-size: 1.3rem;
+ }
+ 
+.btn8 {
+      background-color: white; 
+      width: 17%;
+      color: black; 
+      border: 2px solid black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.3rem;
+}
+/* Al poner el curso encima (hover) */
+.btn8:hover {
+	font-family: "Times New Roman", Times, serif;
+      background-color: #171AB4;
+      color: white;
+      font-size: 1.3rem;
+ }
+
+.btn2 {
+      background-color: white; 
+      width: 25%;
+      margin: 5px 5px 5px 5px;
+      color: black; 
+      border: 2px solid black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.3rem;
+}
+/* Al poner el curso encima (hover) */
+.btn2:hover {
+	font-family: "Times New Roman", Times, serif;
+      background-color: #171AB4;
+      color: white;
+      font-size: 1.3rem;
+ }
+
+
+.btn3 {
+      background-color: white; 
+      width: 35%;
+      margin: 5px 5px 5px 5px;
+      color: black; 
+      border: 2px solid black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.3rem;
+}
+/* Al poner el curso encima (hover) */
+.btn3:hover {
+	font-family: "Times New Roman", Times, serif;
+      background-color: #171AB4;
+      color: white;
+      font-size: 1.3rem;
+ }
+ 
+ .btn4 {
+      background-color: white; 
+      width: 80%;
+      color: black; 
+      border: 2px solid black;
+      font-size: 0.9rem;
+      font-family: "Times New Roman", Times, serif;
+}
+/* Al poner el curso encima (hover) */
+.btn4:hover {
+	font-family: "Times New Roman", Times, serif;
+      background-color: #171AB4;
+      color: white;
+      font-size: 0.9rem;
+ }
+ 
+ 
+.btn5 {
+ 	  float:none;
+      background-color: white; 
+      width: 50%;
+      color: black; 
+      border: 2px solid black;
+      margin: 5px 5px 5px 5px;
+      font-size: 1.3rem;
+      font-family: "Times New Roman", Times, serif;
+}
+/* Al poner el curso encima (hover) */
+.btn5:hover {
+	font-family: "Times New Roman", Times, serif;
+      background-color: #171AB4;
+      color: white;
+      font-size: 1.3rem;
+ }
+
+div.center {
+  text-align: center;
+}
+
+div.izquierdaSistemaTransaccional{
+	margin-left:3%;
+	text-align: left;
+}
+
+ .btn6 {
+ 	text-align: center;
+ 	  float:none;
+      background-color: white; 
+      width: 50%;
+      color: black; 
+      border: 2px solid black;
+      margin: 5px 5px 5px 5px;
+      font-size: 1.3rem;
+      font-family: "Times New Roman", Times, serif;
+}
+/* Al poner el curso encima (hover) */
+.btn6:hover {
+	font-family: "Times New Roman", Times, serif;
+      background-color: #171AB4;
+      color: white;
+      font-size: 1.3rem;
+ }
+ 
+ 
+ .btn7 {
+ 	
+ 	text-align: center;
+ 	  float:none;
+      background-color: white; 
+      width:40%;
+      color: black; 
+      border: 2px solid black;
+      margin: 5px 5px 5px 5px;
+      font-size: 1.3rem;
+      font-family: "Times New Roman", Times, serif;
+}
+/* Al poner el curso encima (hover) */
+.btn7:hover {
+	font-family: "Times New Roman", Times, serif;
+      background-color: #171AB4;
+      color: white;
+      font-size: 1.3rem;
+ }
+ 
+ .btn10 {
+      background-color: white; 
+      width: 70%;
+      color: black; 
+      border: 2px solid black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.3rem;
+}
+/* Al poner el curso encima (hover) */
+.btn10:hover {
+	font-family: "Times New Roman", Times, serif;
+      background-color: #171AB4;
+      color: white;
+      font-size: 1.3rem;
+ }
+ 
+ .btn11 {
+      background-color: white; 
+      width: 100%;
+      margin: 5px 5px 5px 5px;
+      color: black; 
+      border: 2px solid black;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.3rem;
+}
+/* Al poner el curso encima (hover) */
+.btn11:hover {
+	font-family: "Times New Roman", Times, serif;
+      background-color: #171AB4;
+      color: white;
+      font-size: 1.3rem;
+ }

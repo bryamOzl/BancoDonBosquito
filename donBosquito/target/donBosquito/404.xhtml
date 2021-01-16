@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>Don Bosquito</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <link rel="shortcut icon" href="#{ctrSession.externalContext}/favicon.ico" type="image/x-icon" />
+        
+    </h:head> 
+    <h:body class="fontRegular red-back">
+        <div class="Container100 Top20Percent PosAbsolute MarAuto OvHidden">
+            <div class="Wid50 MarAuto OvHidden TexAlCenter">
+                <h:graphicImage name="images/error-face.svg" library="sentinel-layout" style="width: 100px;"/>
+                <div class="EmptyBox20"></div>
+                <span class="white Fs100 Wid100 DispBlock">404</span>
+                <span class="white Wid100 DispBlock" style="font-size: xx-large">No se encuentra la página !</span><br/>
+                <span class="white Wid100 DispBlock Fs16">Lo sentimos, la pagina que busca no esta disponible.<br/>
+                </span>
+                <div class="EmptyBox20"></div>
+                <p:button value="Regresar a la Aplicación" class="Fs60" href="/dashboard.jsf"></p:button>
+            </div>
+        </div>
+    </h:body>
+</html>

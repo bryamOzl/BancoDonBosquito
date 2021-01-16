@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Banco Don Bosquito</title>
+	<style type="text/css" media="all">
+@import "globa.css";
+
+@import "Label.css";
+
+@import "IniciarSesion.css";
+</style>
+</h:head>
+
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="headimg"></div>
+		</div>
+
+		<div id="topnavi">
+			<div id="top">
+				<ul>
+					<li class="selected"><a href="#" title="itemUsuarios">Administrador</a></li>
+					<li class="select"><a href="#" title="itemCerrarSesion">Cerrar
+							Sesion</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="panel">
+
+			<h:form id="form">
+				<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
+
+				<h3 id="titulo">Administrar Usuarios</h3>
+
+				<div>
+					<div class="warppers">
+						<input class="radio" id="one" name="group" type="radio"
+							checked="checked" /> <input class="radio" id="two" name="group"
+							type="radio" /> <input class="radio" id="three" name="group"
+							type="radio" /> <input class="radio" id="four" name="group"
+							type="radio" />
+
+						<div class="tabs">
+							<label class="tab" id="one-tab" for="one">Registrar</label> <label
+								class="tab" id="two-tab" for="two">Actualizar</label> <label
+								class="tab" id="three-tab" for="three">Eliminar</label> <label
+								class="tab" id="four-tab" for="four">Listar</label>
+						</div>
+						<div class="panels">
+							<div class="panel" id="one-panel">
+								<div id="CrearUsuario">
+									<div id="polizasCuadro">
+										<!-- 										<h:form> -->
+										<div id="ivaloresPolizasTitulo">
+											<h1>Crear Usuario</h1>
+										</div>
+										<h:panelGrid columns="4" cellpadding="5">
+											<p:outputLabel for="@next" value="CEDULA:"
+												style="float: right;" />
+
+
+
+											<h:inputText class="form__field2 "
+												value="#{administracionBean.persona.cedula}" />
+											<p:message for="@previous" />
+											<h:outputText  />
+
+											<p:commandButton value="Buscar Cedula" type="submit"
+												update="form"
+												actionListener="#{administracionBean.buscarCedula()}">
+											</p:commandButton>
+
+											<p:outputLabel for="@next" value="NOMBRE:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{administracionBean.persona.nombre}" />
+											<p:message for="@previous" />
+											<h:outputText  />
+
+											<p:outputLabel for="@next" value="APELLIDO:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{administracionBean.persona.apellido}" />
+											<p:message for="@previous" />
+											<h:outputText  />
+
+											<p:outputLabel for="@next" value="DIRECCION:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{administracionBean.persona.direccion}" />
+											<p:message for="@previous" />
+											<h:outputText  />
+
+											<p:outputLabel for="@next" value="TELEFONO:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{administracionBean.persona.telefono}" />
+											<p:message for="@previous" />
+											<h:outputText  />
+
+											<p:outputLabel for="@next" value="FECHA DE NACIMIENTO:"
+												style="float: right;" />
+											<p:calendar id="button" showOn="button"
+												value="#{administracionBean.persona.fecha_nacimiento}" />
+											<p:message for="@previous" />
+											<h:outputText />
+
+											<p:outputLabel for="@next" value="E-mail:"
+												style="float: right;" />
+											<h:inputText class="form__field2"
+												value="#{administracionBean.persona.correo}" />
+											<p:message for="@previous" />
+											<h:outputText value="#{beanValidationView.pattern}" />
+
+											<p:outputLabel for="@next" value="FOTO" style="float: right;" />
+											<h:commandButton class="btn4"  value="Cargar Foto" />
+											<p:message for="@previous" />
+											<h:outputText />
+
+
+											<h:outputText />
+											<h:inputText class="foto_carga"  />
+											<p:message for="@previous" />
+											<h:outputText />
+
+										</h:panelGrid>
+										<p:commandButton  class="btn3"  value="Crear Usuario"  actionListener="#{administracionBean.registraPersona()}" update="@form" />
+										<!-- 										</h:form> -->
+									</div>
+
+								</div>
+								<div id="CrearRegistro">
+									<div id="Registro">
+										<h:form>
+											<div id="ivaloresPolizasTitulo">
+												<h1>Crear Registro</h1>
+											</div>
+											<div>
+
+												<h:panelGrid columns="4" cellpadding="5">
+													<p:outputLabel for="@next" value="Usuario:"
+														style="float: right;" />
+													<h:inputText class="form__field2 "  value="#{administracionBean.registro.usuario}"/>
+													<p:message for="@previous" />
+													<h:outputText  />
+
+													<p:outputLabel for="@next" value="Contraseña:"
+														style="float: right;" />
+													<h:inputText class="form__field2"  value="#{administracionBean.registro.contrasenia}"/>
+													<p:message for="@previous" />
+													<h:outputText  />
+
+													<p:outputLabel for="@next" value="ROL:"
+														style="float: right;" />
+													<p:selectOneMenu id="console"
+														style="width:69%" value="#{administracionBean.registro.rol}">
+														<f:selectItem itemLabel="Cajero" itemValue="Cajero" />
+														<f:selectItem itemLabel="Asistente de Captaciones"
+															itemValue="Asistente de Captaciones" />
+														<f:selectItem itemLabel="Administrador"
+															itemValue="AdministradorWii U" />
+													</p:selectOneMenu>
+													<p:message for="@previous" />
+													<h:outputText  />
+
+												</h:panelGrid>
+<!-- 												<h:commandButton class="btn5"  -->
+<!-- 													value="Crear Registro" /> -->
+											</div>
+
+
+										</h:form>
+									</div>
+									<div class="center">
+										<h:form>
+											<h:commandButton class="btn6"  value="Limpiar" />
+
+										</h:form>
+									</div>
+								</div>
+							</div>
+							<div class="panel" id="two-panel">
+								<div id="CrearUsuario">
+									<div id="polizasCuadro">
+										<h:form>
+											<div id="ivaloresPolizasTitulo">
+												<h1>Editar Usuario</h1>
+											</div>
+											<h:panelGrid columns="4" cellpadding="5">
+												<p:outputLabel for="@next" value="CEDULA:"
+													style="float: right;" />
+												<h:inputText class="form__field2 "  />
+												<p:message for="@previous" />
+												<h:outputText  />
+
+												<p:outputLabel for="@next" value="NOMBRE:"
+													style="float: right;" />
+												<h:inputText class="form__field2"  />
+												<p:message for="@previous" />
+												<h:outputText  />
+
+												<p:outputLabel for="@next" value="APELLIDO:"
+													style="float: right;" />
+												<h:inputText class="form__field2"  />
+												<p:message for="@previous" />
+												<h:outputText  />
+
+												<p:outputLabel for="@next" value="DIRECCION:"
+													style="float: right;" />
+												<h:inputText class="form__field2"  />
+												<p:message for="@previous" />
+												<h:outputText  />
+
+												<p:outputLabel for="@next" value="TELEFONO:"
+													style="float: right;" />
+												<h:inputText class="form__field2"  />
+												<p:message for="@previous" />
+												<h:outputText value="#{beanValidationView.pattern}" />
+
+												<p:outputLabel for="@next" value="FECHA DE NACIMIENTO:"
+													style="float: right;" />
+												<p:calendar id="button" showOn="button" />
+												<p:message for="@previous" />
+												<h:outputText />
+
+												<p:outputLabel for="@next" value="E-mail:"
+													style="float: right;" />
+												<h:inputText class="form__field2"  />
+												<p:message for="@previous" />
+												<h:outputText  />
+
+												<p:outputLabel for="@next" value="FOTO"
+													style="float: right;" />
+												<h:commandButton class="btn4"  value="Cargar Foto" />
+												<p:message for="@previous" />
+												<h:outputText />
+
+
+												<h:outputText />
+												<h:inputText class="foto_carga"  />
+												<p:message for="@previous" />
+												<h:outputText />
+
+											</h:panelGrid>
+										</h:form>
+									</div>
+
+								</div>
+								<div id="CrearRegistro">
+									<div id="Registro">
+										<h:form>
+											<div id="ivaloresPolizasTitulo">
+												<h1>Editar Registro</h1>
+											</div>
+											<div>
+
+												<h:panelGrid columns="4" cellpadding="5">
+													<p:outputLabel for="@next" value="Usuario:"
+														style="float: right;" />
+													<h:inputText class="form__field2 "  />
+													<p:message for="@previous" />
+													<h:outputText  />
+
+													<p:outputLabel for="@next" value="Contraseña:"
+														style="float: right;" />
+													<h:inputText class="form__field2"  />
+													<p:message for="@previous" />
+													<h:outputText  />
+
+													<p:outputLabel for="@next" value="ROL:"
+														style="float: right;" />
+													<p:selectOneMenu id="console"
+														value="#{selectOneMenuView.console}" style="width:69%">
+														<f:selectItem itemLabel="Cajero" itemValue="Cajero" />
+														<f:selectItem itemLabel="Asistente de Captaciones"
+															itemValue="Asistente de Captaciones" />
+														<f:selectItem itemLabel="Administrador"
+															itemValue="AdministradorWii U" />
+														<f:selectItem itemLabel="Cliente" itemValue="Cliente" />
+													</p:selectOneMenu>
+													<p:message for="@previous" />
+													<h:outputText  />
+
+												</h:panelGrid>
+											</div>
+
+
+										</h:form>
+									</div>
+									<div class="center">
+										<h:form>
+											<h:commandButton class="btn7"  value="Buscar" />
+											<h:commandButton class="btn7"  value="Actualizar" />
+
+										</h:form>
+									</div>
+									<div class="center">
+										<h:form>
+											<h:commandButton class="btn7"  value="Editar" />
+											<h:commandButton class="btn7"  value="Limpiar" />
+
+										</h:form>
+									</div>
+								</div>
+							</div>
+							<div class="panel" id="three-panel">
+								<div class="panel-title">Note on Prerequisites</div>
+								<p>We recommend that you complete Learn HTML before learning
+									CSS.</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</h:form>
+		</div>
+		<div id="footer1">
+			<div id="derechosAutor1">
+				<h3>© Banco Don Bosquito Todos los derechos reservados.</h3>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

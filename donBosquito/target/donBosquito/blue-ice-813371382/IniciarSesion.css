@@ -1,0 +1,364 @@
+@charset "UTF-8";
+
+#iniciarSesion {
+	width: 99.5%;
+	overflow: hidden;
+	margin: 3px auto;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+
+#sistemaTransacciones {
+	width: 97.5%;
+	overflow: hidden;
+	margin: 3px 10px;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+
+#sistemaTransaccionesCuadro {
+	width: 97.5%;
+	overflow: hidden;
+	margin: 10px 10px;
+	background-color: #ffff;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+
+
+
+#valoresPolizas {
+	width: 99.5%;
+	overflow: hidden;
+	margin: 3px auto;
+	background-color: #ffff;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+
+#iniciarSesionTitulo {
+	width: 96.7%;
+}
+#tituloSistemaTransaccioones{
+	width: 100%;
+}
+
+#tituloSistemaTransaccioones h1{
+	margin: 20px;
+	font-family: "Times New Roman", Times, serif;
+	font-style: normal;
+	font-size: 40px;
+	color: black;
+}
+
+#tituloSistemaTr{
+	width: 100%;
+}
+
+#tituloSistemaTr h1{
+	margin: 10px;
+	text-align: left;
+	font-family: "Times New Roman", Times, serif;
+	font-style: normal;
+	font-size: 30px;
+	color: black;
+}
+
+
+#iniciarSesionTitulo h1 {
+	margin: 20px;
+	font-family: "Times New Roman", Times, serif;
+	font-style: normal;
+	color: black;
+}
+
+#valoresPolizasTitulo {
+	width: 96.7%;
+}
+
+#ivaloresPolizasTitulo h1 {
+	margin: 20px;
+	font-family: "Times New Roman", Times, serif;
+	font-style: normal;
+	color: black;
+}
+
+#txtTable {
+	WIDTH:20px; 
+	HEIGHT: 20px ;
+	color:black;
+	font-size:130%;
+	
+}
+
+#table1{
+	width: 99.5%;
+	margin: 3px 100px 100px 100px;
+	background-color: #ffff;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	margin: 200px;
+	font-family: "Times New Roman", Times, serif;
+	font-style: normal;
+	color: black;
+}
+
+#iniciarSesionCuadro {
+	width: 50%;
+	margin-left: 25%;
+	text-align: center;
+	color: black;
+	background-color: white;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#cuadroOperacionesCliente {
+	width: 50%;
+	margin: 1%;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#cuadroCuentaCliente {
+	width: 97%;
+	margin: 1%;
+	height: 150px;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#cuadroCuentasClienteB {
+	width: 99.7%;
+	height: 150px;
+	text-align: center;
+	color: black;
+	background-color: #ffff;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+#cuadroCuentasClientec {
+	width: 99.7%;
+	text-align: center;
+	color: black;
+	background-color: #ffff;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+#cuadroCuentasCliente{
+	width: 99.7%;
+	height: 150px;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+
+
+#polizasCuadro {
+	width:100%;
+	margin: 15px  20px 10px;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#Registro {
+	width: 100%;
+	margin: auto  10px 10px;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#col-md-12{
+	margin: 20px auto;
+	font-size: 20px;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: normal;
+	text-align: left;
+	color: black;
+	
+}
+
+#titulo{
+	text-align: center;
+	margin: 20px auto auto 35%;
+	font-size: 25px;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: normal;
+	text-align: left;
+	color: black;
+	margin-top:0
+}
+#tituloMenuCRUD{
+	WIDTH:20px; 
+	HEIGHT: 20px ;
+	color:black;
+	font-size:130%;
+	
+}
+
+.tab1 {
+	padding:0;
+	WIDTH: 10%; 
+	color: black;
+	font-size:120%;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	font-family: "Times New Roman", Times, serif;
+	
+}
+
+#imagenBanco{
+	width: 90%;
+	overflow: hidden;
+	margin: 3px auto;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+
+#tableCRUD{
+	width: 97%;
+	margin: 3px auto;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+
+.warppers{
+	width:100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tab{
+  padding:10px 20px;
+  background: #000;
+  display:inline-block;
+  color:#fff;
+  border-radius:3px 3px 0px 0px;
+  box-shadow: 0 0.5rem 0.8rem #00000080;
+}
+.panels{
+	
+  background:#fffffff6;
+  box-shadow: 0 2rem 2rem #00000080;
+  min-height:200px;
+  width:92%;
+  margin: 0px 0px 20px 0px;
+  border-radius:3px;
+  overflow:hidden;
+  padding:20px;  
+  border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+  
+}
+.panel{
+  display:none;
+  animation: fadein .8s;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+.panel-title{
+  font-size:1.5em;
+  font-weight:bold
+}
+.radio{
+  display:none;
+}
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel,
+#four:checked ~ .panels #four-panel{
+  display:block
+}
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab,
+#four:checked ~ .tabs #four-tab{
+  background: white;
+  color:#000;
+  border-top: 3px solid;
+}
+.ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield {
+    background: #fff;
+    -moz-box-shadow: inset 0 2px 2px #8f8f8f;
+    -webkit-box-shadow: inset 0 2px 2px #8f8f8f;
+    box-shadow: inset 0 2px 2px #8f8f8f;
+    color: black;
+    width: 60%;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+
+ui-button .ui-button-text {
+    display: block;
+    line-height: normal;
+    background-color: white;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
