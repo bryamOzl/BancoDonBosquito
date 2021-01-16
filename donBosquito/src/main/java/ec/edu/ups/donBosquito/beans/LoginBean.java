@@ -55,7 +55,7 @@ public class LoginBean implements Serializable {
 			if (bean != null) {
 				FacesContext facesContext = FacesContext.getCurrentInstance();
 				facesContext.getExternalContext().getSessionMap().put("usuario", username);
-				//ruta por carperas
+				//ruta por carperas despues del login
 				if (rol.equals("Cajero")) {
 					FacesUtils.redirect("/blue-ice-813371382/PrincipalCajero.jsf");
 				} else if (rol.equals("Admin")) {
