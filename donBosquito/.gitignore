@@ -1,6 +1,7 @@
 # Maven output
 target
-
+.settings
+.project
 /target/
 
 #OS X stuff

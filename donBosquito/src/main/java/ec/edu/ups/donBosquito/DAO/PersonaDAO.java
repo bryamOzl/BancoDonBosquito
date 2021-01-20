@@ -57,7 +57,7 @@ public class PersonaDAO {
 			persona.setApellido(res.getString("apellido"));
 			persona.setCedula(res.getString("cedula"));
 			persona.setCorreo(res.getString("correo"));
-			persona.setDireccion(res.getString("correo"));
+			persona.setDireccion(res.getString("direccion"));
 			persona.setFecha_nacimiento(res.getDate("fecha_nacimiento"));
 			persona.setNombre(res.getString("nombre"));
 			persona.setTelefono(res.getString("telefono"));
