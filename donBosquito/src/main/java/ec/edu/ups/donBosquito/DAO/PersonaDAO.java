@@ -64,7 +64,7 @@ public class PersonaDAO {
 			ps.execute();
 			ps.close();
 		} catch (SQLException e) {
-			System.out.println("Erro al buscar a la persona por la cédula " + e.getMessage());
+			System.out.println("Error al buscar a la persona por la cédula " + e.getMessage());
 		}
 		return persona;
 	}

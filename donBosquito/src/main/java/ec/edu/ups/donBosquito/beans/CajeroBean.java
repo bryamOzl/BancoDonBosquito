@@ -128,7 +128,7 @@ public class CajeroBean {
 			movimiento.setFecha(new Date());
 			movimiento.setTipo_movimiento("Deposito");
 			movimiento.setCuenta(cuenta);
-			movimiento.setSaldo(cuenta.getSaldo());
+			movimiento.setSaldo(cuenta.getSaldo()+movimiento.getCantidad());
 			daoMovimiento.insertMovimiento(movimiento);
 			FacesUtils.msgInfo("Exito", "Deposito Realizado");
 
@@ -155,7 +155,7 @@ public class CajeroBean {
 				movimiento.setFecha(new Date());
 				movimiento.setTipo_movimiento("Retiro");
 				movimiento.setCuenta(cuenta);
-				movimiento.setSaldo(cuenta.getSaldo());
+				movimiento.setSaldo(cuenta.getSaldo()-movimiento.getCantidad());
 				daoMovimiento.insertMovimiento(movimiento);
 				FacesUtils.msgInfo("Exito", "Retiro Realizado");
 			}

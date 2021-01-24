@@ -26,7 +26,7 @@
 	<div id="topnavi">
 		<div id="top">
 			<ul>
-				<li class="selected"><a href="#" title="itemUsuarios">Cuentas</a></li>
+				<li class="selected"><a href="#" title="itemUsuarios">Asistente</a></li>
 				<li class="select"><a href="#" title="itemCerrarSesion">Cerrar Sesion</a></li>
 			</ul>
 		</div>
@@ -34,7 +34,7 @@
 	<div id="datosUsuario">
 		<h:form>
 		<div id="datos1">
-			<h1>Datos del Cliente</h1>
+			<h1>Datos del Asistente</h1>
 		</div>
 		<div id="datos2">
 			<h2>
@@ -50,60 +50,44 @@
 	</div>
 	
 	<div id="sistemaCrearPoliza">
-		<h1 id="tituloCrearPoliza">Control de Acceso</h1>
+		<h1 id="tituloCrearPoliza">Estado Polizas</h1>
 		
-		
-		<div id = "cuadroCuentaClienteSP">
+		<div id = "cuadroCuentaClienteAsistente">
+			<h1 id="tituloSistemaTrSubtitulos">Poliza</h1>
 			<h:form id="frmTabla">
 				<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
 				
 				<p:dataTable var="car" value="#{cajeroBean.listaCuenta}" style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
-					<p:column headerText="Fecha de Acceso" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+					<p:column headerText="# de Poliza" style="width:17%; color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
 						<h:outputText value="#{car.numero_cuenta}" />
 					</p:column>
-					<p:column headerText="Acceso" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+					<p:column headerText="Plazo" style=" width:10%; color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+						<h:outputText value="#{car.registro.persona.cedula}" />
+					</p:column>
+					<p:column headerText="Valor Poliza" style=" width:18%; color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+						<h:outputText value="#{car.registro.persona.nombre}" />
+					</p:column>
+					<p:column headerText="Interés" style="width:10%;color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
 						<h:outputText value="#{car.tipo_cuenta}" />
+					</p:column>
+					<p:column headerText="Fecha de vencimiento" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+						<h:outputText value="#{car.registro.estado}" />
+					</p:column>
+					<p:column headerText="Estado" style=" width:16%; color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+						<h:outputText value="#{car.saldo}" />
 					</p:column>
 							
 				</p:dataTable>
 			</h:form>
 		</div>
-		
-		
-			
+	
 	</div>
 	
-	<div id="footer">
-			<div id="Contacto">
-
-				<div id="Ubiquenos">
-					<h1>UBIQUENOS</h1>
-					<h3>
-						<a><img src="img/icons8-parthenon.png" alt="" /></a> Miguel T.
-						Duran 1-112
-					</h3>
-					<h3>
-						<a><img src="img/icons8-new_post.png" alt="" /></a>
-						lsanchezs@est.ups.edu.ec
-					</h3>
-					<h3>
-						<a><img src="img/icons8-phone.png" alt="" /></a> 0996214346
-					</h3>
-				</div>
-				<div id="RedesSociales">
-					<h1>Redes Sociales</h1>
-					<h2>
-						<img src="img/icons8-facebook.png" alt="" /> <img
-							src="img/icons8-twitter.png" alt="" /> <img
-							src="img/icons8-play_button.png" alt="" />
-					</h2>
-				</div>
-			</div>
-			<div id="derechosAutor">
-				<h3>© Banco Don Bosquito Todos los derechos reservados.</h3>
-			</div>
-
+	<div id="footer1">
+		<div id="derechosAutor1">
+			<h3>© Banco Don Bosquito Todos los derechos reservados.</h3>
 		</div>
+	</div>
 	
 
 </div>

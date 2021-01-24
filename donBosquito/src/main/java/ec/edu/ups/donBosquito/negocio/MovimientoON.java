@@ -1,14 +1,13 @@
 package ec.edu.ups.donBosquito.negocio;
 
 import java.sql.SQLException;
-import java.util.Date;
+
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import ec.edu.ups.donBosquito.DAO.CuentaDAO;
 import ec.edu.ups.donBosquito.DAO.MovimientoDAO;
-import ec.edu.ups.donBosquito.core.FacesUtils;
 import ec.edu.ups.donBosquito.modelo.Cuenta;
 import ec.edu.ups.donBosquito.modelo.Movimiento;
 
@@ -21,7 +20,7 @@ public class MovimientoON implements MovimientoONLocal {
 	@Inject
 	private CuentaDAO cuentaDAO;
 
-	private Movimiento movimiento = new Movimiento();
+
 	private Cuenta cuenta = new Cuenta();
 
 	public boolean movimiento(Movimiento movimiento) throws Exception {

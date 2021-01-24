@@ -11,8 +11,11 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
+import org.wildfly.security.manager.action.GetModuleClassLoaderAction;
+
 import ec.edu.ups.donBosquito.modelo.Cuenta;
 import ec.edu.ups.donBosquito.modelo.Movimiento;
+import ec.edu.ups.donBosquito.modelo.Persona;
 
 @Stateless
 public class MovimientoDAO {
@@ -24,6 +27,12 @@ public class MovimientoDAO {
 	private Connection con;
 
 	public boolean insertMovimiento(Movimiento movimiento) throws SQLException {
+		String sql = "UPDATE Cuenta SET saldo = ? WHERE  cuenta_id=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setDouble(1,movimiento.getSaldo());
+		ps.setInt(2, movimiento.getCuenta().getCuenta_id());
+		ps.executeUpdate();
+		ps.close();
 		em.persist(movimiento);
 		return true;
 	}
@@ -31,6 +40,18 @@ public class MovimientoDAO {
 	public Movimiento readMovimiento(int movimiento_id) throws SQLException {
 		Movimiento movimiento = em.find(Movimiento.class, movimiento_id);
 		return movimiento;
+	}
+	
+	/**
+	 * Metodo para actualizar el campo saldo del objeto movimiento con JPA
+	 * 
+	 * @param movimiento
+	 * @return
+	 * @throws SQLException
+	 */
+	public boolean updateMovimiento(Movimiento movimiento) throws SQLException {
+		em.merge(movimiento);
+		return true;
 	}
 
 	public int contarMovimiento() throws SQLException {

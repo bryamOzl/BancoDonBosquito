@@ -38,6 +38,12 @@
 	
 }
 
+.form_field_CrearPoliza {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 1.1rem;
+	float: right;
+}
+
 #Operacioninput{
 	text-align: center;
 }
@@ -52,14 +58,205 @@
 	text-align: center;
 }
 
-#OperacionButon{
+#RealizarDeposito{
 	text-align: center;
 	margin: 30px  auto auto auto;
 }
-#OperacionButon1{
+
+
+.btnLogin {
+      background-color: white; 
+      font-family: "Times New Roman", Times, serif;      
+   	  float: center;
+      width: 30%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 1.2rem;
+      margin: 2% 2% 2% 2% ;
+}
+/* Al poner el curso encima (hover) */
+.btnLogin:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+.btnRealizarDeposito {
+      background-color: white; 
+      font-family: "Times New Roman", Times, serif;      
+   	  float: center;
+      width: 70%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 1.2rem;
+}
+/* Al poner el curso encima (hover) */
+.btnRealizarDeposito:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+.btnIngresarPoliza {
+      background-color: white; 
+      font-family: "Times New Roman", Times, serif;      
+   	  float: center;
+      width: 25%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 1.2rem;
+}
+/* Al poner el curso encima (hover) */
+.btnIngresarPoliza:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+.btnActualizarPoliza {
+      background-color: white; 
+      font-family: "Times New Roman", Times, serif;      
+   	  float: center;
+      width: 25%;
+      border-radius: 6px;
+      border: 2px solid black;
+      margin: 1.5% 1.5% 1.5% 1.5%;
+      font-size: 1.2rem;
+}
+/* Al poner el curso encima (hover) */
+.btnActualizarPoliza:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+.btnEliminarPoliza {
+      background-color: white; 
+      font-family: "Times New Roman", Times, serif;      
+   	  float: center;
+      width: 25%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 1.2rem;
+}
+/* Al poner el curso encima (hover) */
+.btnEliminarPoliza:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+ .btnCalcularPoliza {
+      background-color: white; 
+      font-family: "Times New Roman", Times, serif;      
+   	  float: center;
+      width: 25%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 1.2rem;
+}
+/* Al poner el curso encima (hover) */
+.btnCalcularPoliza:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+.btnSolicitarPoliza {
+      background-color: white; 
+      font-family: "Times New Roman", Times, serif;      
+   	  float: center;
+      width: 25%;
+      border-radius: 6px;
+      border: 2px solid black;
+      margin: 1.5% 1.5% 1.5% 1.5%;
+      font-size: 1.2rem;
+}
+/* Al poner el curso encima (hover) */
+.btnSolicitarPoliza:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+.btnLimpiarPoliz {
+      background-color: white; 
+      font-family: "Times New Roman", Times, serif;      
+   	  float: center;
+      width: 25%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 1.2rem;
+}
+/* Al poner el curso encima (hover) */
+.btnLimpiarPoliz:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+.btnAprobarPoliza {
+      background-color: white; 
+      font-family: "Times New Roman", Times, serif;      
+   	  float: center;
+   	  margin-right: 5%;
+      width: 20%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 1.2rem;
+}
+/* Al poner el curso encima (hover) */
+.btnAprobarPoliza:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+
+.btnLimpiarPoliza {
+      background-color: white; 
+      margin-left: 5%;
+      font-family: "Times New Roman", Times, serif;      
+   	  float: center;
+      width: 20%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 1.2rem;
+}
+/* Al poner el curso encima (hover) */
+.btnLimpiarPoliza:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+
+#RealizarRetiro{
 	text-align: center;
 	margin: 5px  auto auto auto;
 }
+
+.btnRealizarRetiro {
+      background-color: white; 
+      font-family: "Times New Roman", Times, serif;      
+   	  float: center;
+      width: 70%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 1.2rem;
+}
+/* Al poner el curso encima (hover) */
+.btnRealizarRetiro:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+#RealizarLimpiar{
+	text-align: center;
+	margin: 5px  auto auto auto;
+}
+
+.btnRealizarLimpiar{
+      background-color: white; 
+      font-family: "Times New Roman", Times, serif;      
+   	  float: center;
+      width: 70%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 1.2rem;
+}
+/* Al poner el curso encima (hover) */
+.btnRealizarLimpiar:hover {
+      background-color: #171AB4;
+      color: white;
+ }
 
 .form__cuenta {
   width: 20%;
@@ -77,6 +274,19 @@
 
 .form__field1 {
   width: 25%;
+  font-family: "Times New Roman", Times, serif;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  font-size: 1.3rem;
+  color: black;
+  margin: 10px 20px;
+  text-align: left;
+}
+
+.form__field_PolizaA {
+  width: 13%;
   font-family: "Times New Roman", Times, serif;
   border-bottom: 1px solid black;
   border-left: 1px solid black;
@@ -182,6 +392,21 @@
       font-size: 1.3rem;
  }
  
+.btnCrearUsuario {
+      background-color: white; 
+   	  float: center;
+      width: 80%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 0.9rem;
+}
+/* Al poner el curso encima (hover) */
+.btnCrearUsuario:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+ 
  .btnBuscar {
       background-color: white; 
    	  float: center;
@@ -196,6 +421,163 @@
       color: white;
  }
  
+.btnBuscarAC {
+      background-color: white; 
+   	  float: center;
+      width: 90%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 0.9rem;
+}
+/* Al poner el curso encima (hover) */
+.btnBuscarAC:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+.btnEditarAC {
+      background-color: white; 
+   	  float: center;
+      width: 80%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 0.9rem;
+}
+/* Al poner el curso encima (hover) */
+.btnEditarAC:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+
+.btnActualizarAC {
+      background-color: white; 
+   	  float: center;
+      width: 100%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 0.9rem;
+}
+/* Al poner el curso encima (hover) */
+.btnActualizarAC:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+
+.btnEliminarAC {
+      background-color: white; 
+   	  float: center;
+      width: 100%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 0.9rem;
+}
+/* Al poner el curso encima (hover) */
+.btnEliminarAC:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+.btnLimpiarAC {
+      background-color: white; 
+   	  float: center;
+      width: 100%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 0.9rem;
+}
+/* Al poner el curso encima (hover) */
+.btnLimpiarAC:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+
+.btnConsultar {
+
+      width: 100%;    
+      background-color: white; 
+      font-family: "Times New Roman", Times, serif;      
+   	  float: center;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 1.2rem;
+}
+/* Al poner el curso encima (hover) */
+.btnConsultar:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ .btnBuscarCuenta {
+ 	background-color: white; 
+    font-family: "Times New Roman", Times, serif;      
+   	float: center;
+    border-radius: 6px;
+    border: 2px solid black;
+    font-size: 1.2rem;
+    width: 20%;
+}
+/* Al poner el curso encima (hover) */
+.btnBuscarCuenta:hover {
+    background-color: #171AB4;
+    color: white;
+ }
+ 
+.btnConsultarCrearPoliza {
+ 	background-color: white; 
+    font-family: "Times New Roman", Times, serif;      
+   	float: center;
+    border-radius: 6px;
+    border: 2px solid black;
+    font-size: 1.2rem;
+    width: 20%;
+}
+/* Al poner el curso encima (hover) */
+.btnConsultarCrearPoliza:hover {
+    background-color: #171AB4;
+    color: white;
+ }
+ 
+.btnCargarFoto {
+      background-color: white; 
+   	  float: center;
+      width: 80%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 0.9rem;
+}
+/* Al poner el curso encima (hover) */
+.btnCargarFoto:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+ .btnEditaradministrador {
+      background-color: white; 
+   	  float: center;
+      width: 40%;
+      margin-left: 5%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 0.9rem;
+}
+/* Al poner el curso encima (hover) */
+.btnEditaradministrador:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+ .btnEliminarAdministrador {
+      background-color: white; 
+   	  float: center;
+      width: 80%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 0.9rem;
+}
+/* Al poner el curso encima (hover) */
+.btnEliminarAdministrador:hover {
+      background-color: #171AB4;
+      color: white;
+ }
  
  .btnCrearCuenta {
       background-color: white; 
@@ -207,6 +589,52 @@
 }
 /* Al poner el curso encima (hover) */
 .btnCrearCuenta:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+ 
+.btnCargarPlantilla{
+	font-family: "Times New Roman", Times, serif;  
+      background-color: white; 
+   	  float: center;
+      width: 100%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 1.1rem;
+}
+/* Al poner el curso encima (hover) */
+.btnCargarPlantilla:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+.btnCargarCedula{
+	font-family: "Times New Roman", Times, serif;  
+      background-color: white; 
+   	  float: center;
+      width:80%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 1.1rem;
+}
+/* Al poner el curso encima (hover) */
+.btnCargarCedula:hover {
+      background-color: #171AB4;
+      color: white;
+ }
+ 
+.btnCargarPlanill{
+	font-family: "Times New Roman", Times, serif;  
+      background-color: white; 
+   	  float: center;
+      width:80%;
+      border-radius: 6px;
+      border: 2px solid black;
+      font-size: 1.1rem;
+}
+/* Al poner el curso encima (hover) */
+.btnCargarPlanill:hover {
       background-color: #171AB4;
       color: white;
  }
@@ -224,6 +652,22 @@
 .btnLimpiar:hover {
       background-color: #171AB4;
       color: white;
+ }
+ 
+ .btnLimpiarCRUDA {
+ 	
+ 	text-align: center;
+ 	border-radius: 6px;
+    background-color: white; 
+    width: 60%;
+    border: 2px solid black;
+    font-size: 0.9rem;
+}
+/* Al poner el curso encima (hover) */
+.btnLimpiarCRUDA:hover {
+	
+     background-color: #171AB4;
+     color: white;
  }
  
  
@@ -271,24 +715,7 @@ div.izquierdaSistemaTransaccional{
 	text-align: left;
 }
 
- .btn6 {
- 	text-align: center;
- 	  float:none;
-      background-color: white; 
-      width: 50%;
-      color: black; 
-      border: 2px solid black;
-      margin: 5px 5px 5px 5px;
-      font-size: 1.3rem;
-      font-family: "Times New Roman", Times, serif;
-}
-/* Al poner el curso encima (hover) */
-.btn6:hover {
-	font-family: "Times New Roman", Times, serif;
-      background-color: #171AB4;
-      color: white;
-      font-size: 1.3rem;
- }
+ 
  
  
  .btn7 {

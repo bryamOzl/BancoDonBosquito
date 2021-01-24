@@ -31,6 +31,7 @@
 			</div>
 		</div>
 		<div id="datosUsuario">
+			<h:form>
 
 			<div id="datos1">
 				<h1>Datos del Administrador</h1>
@@ -47,6 +48,7 @@
 						value="#{clientesBean.newCliente.dni}" />
 				</h2>
 			</div>
+			</h:form>
 		</div>
 
 		<div id="valoresPolizas">
@@ -92,25 +94,30 @@
 			<div id="polizasCuadro">
 				<h:form>
 					<div>
-						<label for="txtUsuario" id="col-md-12">Tiempo:
+						<label for="txtTiempoInicio" id="col-md-12">Tiempo Inicio:
 						</label>
 
-						<h:inputText id="txtUsuario" class="form__field1"
-							value="#{clientesBean.newCliente.dni}" />
-						<h:message for="txtUsuario" />
+						<h:inputText id="txtTiempoInicio" class="form__field_PolizaA" value="#{clientesBean.newCliente.dni}" />
+						<h:message for="txtTiempoInicio" />
+						
+						<label for="txtTiempoFinal" id="col-md-12">Tiempo Final:
+						</label>
+
+						<h:inputText id="txtTiempoFinal" class="form__field_PolizaA" value="#{clientesBean.newCliente.dni}" />
+						<h:message for="txtTiempoFinal" />
+						
 					
-						<label for="txtcontrasena" id="col-md-12">Tasa de Interes: </label>
-						<h:inputText id="txtcontrasena" class="form__field1"
-							value="#{clientesBean.newCliente.nombre}" />
-						<h:message for="txtcontrasena" />
+						<label for="txtTasaInteres" id="col-md-12">Tasa de Interes: </label>
+						<h:inputText id="txtTasaInteres" class="form__field_PolizaA" value="#{clientesBean.newCliente.nombre}" />
+						<h:message for="txtTasaInteres" />
 					</div>
 					<div>
 						<div>
-							<h:commandButton class="btn2"
+							<h:commandButton class="btnIngresarPoliza"
 								action="#{clientesBean.doGuardar()}" value="Ingresa" />
-							<h:commandButton class="btn2"
+							<h:commandButton class="btnActualizarPoliza"
 								action="#{clientesBean.doGuardar()}" value="Actualizar" />
-							<h:commandButton class="btn2"
+							<h:commandButton class="btnEliminarPoliza"
 								action="#{clientesBean.doGuardar()}" value="Eliminar" />
 						</div>
 					</div>

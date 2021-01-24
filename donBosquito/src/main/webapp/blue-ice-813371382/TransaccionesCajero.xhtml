@@ -1,140 +1,120 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:rich="http://richfaces.org/rich">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Banco Don Bosquito</title>
 	<style type="text/css" media="all">
-@import "/donBosquito/blue-ice-813371382/globa.css";
+	
+	@import "/donBosquito/blue-ice-813371382/globa.css";
+	
+	@import "/donBosquito/blue-ice-813371382/Label.css";
+	
+	@import "/donBosquito/blue-ice-813371382/IniciarSesion.css";
+	</style>
+</h:head> 
+<body> 
 
-@import "/donBosquito/blue-ice-813371382/Label.css";
-
-@import "/donBosquito/blue-ice-813371382/IniciarSesion.css";
-</style>
-</h:head>
-<body>
-	<div id="wrapper">
-		<div id="header">
+<div id="wrapper">
+	<div id="header">
 			<div id="headimg"></div>
-		</div>
-		<div id="topnavi">
+	</div>
+	<div id="topnavi">
 			<div id="top">
 				<ul>
 					<li class="selected"><a href="#" title="itemUsuarios">Cajero</a></li>
-					<li class="select"><a href="#" title="itemCerrarSesion">Cerrar
-							Sesion</a></li>
+					<li class="select"><a href="#" title="itemCerrarSesion">Cerrar Sesion</a></li>
 				</ul>
 			</div>
-		</div>
-
 	</div>
-
-	<div id="sistemaTransacciones">
-
-		<div id="tituloSistemaTransaccioones">
-			<h1>Sistema de Transacciones</h1>
-		</div>
-
+	<div id="panel">
+		<h1 id="tituloSistemaTr">Sistema de Transacciones</h1>
+		
 		<div id="sistemaTransaccionesCuadro">
 			<h:form id="frmBuscar">
 				<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
 
 				<div class="izquierdaSistemaTransaccional">
 					<label for="txtcontrasena" id="col-md-12"># Cuenta: </label>
-					<h:inputText id="txtNCuenta" class="form__cuenta"
-						value="#{cajeroBean.cuenta.numero_cuenta}" />
+					<h:inputText id="txtNCuenta" class="form__cuenta" value="#{cajeroBean.cuenta.numero_cuenta}" />
 					<h:message for="txtUsuario" />
-					<p:commandButton class="btn8"
-						actionListener="#{cajeroBean.buscarCuenta()}" update="frmTabla"
-						value="Buscar Cuenta" />
+					<h:commandButton class="btnBuscarCuenta" actionListener="#{cajeroBean.buscarCuenta()}" update="frmTabla" value="Buscar Cuenta" />
 
 				</div>
 			</h:form>
-
-			<div id="cuadroCuentaCliente">
-				<div id="tituloSistemaTr">
-					<h1>Sistema de Transacciones</h1>
-				</div>
-				<div>
-					<h:form id="frmTabla">
-						<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
-
-						<p:dataTable var="car" value="#{cajeroBean.listaCuenta}"
-							style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
-							<p:column headerText="N. Cuenta"
-								style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-								<h:outputText value="#{car.numero_cuenta}" />
-							</p:column>
-
-							<p:column headerText="T. Cuenta"
-								style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-								<h:outputText value="#{car.tipo_cuenta}" />
-							</p:column>
-							<p:column headerText="Saldo"
-								style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-								<h:outputText value="#{car.saldo}" />
-							</p:column>
-
-						</p:dataTable>
-					</h:form>
-
-				</div>
+			
+			<div id = "cuadroCuentaCliente">
+				<h1 id="tituloSistemaTrSubtitulos">Cuenta de Cliente</h1>
+				<h:form id="frmTabla">
+					<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
+					
+					<p:dataTable var="car" value="#{cajeroBean.listaCuenta}" style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
+						<p:column headerText="N. Cuenta" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+							<h:outputText value="#{car.numero_cuenta}" />
+						</p:column>
+						<p:column headerText="T. Cuenta" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+							<h:outputText value="#{car.tipo_cuenta}" />
+						</p:column>
+						<p:column headerText="Saldo" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+							<h:outputText value="#{car.saldo}" />
+						</p:column>
+								
+					</p:dataTable>
+				</h:form>
 			</div>
-
-			<div id="bodybox4">
-				<div id="tituloSistemaTr">
-					<h1>Operaciones</h1>
-				</div>
+			
+			<div id="bodyboxOperaciones">
+				<h1 id="tituloSistemaTrSubtitulos">Operaciones</h1>
 				<h:form id="frmOperaciones">
 					<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
-
 					<div id="OperacionesDerecha">
 						<div id="Operacioninput">
-							<h:inputText class="form__operaciones"
-								value="#{cajeroBean.movimiento.cantidad}" />
+							<h:inputText class="form__operaciones" value="#{cajeroBean.movimiento.cantidad}" />
 						</div>
 						<div>
-							<label for="txtUsuario" id="col__operaciones">Ingrese el
-								Monto </label>
+							<label for="txtUsuario" id="col__operaciones">Ingrese el Monto </label>
 						</div>
-
 					</div>
 					<div id="OperacionesIzquierda">
-						<div id="OperacionButon">
-							<p:commandButton class="btn10" value="Realizar Deposito"
-								actionListener="#{cajeroBean.deposito()}"
-								update="frmOperaciones" />
+						<div id="RealizarDeposito">
+							<h:commandButton class="btnRealizarDeposito" value="Realizar Deposito" actionListener="#{cajeroBean.deposito()}" update="frmOperaciones" />
 						</div>
-						<div id="OperacionButon1">
-							<h:commandButton class="btn10" value="Realizar Retiro" 
-							actionListener="#{cajeroBean.retiro()}"
-								update="frmOperaciones"/>
+						
+						<div id="RealizarRetiro">
+							<h:commandButton class="btnRealizarRetiro" value="Realizar Retiro" actionListener="#{cajeroBean.retiro()}" update="frmOperaciones"/>
 						</div>
-						<div id="OperacionButon2">
-							<h:commandButton class="btn10" value="Limpiar" />
+						<div id="RealizarLimpiar">
+							<h:commandButton class="btnRealizarLimpiar" value="Limpiar" />
 						</div>
-
+						
 					</div>
+					
+				
 				</h:form>
-
-
+				
 			</div>
-
+			
 		</div>
-
+		
+		
+	
+		
+	
+	
 	</div>
-	<!-- 	</h:form> -->
-
+	
 	<div id="footer1">
 		<div id="derechosAutor1">
 			<h3>© Banco Don Bosquito Todos los derechos reservados.</h3>
 		</div>
 	</div>
+	
 
-</body>
+</div>
+
+</body> 
 </html>
