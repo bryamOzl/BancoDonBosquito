@@ -7,12 +7,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import org.hibernate.validator.constraints.UniqueElements;
 
 
 @Entity
-@Table(name = "Persona", schema ="public")
+@Table(name = "Persona", schema ="public", uniqueConstraints = @UniqueConstraint(columnNames = {"id","cedula"}) )
 public class Persona implements Serializable {
 
 
@@ -22,7 +23,6 @@ public class Persona implements Serializable {
 	@Column(name= "persona_id")
 	private int persona_id;
 	
-	@UniqueElements
 	@Column(name= "cedula")
 	private String cedula;
 	private String nombre;
