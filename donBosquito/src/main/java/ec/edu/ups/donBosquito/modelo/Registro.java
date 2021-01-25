@@ -25,6 +25,9 @@ public class Registro implements Serializable {
 	private String rol;
 	private String estado;
 	
+	@Column(name= "intento")
+	private int intento;
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="persona_id")
 	private Persona persona;
@@ -77,10 +80,20 @@ public class Registro implements Serializable {
 		this.persona = persona;
 	}
 
+	public int getIntento() {
+		return intento;
+	}
+
+	public void setIntento(int intento) {
+		this.intento = intento;
+	}
+
 	@Override
 	public String toString() {
 		return "Registro [registro_id=" + registro_id + ", usuario=" + usuario + ", contrasenia=" + contrasenia
-				+ ", rol=" + rol + ", estado=" + estado + ", persona=" + persona + "]";
+				+ ", rol=" + rol + ", estado=" + estado + ", intento=" + intento + ", persona=" + persona + "]";
 	}
+
+	
 
 }

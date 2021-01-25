@@ -1,7 +1,6 @@
 package ec.edu.ups.donBosquito.modelo;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Date;
 
 import javax.persistence.Column;

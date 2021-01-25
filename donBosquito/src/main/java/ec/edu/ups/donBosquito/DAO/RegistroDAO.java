@@ -20,6 +20,9 @@ public class RegistroDAO {
 
 	@Inject
 	private EntityManager em;
+	
+	@Inject
+	private PersonaDAO personaDAO;
 
 	public boolean insertRegistro(Registro registro) throws SQLException {
 		em.persist(registro);
@@ -79,6 +82,7 @@ public class RegistroDAO {
 	
 	public Registro leerNombre(String usuario) throws SQLException {
 		Registro registro = new Registro();
+		
 		String sql = "SELECT * FROM Registro WHERE  usuario=?";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, usuario);
@@ -89,6 +93,7 @@ public class RegistroDAO {
 		registro.setEstado(res.getString("estado"));
 		registro.setRol(res.getString("rol"));
 		registro.setUsuario(res.getString("usuario"));
+		registro.setPersona(personaDAO.readPersona(res.getInt("persona_id")));
 		ps.execute();
 		ps.close();
 		return registro;

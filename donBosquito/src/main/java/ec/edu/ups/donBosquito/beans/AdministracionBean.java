@@ -35,7 +35,6 @@ public class AdministracionBean {
 	public void buscarCedula()  {
 		Persona per = null;
 		per = daoPersona.buscarCedula(persona.getCedula());
-		//per = daoPersona.buscarCedula(persona.getCedula());
 		if (per == null) {
 			FacesUtils.msgError("Error", "No se encontro la persona");
 		} else {

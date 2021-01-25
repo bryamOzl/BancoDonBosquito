@@ -11,11 +11,10 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
-import org.wildfly.security.manager.action.GetModuleClassLoaderAction;
+
 
 import ec.edu.ups.donBosquito.modelo.Cuenta;
 import ec.edu.ups.donBosquito.modelo.Movimiento;
-import ec.edu.ups.donBosquito.modelo.Persona;
 
 @Stateless
 public class MovimientoDAO {

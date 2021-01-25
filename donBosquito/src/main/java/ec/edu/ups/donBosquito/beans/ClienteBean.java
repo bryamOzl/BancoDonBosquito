@@ -22,6 +22,7 @@ public class ClienteBean {
 
 	private List<Cuenta> listaCuentas = new ArrayList<>();
 	public Cuenta select;
+	public Registro registro = new Registro();
 
 	@Inject
 	private CuentaDAO daoCuenta;
@@ -37,11 +38,15 @@ public class ClienteBean {
 			FacesUtils.msgError("Error", "Usuario no cargado");
 		} else {
 			try {
-				Registro registro = daoRegistro.leerNombre(user);
+				registro = daoRegistro.leerNombre(user);
+				
 				if (registro == null) {
 					FacesUtils.msgError("Error", "Usuario no existe");
 				} else {
 					listaCuentas = daoCuenta.listarCuenta(registro.getRegistro_id());
+					
+					registro = daoRegistro.leerRegistro(registro.getRegistro_id());
+					System.out.println(registro);
 
 				}
 			} catch (SQLException e) {
@@ -71,4 +76,15 @@ public class ClienteBean {
 		this.select = select;
 	}
 
+	public Registro getRegistro() {
+		return registro;
+	}
+
+	public void setRegistro(Registro registro) {
+		this.registro = registro;
+	}
+
+	
+
+	
 }
