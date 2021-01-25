@@ -22,6 +22,9 @@ public class CuentaDAO {
 
 	@Inject
 	private Connection con;
+	
+	@Inject
+	private RegistroDAO registroDAO;
 
 	public boolean insertCuenta(Cuenta cuenta) throws SQLException {
 		em.persist(cuenta);
@@ -115,7 +118,7 @@ public class CuentaDAO {
 		cuenta.setNumero_cuenta(res.getString("numero_cuenta"));
 		cuenta.setSaldo(res.getDouble("saldo"));
 		cuenta.setTipo_cuenta(res.getString("tipo_cuenta"));
-		cuenta.setRegistro(new Registro());
+		cuenta.setRegistro(registroDAO.readRegistro(res.getInt("registro_id")));
 		ps.execute();
 		ps.close();
 		return cuenta;

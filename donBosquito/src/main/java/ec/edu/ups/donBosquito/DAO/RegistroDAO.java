@@ -20,6 +20,9 @@ public class RegistroDAO {
 
 	@Inject
 	private EntityManager em;
+	
+	@Inject
+	private PersonaDAO personaDAO;
 
 	public boolean insertRegistro(Registro registro) throws SQLException {
 		em.persist(registro);
@@ -43,10 +46,43 @@ public class RegistroDAO {
 		ps.close();
 		return registro;
 	}
+	
+	public Registro buscarCedula(String cedula) {
+
+		Persona persona = new Persona();
+		Registro registro = new Registro();
+		String sql = "SELECT * FROM Persona p, Registro r WHERE p.cedula=? and p.persona_id = r.persona_id";
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, cedula);
+			ResultSet res = ps.executeQuery();
+			res.next();
+			
+			persona.setPersona_id(res.getInt("persona_id"));
+			persona.setApellido(res.getString("apellido"));
+			persona.setCedula(res.getString("cedula"));
+			persona.setCorreo(res.getString("correo"));
+			persona.setDireccion(res.getString("direccion"));
+			persona.setFecha_nacimiento(res.getDate("fecha_nacimiento"));
+			persona.setNombre(res.getString("nombre"));
+			persona.setTelefono(res.getString("telefono"));
+			registro.setPersona(persona);
+			registro.setContrasenia(res.getString("contrasenia"));
+			registro.setUsuario(res.getString("usuario"));
+			registro.setEstado(res.getString("estado"));
+			registro.setRol(res.getString("rol"));
+			ps.execute();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println("Error al buscar a la persona por la cédula " + e.getMessage());
+		}
+		return registro;
+	}
 
 	
 	public Registro leerNombre(String usuario) throws SQLException {
 		Registro registro = new Registro();
+		
 		String sql = "SELECT * FROM Registro WHERE  usuario=?";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, usuario);
@@ -57,6 +93,7 @@ public class RegistroDAO {
 		registro.setEstado(res.getString("estado"));
 		registro.setRol(res.getString("rol"));
 		registro.setUsuario(res.getString("usuario"));
+		registro.setPersona(personaDAO.readPersona(res.getInt("persona_id")));
 		ps.execute();
 		ps.close();
 		return registro;

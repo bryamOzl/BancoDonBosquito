@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Banco Don Bosquito</title>
+	<style type="text/css" media="all">
+	
+	@import "/donBosquito/blue-ice-813371382/globa.css";
+	
+	@import "/donBosquito/blue-ice-813371382/Label.css";
+	
+	@import "/donBosquito/blue-ice-813371382/IniciarSesion.css";
+	</style>
+</h:head> 
+<body> 
+
+<div id="wrapper">
+	<div id="header">
+			<div id="headimg"></div>
+	</div>
+	<div id="topnavi">
+		<div id="top">
+			<ul>
+				<li class="selected"><a href="#" title="itemUsuarios">Cuentas</a></li>
+				<li class="select"><a href="#" title="itemCerrarSesion">Cerrar Sesion</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="datosUsuario">
+		<h:form>
+		<div id="datos1">
+			<h1>Datos del Cliente</h1>
+		</div>
+		<div id="datos2">
+			<h2>
+				<h:inputText class="txtUsuario" value="#{clientesBean.newCliente.dni}" />
+			</h2>
+		</div>
+		<div id="datos3">
+			<h2>
+				<h:inputText class="txtEmail" value="#{clientesBean.newCliente.dni}" />
+			</h2>
+		</div>
+		</h:form>
+	</div>
+	
+	<div id="sistemaCrearPoliza">
+		<h1 id="tituloCrearPoliza">Control de Acceso</h1>
+		
+		
+		<div id = "cuadroCuentaClienteSP">
+			<h:form id="frmTabla">
+				<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
+				
+				<p:dataTable var="car" value="#{cajeroBean.listaCuenta}" style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
+					<p:column headerText="Fecha de Acceso" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+						<h:outputText value="#{car.numero_cuenta}" />
+					</p:column>
+					<p:column headerText="Acceso" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+						<h:outputText value="#{car.tipo_cuenta}" />
+					</p:column>
+							
+				</p:dataTable>
+			</h:form>
+		</div>
+		
+		
+			
+	</div>
+	
+	<div id="footer">
+			<div id="Contacto">
+
+				<div id="Ubiquenos">
+					<h1>UBIQUENOS</h1>
+					<h3>
+						<a><img src="img/icons8-parthenon.png" alt="" /></a> Miguel T.
+						Duran 1-112
+					</h3>
+					<h3>
+						<a><img src="img/icons8-new_post.png" alt="" /></a>
+						lsanchezs@est.ups.edu.ec
+					</h3>
+					<h3>
+						<a><img src="img/icons8-phone.png" alt="" /></a> 0996214346
+					</h3>
+				</div>
+				<div id="RedesSociales">
+					<h1>Redes Sociales</h1>
+					<h2>
+						<img src="img/icons8-facebook.png" alt="" /> <img
+							src="img/icons8-twitter.png" alt="" /> <img
+							src="img/icons8-play_button.png" alt="" />
+					</h2>
+				</div>
+			</div>
+			<div id="derechosAutor">
+				<h3>© Banco Don Bosquito Todos los derechos reservados.</h3>
+			</div>
+
+		</div>
+	
+
+</div>
+
+</body> 
+</html>

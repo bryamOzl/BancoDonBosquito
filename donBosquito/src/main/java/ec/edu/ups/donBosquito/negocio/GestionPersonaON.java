@@ -29,13 +29,8 @@ public class GestionPersonaON implements GestionPersonaONRemoto{
 	public Persona leerPersona(String cedula) throws Exception {
 		if (cedula.length() != 10 || cedula.equals(""))
 			throw new Exception("Cedula es Incorrecta o Vacia");
-		try {
-			Persona persona = daoPersona.readPersona(cedula);
-			return persona;
-		} catch (SQLException e) {
-			e.printStackTrace();
-			throw new SQLException("Error al leer la Persona");
-		}
+		Persona persona = daoPersona.buscarCedula(cedula);
+		return persona;
 	}
 
 	public boolean actualizarPersona(Persona persona) throws Exception {

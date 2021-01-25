@@ -62,76 +62,54 @@
 											<h1>Crear Usuario</h1>
 										</div>
 										<h:panelGrid columns="4" cellpadding="5">
-											<p:outputLabel for="@next" value="CEDULA:"
-												style="float: right;" />
-
-
-
-											<h:inputText class="form__field2 "
-												value="#{administracionBean.persona.cedula}" />
+										
+											<p:outputLabel for="@next" value="CEDULA:" style="float: right;" />
+											<h:inputText class="form__field2" value="#{administracionBean.persona.cedula}" />
 											<p:message for="@previous" />
 											<h:outputText  />
 
-											<p:commandButton value="Buscar Cedula" type="submit"
-												update="form"
-												actionListener="#{administracionBean.buscarCedula()}">
-											</p:commandButton>
+											<h:outputText  />
+											<h:commandButton value="Buscar Cedula" class="btnBuscar"  type="submit" update="form" actionListener="#{administracionBean.buscarCedula()}" />
+											<h:outputText  />
+											<h:outputText  />
 
-											<p:outputLabel for="@next" value="NOMBRE:"
-												style="float: right;" />
-											<h:inputText class="form__field2"
-												value="#{administracionBean.persona.nombre}" />
+											<p:outputLabel for="@next" value="NOMBRE:" style="float: right;" />
+											<h:inputText class="form__field2" value="#{administracionBean.persona.nombre}" />
 											<p:message for="@previous" />
 											<h:outputText  />
 
-											<p:outputLabel for="@next" value="APELLIDO:"
-												style="float: right;" />
-											<h:inputText class="form__field2"
-												value="#{administracionBean.persona.apellido}" />
+											<p:outputLabel for="@next" value="APELLIDO:" style="float: right;" />
+											<h:inputText class="form__field2" value="#{administracionBean.persona.apellido}" />
 											<p:message for="@previous" />
 											<h:outputText  />
 
-											<p:outputLabel for="@next" value="DIRECCION:"
-												style="float: right;" />
-											<h:inputText class="form__field2"
-												value="#{administracionBean.persona.direccion}" />
+											<p:outputLabel for="@next" value="DIRECCION:" style="float: right;" />
+											<h:inputText class="form__field2" value="#{administracionBean.persona.direccion}" />
 											<p:message for="@previous" />
 											<h:outputText  />
 
-											<p:outputLabel for="@next" value="TELEFONO:"
-												style="float: right;" />
-											<h:inputText class="form__field2"
-												value="#{administracionBean.persona.telefono}" />
+											<p:outputLabel for="@next" value="TELEFONO:" style="float: right;" />
+											<h:inputText class="form__field2" value="#{administracionBean.persona.telefono}" />
 											<p:message for="@previous" />
 											<h:outputText  />
 
-											<p:outputLabel for="@next" value="FECHA DE NACIMIENTO:"
-												style="float: right;" />
-											<p:calendar id="button" showOn="button"
-												value="#{administracionBean.persona.fecha_nacimiento}" />
+											<p:outputLabel for="@next" value="FECHA DE NACIMIENTO:" style="float: right;" />
+											<p:calendar id="button" showOn="button" value="#{administracionBean.persona.fecha_nacimiento}" />
 											<p:message for="@previous" />
 											<h:outputText />
 
-											<p:outputLabel for="@next" value="E-mail:"
-												style="float: right;" />
-											<h:inputText class="form__field2"
-												value="#{administracionBean.persona.correo}" />
+											<p:outputLabel for="@next" value="E-mail:" style="float: right;" />
+											<h:inputText class="form__field2" value="#{administracionBean.persona.correo}" />
 											<p:message for="@previous" />
 											<h:outputText value="#{beanValidationView.pattern}" />
 
-											<p:outputLabel for="@next" value="FOTO" style="float: right;" />
-											<h:commandButton class="btn4"  value="Cargar Foto" />
-											<p:message for="@previous" />
-											<h:outputText />
 
-
-											<h:outputText />
-											<h:inputText class="foto_carga"  />
-											<p:message for="@previous" />
-											<h:outputText />
+											<h:outputText  />
+											<h:commandButton  class="btnCrearUsuario" value="Crear Usuario" actionListener="#{administracionBean.registraPersona()}" update="@form" />
+											<h:outputText  />
+											<h:outputText  />
 
 										</h:panelGrid>
-										<p:commandButton  class="btn3"  value="Crear Usuario"  actionListener="#{administracionBean.registraPersona()}" update="@form" />
 										<!-- 										</h:form> -->
 									</div>
 
@@ -145,20 +123,17 @@
 											<div>
 
 												<h:panelGrid columns="4" cellpadding="5">
-													<p:outputLabel for="@next" value="Usuario:"
-														style="float: right;" />
+													<p:outputLabel for="@next" value="Usuario:" style="float: right;" />
 													<h:inputText class="form__field2 "  value="#{administracionBean.registro.usuario}"/>
 													<p:message for="@previous" />
 													<h:outputText  />
 
-													<p:outputLabel for="@next" value="Contraseña:"
-														style="float: right;" />
+													<p:outputLabel for="@next" value="Contraseña:" style="float: right;" />
 													<h:inputText class="form__field2"  value="#{administracionBean.registro.contrasenia}"/>
 													<p:message for="@previous" />
 													<h:outputText  />
 
-													<p:outputLabel for="@next" value="ROL:"
-														style="float: right;" />
+													<p:outputLabel for="@next" value="ROL:" style="float: right;" />
 													<p:selectOneMenu id="console"
 														style="width:69%" value="#{administracionBean.registro.rol}">
 														<f:selectItem itemLabel="Cajero" itemValue="Cajero" />
@@ -180,7 +155,7 @@
 									</div>
 									<div class="center">
 										<h:form>
-											<h:commandButton class="btn6"  value="Limpiar" />
+											<h:commandButton class="btnLimpiarCRUDA"  value="Limpiar" />
 
 										</h:form>
 									</div>
@@ -235,18 +210,7 @@
 												<h:inputText class="form__field2"  />
 												<p:message for="@previous" />
 												<h:outputText  />
-
-												<p:outputLabel for="@next" value="FOTO"
-													style="float: right;" />
-												<h:commandButton class="btn4"  value="Cargar Foto" />
-												<p:message for="@previous" />
-												<h:outputText />
-
-
-												<h:outputText />
-												<h:inputText class="foto_carga"  />
-												<p:message for="@previous" />
-												<h:outputText />
+									
 
 											</h:panelGrid>
 										</h:form>
@@ -296,26 +260,198 @@
 									</div>
 									<div class="center">
 										<h:form>
-											<h:commandButton class="btn7"  value="Buscar" />
-											<h:commandButton class="btn7"  value="Actualizar" />
+											<h:commandButton class="btnEditaradministrador"  value="Buscar" actionListener="#{administracionBean.buscarCedula()}" update="@form" />
+											<h:commandButton class="btnEditaradministrador"  value="Actualizar" actionListener="#{administracionBean.registraPersona()}" update="@form"/>
 
 										</h:form>
 									</div>
 									<div class="center">
 										<h:form>
-											<h:commandButton class="btn7"  value="Editar" />
-											<h:commandButton class="btn7"  value="Limpiar" />
+											<h:commandButton class="btnEditaradministrador"  value="Editar" />
+											<h:commandButton class="btnEditaradministrador"  value="Limpiar" />
 
 										</h:form>
 									</div>
 								</div>
 							</div>
 							<div class="panel" id="three-panel">
-								<div class="panel-title">Note on Prerequisites</div>
-								<p>We recommend that you complete Learn HTML before learning
-									CSS.</p>
+								<div id="CrearUsuario">
+									<div id="polizasCuadro">
+										<h:form>
+											<div id="ivaloresPolizasTitulo">
+												<h1>Eliminar Usuario</h1>
+											</div>
+											<h:panelGrid columns="4" cellpadding="5">
+												<p:outputLabel for="@next" value="CEDULA:"
+													style="float: right;" />
+												<h:inputText class="form__field2 "  />
+												<p:message for="@previous" />
+												<h:outputText  />
+
+												<p:outputLabel for="@next" value="NOMBRE:"
+													style="float: right;" />
+												<h:inputText class="form__field2"  />
+												<p:message for="@previous" />
+												<h:outputText  />
+
+												<p:outputLabel for="@next" value="APELLIDO:"
+													style="float: right;" />
+												<h:inputText class="form__field2"  />
+												<p:message for="@previous" />
+												<h:outputText  />
+
+												<p:outputLabel for="@next" value="DIRECCION:"
+													style="float: right;" />
+												<h:inputText class="form__field2"  />
+												<p:message for="@previous" />
+												<h:outputText  />
+
+												<p:outputLabel for="@next" value="TELEFONO:"
+													style="float: right;" />
+												<h:inputText class="form__field2"  />
+												<p:message for="@previous" />
+												<h:outputText value="#{beanValidationView.pattern}" />
+
+												<p:outputLabel for="@next" value="FECHA DE NACIMIENTO:"
+													style="float: right;" />
+												<p:calendar id="button" showOn="button" />
+												<p:message for="@previous" />
+												<h:outputText />
+
+												<p:outputLabel for="@next" value="E-mail:"
+													style="float: right;" />
+												<h:inputText class="form__field2"  />
+												<p:message for="@previous" />
+												<h:outputText  />												
+												
+												<h:outputText />
+												<h:commandButton class="btnEliminarAdministrador"  value="Eliminar Usuario" actionListener="#{administracionBean.buscarCedula()}" update="@form" />
+												<h:outputText />
+												<h:outputText />
+
+											</h:panelGrid>
+										</h:form>
+									</div>
+
+								</div>
+								<div id="CrearRegistro">
+									<div id="Registro">
+										<h:form>
+											<div id="ivaloresPolizasTitulo">
+												<h1>Eliminar Registro</h1>
+											</div>
+											<div>
+
+												<h:panelGrid columns="4" cellpadding="5">
+													<p:outputLabel for="@next" value="Usuario:"
+														style="float: right;" />
+													<h:inputText class="form__field2 "  />
+													<p:message for="@previous" />
+													<h:outputText  />
+
+													<p:outputLabel for="@next" value="Contraseña:"
+														style="float: right;" />
+													<h:inputText class="form__field2"  />
+													<p:message for="@previous" />
+													<h:outputText  />
+
+													<p:outputLabel for="@next" value="ROL:"
+														style="float: right;" />
+													<p:selectOneMenu id="console"
+														value="#{selectOneMenuView.console}" style="width:69%">
+														<f:selectItem itemLabel="Cajero" itemValue="Cajero" />
+														<f:selectItem itemLabel="Asistente de Captaciones"
+															itemValue="Asistente de Captaciones" />
+														<f:selectItem itemLabel="Administrador"
+															itemValue="AdministradorWii U" />
+														<f:selectItem itemLabel="Cliente" itemValue="Cliente" />
+													</p:selectOneMenu>
+													<p:message for="@previous" />
+													<h:outputText  />
+													
+													<h:outputText />
+													<h:commandButton class="btnEliminarAdministrador"  value="Eliminar Registro" actionListener="#{administracionBean.buscarCedula()}" update="@form" />
+													<h:outputText />
+													<h:outputText />
+												
+												</h:panelGrid>
+											</div>
+
+
+										</h:form>
+									</div>
+									<div class="center">
+										<h:form>
+											<h:commandButton class="btnEditaradministrador"  value="Buscar" actionListener="#{administracionBean.buscarCedula()}" update="@form" />
+										</h:form>
+									</div>
+									<div class="center">
+										<h:form>
+											<h:commandButton class="btnEditaradministrador"  value="Limpiar" />
+
+										</h:form>
+									</div>
+								</div>
+							</div>
+							<div class="panel" id="four-panel">
+								<div class="ListarUsuario">
+									<div id="ivaloresPolizasTitulo">
+										<h1>Listar Usuario</h1>
+									</div>
+									<div>
+										<h:form id="frmBuscar">
+											<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
+							
+											<div class="izquierdaSistemaTransaccional">
+												<label for="txtcontrasena" id="col-md-12">Buscar Cédula: </label>
+												<h:inputText id="txtNCuenta" class="form__cuenta" value="#{cajeroBean.cuenta.numero_cuenta}" />
+												<h:message for="txtUsuario" />
+												<h:commandButton class="btnBuscarCuenta" actionListener="#{cajeroBean.buscarCuenta()}" update="frmTabla" value="Buscar Cuenta" />
+							
+											</div>
+										</h:form>
+									</div>
+									<div id = "cuadroListaUsuario">
+										<h:form id="frmTabla">
+											<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
+											
+											<p:dataTable var="car" value="#{cajeroBean.listaCuenta}" style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
+												<p:column headerText="Cédula" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+													<h:outputText value="#{car.numero_cuenta}" />
+												</p:column>
+												<p:column headerText="Nombre" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+													<h:outputText value="#{car.tipo_cuenta}" />
+												</p:column>
+												<p:column headerText="Apellido" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+													<h:outputText value="#{car.saldo}" />
+												</p:column>
+												<p:column headerText="Dirección" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+													<h:outputText value="#{car.numero_cuenta}" />
+												</p:column>
+												<p:column headerText="Teléfono" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+													<h:outputText value="#{car.tipo_cuenta}" />
+												</p:column>
+												<p:column headerText="F. Nacimiento" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+													<h:outputText value="#{car.saldo}" />
+												</p:column>
+												<p:column headerText="E-mail" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+													<h:outputText value="#{car.tipo_cuenta}" />
+												</p:column>
+												<p:column headerText="Rol" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+													<h:outputText value="#{car.saldo}" />
+												</p:column>
+														
+											</p:dataTable>
+										</h:form>
+									
+									</div>
+									
+								</div>
+								
+						
 							</div>
 						</div>
+						
 					</div>
 
 				</div>

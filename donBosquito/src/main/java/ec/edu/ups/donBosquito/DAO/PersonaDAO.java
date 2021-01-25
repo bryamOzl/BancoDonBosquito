@@ -39,7 +39,7 @@ public class PersonaDAO {
 	 * @return
 	 * @throws SQLException
 	 */
-	public Persona readPersona(String persona_id) throws SQLException {
+	public Persona readPersona(int persona_id) throws SQLException {
 		Persona persona = em.find(Persona.class, persona_id);
 		return persona;
 	}
@@ -57,14 +57,14 @@ public class PersonaDAO {
 			persona.setApellido(res.getString("apellido"));
 			persona.setCedula(res.getString("cedula"));
 			persona.setCorreo(res.getString("correo"));
-			persona.setDireccion(res.getString("correo"));
+			persona.setDireccion(res.getString("direccion"));
 			persona.setFecha_nacimiento(res.getDate("fecha_nacimiento"));
 			persona.setNombre(res.getString("nombre"));
 			persona.setTelefono(res.getString("telefono"));
 			ps.execute();
 			ps.close();
 		} catch (SQLException e) {
-			System.out.println("Erro al buscar a la persona por la cédula " + e.getMessage());
+			System.out.println("Error al buscar a la persona por la cédula " + e.getMessage());
 		}
 		return persona;
 	}
@@ -89,7 +89,7 @@ public class PersonaDAO {
 	 * @throws SQLException
 	 */
 	public boolean deletePersona(String cedula) throws SQLException {
-		em.remove(readPersona(cedula));
+		em.remove(buscarCedula(cedula));
 		return true;
 	}
 

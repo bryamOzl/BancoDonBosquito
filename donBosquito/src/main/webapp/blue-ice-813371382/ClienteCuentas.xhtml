@@ -45,23 +45,21 @@
 				</div>
 				<div id="datos2">
 					<h2>
-						<h:inputText class="txtUsuario"
-							value="#{clientesBean.newCliente.dni}" />
+						<p:outputLabel class="txtUsuario"
+							value="#{clienteBean.registro.persona.nombre}" />
 					</h2>
 				</div>
 				<div id="datos3">
 					<h2>
-						<h:inputText class="txtEmail"
-							value="#{clientesBean.newCliente.dni}" />
+						<p:outputLabel class="txtEmail"
+							value="#{clienteBean.registro.persona.correo}" />
 					</h2>
 				</div>
 			</h:form>
 		</div>
 
 		<div id="cuadroCuentasClienteB">
-			<div id="tituloSistemaTr">
-				<h1>Cuentas del Cliente</h1>
-			</div>
+			<h1 id ="tituloEstadoCliente">Cuentas del Cliente</h1>
 			<div>
 
 				<h:form>
@@ -103,9 +101,7 @@
 		</div>
 
 		<div id="cuadroCuentasCliente">
-			<div id="tituloSistemaTr">
-				<h1>Polizas</h1>
-			</div>
+			<h1 id="tituloEstadoCliente">Polizas</h1>
 			<div>
 
 				<h:form>

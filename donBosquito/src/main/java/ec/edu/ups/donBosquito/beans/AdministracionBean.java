@@ -2,6 +2,7 @@ package ec.edu.ups.donBosquito.beans;
 
 import java.sql.SQLException;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
@@ -24,8 +25,14 @@ public class AdministracionBean {
 	
 	@Inject
 	private RegistroDAO daoRegistro;
+	
+	@PostConstruct
+	public void init() {
+		
+		
+	}
 
-	public void buscarCedula() {
+	public void buscarCedula()  {
 		Persona per = null;
 		per = daoPersona.buscarCedula(persona.getCedula());
 		if (per == null) {

@@ -26,19 +26,19 @@
 			<div id="headimg"></div>
 		</div>
 		<div id="topnavi">
+			<h:form>
 			<div id="top">
 				<ul>
 					<li class="selected"><a href="#" title="itemUsuarios">Polizas</a></li>
-					<li class="selected"><a href="#" title="itemPolizas">Historia
-							de Acceso</a></li>
-					<p:commandButton value="Logout" icon="pi pi-home"
-						action="#{ctrSession.logout()}" />
+					<li class="selected"><a href="#" title="itemPolizas">Historia de Acceso</a></li>
+					<p:commandButton value="Logout" icon="pi pi-home" action="#{ctrSession.logout()}" />
 
 				</ul>
 			</div>
+			</h:form>
 		</div>
 		<div id="datosUsuario">
-
+			<h:form>
 			<div id="datos1">
 				<h1>Datos del Cliente</h1>
 			</div>
@@ -54,12 +54,11 @@
 						value="#{clientesBean.newCliente.dni}" />
 				</h2>
 			</div>
+			</h:form>
 		</div>
 
 		<div id="cuadroCuentasClientec">
-			<div id="tituloSistemaTr">
-				<h1>Cuentas del Cliente</h1>
-			</div>
+			<h1 id ="tituloEstadoCliente">Cuentas del Cliente</h1>
 			<div style="margin-bottom: 40px;">
 				<h:form>
 					<p:dataTable var="car" value="#{movimientoBean.listaCuentas}"
@@ -87,6 +86,7 @@
 				</h:form>
 			</div>
 			<div id="centerCuentaCliente1">
+				<h:form>
 				<h:panelGrid columns="4" cellpadding="5">
 					<p:outputLabel for="@next" value="Fecha de Movimiento"
 						style="float: center;" />
@@ -104,13 +104,14 @@
 					</p:selectOneMenu>
 					<p:calendar id="button1" showOn="button" style="width:100%; " />
 					<p:calendar id="button" showOn="button" style="width:100%;" />
-					<h:commandButton class="btn11" action="#{clientesBean.doGuardar()}"
+					<h:commandButton class="btnConsultar" action="#{clientesBean.doGuardar()}"
 						value="Consultar" />
 
 				</h:panelGrid>
+				</h:form>
 
 			</div>
-			<div style="margin-bottom: 40px;">
+			<div style="margin-bottom: 60px;">
 				<h:form>
 					<p:dataTable var="car" value="#{movimientoBean.listaMovimiento}"
 						scrollable="true" scrollHeight="50"
@@ -146,7 +147,6 @@
 
 				<div id="Ubiquenos">
 					<h1>UBIQUENOS</h1>
-
 					<h3>
 						<a><img src="img/icons8-parthenon.png" alt="" /></a> Miguel T.
 						Duran 1-112
@@ -158,8 +158,6 @@
 					<h3>
 						<a><img src="img/icons8-phone.png" alt="" /></a> 0996214346
 					</h3>
-
-
 				</div>
 				<div id="RedesSociales">
 					<h1>Redes Sociales</h1>
@@ -169,13 +167,10 @@
 							src="img/icons8-play_button.png" alt="" />
 					</h2>
 				</div>
-
 			</div>
-
 			<div id="derechosAutor">
 				<h3>© Banco Don Bosquito Todos los derechos reservados.</h3>
 			</div>
-
 
 		</div>
 

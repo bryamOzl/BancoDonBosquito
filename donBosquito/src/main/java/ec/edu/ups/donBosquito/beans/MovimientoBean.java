@@ -14,19 +14,13 @@ import javax.servlet.http.HttpServletRequest;
 import ec.edu.ups.donBosquito.DAO.CuentaDAO;
 import ec.edu.ups.donBosquito.DAO.MovimientoDAO;
 import ec.edu.ups.donBosquito.DAO.RegistroDAO;
-import ec.edu.ups.donBosquito.core.FacesUtils;
 import ec.edu.ups.donBosquito.modelo.Cuenta;
 import ec.edu.ups.donBosquito.modelo.Movimiento;
-import ec.edu.ups.donBosquito.modelo.Persona;
 import ec.edu.ups.donBosquito.modelo.Registro;
 
 @ManagedBean
 @ViewScoped
 public class MovimientoBean {
-
-	private List<Cuenta> listaCuentas = new ArrayList<>();
-
-	private List<Movimiento> listaMovimiento = new ArrayList<>();
 
 	@Inject
 	private CuentaDAO daoCuenta;
@@ -36,11 +30,15 @@ public class MovimientoBean {
 
 	@Inject
 	private MovimientoDAO daoMovimiento;
+	
+	
+	private List<Cuenta> listaCuentas = new ArrayList<>();
+
+	private List<Movimiento> listaMovimiento = new ArrayList<>();
 
 	@PostConstruct
 	public void init() {
-		HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext()
-				.getRequest();
+		HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
 		String cuenta = request.getParameter("cuenta");
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		String user = (String) facesContext.getExternalContext().getSessionMap().get("usuario");

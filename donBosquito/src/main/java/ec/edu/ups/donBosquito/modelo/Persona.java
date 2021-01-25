@@ -1,17 +1,18 @@
 package ec.edu.ups.donBosquito.modelo;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
 
 
 @Entity
-@Table(name = "Persona", schema ="public")
+@Table(name = "Persona", schema ="public", uniqueConstraints = @UniqueConstraint(columnNames = {"id","cedula"}) )
 public class Persona implements Serializable {
 
 
@@ -21,6 +22,7 @@ public class Persona implements Serializable {
 	@Column(name= "persona_id")
 	private int persona_id;
 	
+	@Column(name= "cedula")
 	private String cedula;
 	private String nombre;
 	private String apellido;
@@ -29,8 +31,7 @@ public class Persona implements Serializable {
 	private Date fecha_nacimiento;
 	private String correo;
 	
-	@Column(name ="foto")
-	private byte[] image;
+
 
 	public int getPersona_id() {
 		return persona_id;
@@ -96,19 +97,13 @@ public class Persona implements Serializable {
 		this.correo = correo;
 	}
 
-	public byte[] getImage() {
-		return image;
-	}
 
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
 
 	@Override
 	public String toString() {
 		return "Persona [persona_id=" + persona_id + ", cedula=" + cedula + ", nombre=" + nombre + ", apellido="
 				+ apellido + ", direccion=" + direccion + ", telefono=" + telefono + ", fecha_nacimiento="
-				+ fecha_nacimiento + ", correo=" + correo + ", image=" + Arrays.toString(image) + "]";
+				+ fecha_nacimiento + ", correo=" + correo + "]";
 	}
 
 	

@@ -33,6 +33,15 @@
 	border-left: 2px solid black;
 }
 
+#sistemaCrearPoliza {
+	width: 99.7%;
+	overflow: hidden;
+	background-color: #ffff;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
 
 
 #valoresPolizas {
@@ -47,7 +56,8 @@
 }
 
 #iniciarSesionTitulo {
-	width: 96.7%;
+	width: 100%;
+	margin-top: 1.5%;
 }
 #tituloSistemaTransaccioones{
 	width: 100%;
@@ -62,24 +72,55 @@
 }
 
 #tituloSistemaTr{
-	width: 100%;
+	margin: 20px auto auto center;
+	font-size: 25px;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: normal;
+	color: black;
+	margin-top:0;
 }
 
-#tituloSistemaTr h1{
-	margin: 10px;
+#tituloSistemaTrSubtitulos{
+	margin: 20px auto auto 5%;
 	text-align: left;
+	font-size: 25px;
 	font-family: "Times New Roman", Times, serif;
-	font-style: normal;
-	font-size: 30px;
+	font-weight: normal;
 	color: black;
+	margin-top:0;
+}
+
+#tituloCrearPoliza{
+	margin: 20px auto auto 5%;
+	text-align: left;
+	font-size: 25px;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: normal;
+	color: black;
+	margin-top:0;
+}
+
+
+#tituloEstadoCliente{
+	margin: 20px auto auto 5%;
+	text-align: left;
+	font-size: 25px;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: normal;
+	color: black;
+	margin-top:0;
 }
 
 
 #iniciarSesionTitulo h1 {
-	margin: 20px;
+	
+	margin: 1.5% 1.5% 1.5% 1.5%;
 	font-family: "Times New Roman", Times, serif;
-	font-style: normal;
+	font-weight: normal;
 	color: black;
+	text-align: center;
+	font-size: 25px;
+	margin-top:0;
 }
 
 #valoresPolizasTitulo {
@@ -120,6 +161,7 @@
 	margin-left: 25%;
 	text-align: center;
 	color: black;
+	margin-bottom:1.5%;
 	background-color: white;
 	border-top: 2px solid black;
 	border-right: 2px solid black;
@@ -144,7 +186,7 @@
 #cuadroCuentaCliente {
 	width: 97%;
 	margin: 1%;
-	height: 150px;
+	height: 120px;
 	text-align: center;
 	color: black;
 	background-color: #ffd966;
@@ -153,6 +195,90 @@
 	border-bottom: 2px solid black;
 	border-left: 2px solid black;
 	border-radius: 10px 10px 10px 10px;
+}
+
+#cuadroListaUsuario {
+	width: 100%;
+	height: 120px;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#cuadroCuentaClienteSP {
+	width: 90%;
+	margin-left: 4%;
+	height: 100px;
+	text-align: center;
+	color: black;
+	background-color: #ffff;
+}
+
+#cuadroCuentaClienteAsistente {
+	width: 97%;
+	margin: 1%;
+	height: 340px;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#cuadroCuentaClientePoliza {
+	width: 97%;
+	margin: 1%;
+	height: 280px;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#cuadroDatosCrearPoliza {
+	width: 94%;
+	margin: 2.5%;
+	height: 220px;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#cuadroDatosCrearPolizaAsistente {
+	width: 100%;
+	height: 220px;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
+}
+
+#cuadroDatosPolizaAsistente {
+	width: 100%;
+	height: 200px;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
+}
+
+#cuadroCuentaCLienteAsistente {
+	width: 100%;
+	height: 90px;
+	text-align: center;
+	color: black;
+	background-color: #ffd966;
 }
 
 #cuadroCuentasClienteB {
@@ -233,7 +359,7 @@
 	font-weight: normal;
 	text-align: left;
 	color: black;
-	margin-top:0
+	margin-top:0;
 }
 #tituloMenuCRUD{
 	WIDTH:20px; 
