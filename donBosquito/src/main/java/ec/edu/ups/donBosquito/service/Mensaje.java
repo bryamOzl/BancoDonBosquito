@@ -1,6 +1,5 @@
 package ec.edu.ups.donBosquito.service;
 
-
 public class Mensaje {
 
 	private String code;
@@ -18,10 +17,10 @@ public class Mensaje {
 	public void setMessage(String message) {
 		this.message = message;
 	}
+	
 	@Override
 	public String toString() {
 		return "Mensaje [code=" + code + ", message=" + message + "]";
 	}
-	
 	
 }

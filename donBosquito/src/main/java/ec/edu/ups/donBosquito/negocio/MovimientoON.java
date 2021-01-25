@@ -41,7 +41,6 @@ public class MovimientoON implements MovimientoONLocal {
 	}
 	
 	public Cuenta cuenta(String nCuenta) throws SQLException {
-		
 		cuenta = cuentaDAO.buscarCuenta(nCuenta);
 		return cuenta;
 	}

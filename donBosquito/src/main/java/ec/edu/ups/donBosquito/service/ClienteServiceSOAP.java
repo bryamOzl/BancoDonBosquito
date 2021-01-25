@@ -35,9 +35,7 @@ public class ClienteServiceSOAP {
 
 	private Movimiento movimiento = new Movimiento();
 	private Cuenta cuenta = new Cuenta();
-	
-	private List<Cuenta> listaCuenta = new ArrayList<>();
-	
+		
 	
 	@WebMethod
 	public String saludar (String nombre) {
@@ -68,14 +66,12 @@ public class ClienteServiceSOAP {
 			cuenta = new Cuenta();
 		} else {
 			cuenta = cue;
-			
-			
 		}
 		return cuenta;
 	}
 	
 	@WebMethod
-	public void deposito(int cuentaid, String fecha, double cantidad,  double saldo) throws Exception {
+	public String deposito(int cuentaid, String fecha, double cantidad,  double saldo) throws Exception {
 		cuenta.setCuenta_id(cuentaid);
 		int idMovimiento = onMovimiento.movimientoN();
 		
@@ -86,10 +82,11 @@ public class ClienteServiceSOAP {
 		movimiento.setCuenta(cuenta);
 		movimiento.setSaldo(saldo);
 		onMovimiento.movimiento(movimiento);
+		return "OK";
 	}
 	
 	@WebMethod
-	public void retiro(int cuentaid, String fecha, double cantidad,  double saldo) throws Exception {
+	public String retiro(int cuentaid, String fecha, double cantidad,  double saldo) throws Exception {
 		cuenta.setCuenta_id(cuentaid);
 		int idMovimiento = onMovimiento.movimientoN();
 		
@@ -100,6 +97,7 @@ public class ClienteServiceSOAP {
 		movimiento.setCuenta(cuenta);
 		movimiento.setSaldo(saldo);
 		onMovimiento.movimiento(movimiento);
+		return "OK";
 	}
 	
 	/**
