@@ -35,10 +35,12 @@ public class AdministracionBean {
 	public void buscarCedula()  {
 		Persona per = null;
 		per = daoPersona.buscarCedula(persona.getCedula());
-		if (per == null) {
+		registro = daoRegistro.buscarCedula(persona.getCedula());
+		if (per == null && registro == null) {
 			FacesUtils.msgError("Error", "No se encontro la persona");
 		} else {
 			persona = per;
+			System.out.println(registro);
 		}
 	}
 
@@ -70,6 +72,13 @@ public class AdministracionBean {
 		registro.setPersona(persona);
 		daoRegistro.insertRegistro(registro);
 		registro = null;
+		
+	}
+	
+	public void habilitarCuenta() throws SQLException {
+		registro.setRegistro_id(registro.getRegistro_id());
+		registro.setEstado("Habilitado");
+		daoRegistro.updateRegistro(registro);
 		
 	}
 	

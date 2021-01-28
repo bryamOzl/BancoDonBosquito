@@ -11,9 +11,11 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 import ec.edu.ups.donBosquito.DAO.CuentaDAO;
+import ec.edu.ups.donBosquito.DAO.HistorialAccesosDAO;
 import ec.edu.ups.donBosquito.DAO.RegistroDAO;
 import ec.edu.ups.donBosquito.core.FacesUtils;
 import ec.edu.ups.donBosquito.modelo.Cuenta;
+import ec.edu.ups.donBosquito.modelo.Historial_Acceso;
 import ec.edu.ups.donBosquito.modelo.Registro;
 
 @ManagedBean
@@ -21,6 +23,7 @@ import ec.edu.ups.donBosquito.modelo.Registro;
 public class ClienteBean {
 
 	private List<Cuenta> listaCuentas = new ArrayList<>();
+	private List<Historial_Acceso> listaHistorial_Accesos = new ArrayList<>();
 	public Cuenta select;
 	public Registro registro = new Registro();
 
@@ -29,6 +32,9 @@ public class ClienteBean {
 
 	@Inject
 	private RegistroDAO daoRegistro;
+	
+	@Inject
+	private HistorialAccesosDAO daoHAcceso;
 
 	@PostConstruct
 	public void init() {
@@ -44,7 +50,7 @@ public class ClienteBean {
 					FacesUtils.msgError("Error", "Usuario no existe");
 				} else {
 					listaCuentas = daoCuenta.listarCuenta(registro.getRegistro_id());
-					
+					listaHistorial_Accesos = daoHAcceso.listarHAcceso(registro.getRegistro_id());
 					registro = daoRegistro.leerRegistro(registro.getRegistro_id());
 					System.out.println(registro);
 
@@ -82,6 +88,14 @@ public class ClienteBean {
 
 	public void setRegistro(Registro registro) {
 		this.registro = registro;
+	}
+
+	public List<Historial_Acceso> getListaHistorial_Accesos() {
+		return listaHistorial_Accesos;
+	}
+
+	public void setListaHistorial_Accesos(List<Historial_Acceso> listaHistorial_Accesos) {
+		this.listaHistorial_Accesos = listaHistorial_Accesos;
 	}
 
 	

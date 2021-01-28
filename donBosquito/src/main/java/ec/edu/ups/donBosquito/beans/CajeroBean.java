@@ -164,6 +164,8 @@ public class CajeroBean {
 			e.printStackTrace();
 		}
 	}
+	
+	
 
 	public Persona getPersona() {
 		return persona;

@@ -49,7 +49,7 @@
 				</div>
 				<div class="panels">
 					<div class="panel" id="one-panel">
-						<h:form>						
+						<h:form id="crear">						
 							<div id="CrearUsuario">
 								<div id="polizasCuadro">
 									<div id="ivaloresPolizasTitulo">
@@ -64,8 +64,8 @@
 											<h:outputText  />
 																						
 											<h:outputText/>
-											<h:commandButton value="Buscar Cedula" class="btnBuscar"  type="submit" update="form" actionListener="#{administracionBean.buscarCedula()}" />
-											<h:commandButton  value="Limpiar"  class="btnLimpiar"  />
+											<h:commandButton value="Buscar Cedula" class="btnBuscar"  type="submit" update="@crear" actionListener="#{administracionBean.buscarCedula()}" />
+											<h:commandButton  value="Limpiar" update ="@crear"  class="btnLimpiar"  />
 											<h:outputText  />
 											
 											<h:outputLabel for="@next" value="NOMBRE:" style="float: right;" />
@@ -152,14 +152,14 @@
 	
 										</h:panelGrid>
 										
-										<h:commandButton class="btnCrearCuenta" actionListener="#{cajeroBean.registraPersona()}" value="Crear Cuenta" update="@form"/>
+										<h:commandButton class="btnCrearCuenta" actionListener="#{cajeroBean.registraPersona()}" value="Crear Cuenta" update="@crear"/>
 									</div>
 								</div>
 							</div>
 						</h:form>	
 					</div>
 					<div class="panel" id="two-panel">
-						<h:form>						
+						<h:form id="actualizar">						
 							<div id="CrearUsuario">
 								<div id="polizasCuadro">
 									<div id="ivaloresPolizasTitulo">
@@ -173,10 +173,10 @@
 											<h:message for="@previous" />
 											<h:outputText  />
 																						
-											<h:commandButton value="Buscar Cedula" class="btnBuscarAC"  type="submit" update="form" actionListener="#{administracionBean.buscarCedula()}" />
-											<h:commandButton value="Editar " class="btnEditarAC"  type="submit" update="form" actionListener="#{administracionBean.buscarCedula()}" />
-											<h:commandButton value="Actualizar" class="btnActualizarAC"  type="submit" update="form" actionListener="#{administracionBean.buscarCedula()}" />
-											<h:commandButton  value="Limpiar"  class="btnEliminarAC"  />
+											<h:commandButton value="Buscar Cedula" class="btnBuscarAC"  type="submit" update="@actualizar" actionListener="#{administracionBean.buscarCedula()}" />
+											<h:commandButton value="Editar " class="btnEditarAC"  type="submit" update="@actualizar" actionListener="#{administracionBean.buscarCedula()}" />
+											<h:commandButton value="Actualizar" class="btnActualizarAC"  type="submit" update="@actualizar" actionListener="#{administracionBean.habilitarCuenta()}" />
+											<h:commandButton  value="Limpiar" update ="@actualizar" class="btnEliminarAC"  />
 												
 											<h:outputLabel for="@next" value="NOMBRE:" style="float: right;" />
 											<h:inputText class="form__field2" value="#{administracionBean.persona.nombre}" />
@@ -216,19 +216,30 @@
 							<div id="CrearRegistro">
 								<div id="Registro">
 									<div id="ivaloresPolizasTitulo">
-										<h1>Actualizar Registro Cliente</h1>
+										<h1>Registro Cliente</h1>
 									</div>
 									<div>
 										<h:panelGrid columns="4" cellpadding="5">
 											<p:outputLabel for="@next" value="USUARIO:" style="float: right;" />
-											<h:inputText class="form__field2 " value="#{cajeroBean.registro.usuario}" />
+											<h:inputText class="form__field2 " value="#{administracionBean.registro.usuario}" />
 											<p:message for="@previous" />
 											<h:outputText />
 	
 											<p:outputLabel for="@next" value="CONTRASEÑA:" style="float: right;" />
-											<p:password style="width: 77%;" value="#{cajeroBean.registro.contrasenia}"/>
+											<h:inputText style="width: 77%;" value="#{administracionBean.registro.contrasenia}"/>
+											<p:message  for="@previous" />
+											<h:outputText />
+											
+											<p:outputLabel for="@next" value="ESTADO:" style="float: right;" />
+											<p:selectOneMenu id="conso" value="#{administracionBean.registro.estado}" style="width:69%">
+												<f:selectItem itemLabel="Habilitado"
+													itemValue="Habilitado" />
+												<f:selectItem itemLabel="Bloqueado"
+													itemValue="Bloqueado" />
+											</p:selectOneMenu>
 											<p:message for="@previous" />
 											<h:outputText />
+											
 											
 										</h:panelGrid>
 									</div>
@@ -236,7 +247,7 @@
 								<div id="Registro">
 								
 									<div id="ivaloresPolizasTitulo">
-										<h1>Actualizar Cuenta Bancaria</h1>
+										<h1>Cuenta Bancaria</h1>
 									</div>
 									<div>
 										<h:panelGrid columns="4" cellpadding="5">
@@ -272,7 +283,7 @@
 							<div id="CrearUsuario">
 								<div id="polizasCuadro">
 									<div id="ivaloresPolizasTitulo">
-										<h1>Actualizar Usuario</h1>
+										<h1>Eliminar Usuario</h1>
 									</div>
 									<div>
 										<h:panelGrid columns="4" cellpadding="5">

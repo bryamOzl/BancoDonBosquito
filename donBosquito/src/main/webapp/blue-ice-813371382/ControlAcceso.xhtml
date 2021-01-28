@@ -15,6 +15,8 @@
 	@import "/donBosquito/blue-ice-813371382/Label.css";
 	
 	@import "/donBosquito/blue-ice-813371382/IniciarSesion.css";
+	
+	@import "/donBosquito/blue-ice-813371382/EstiloCajones.css";
 	</style>
 </h:head> 
 <body> 
@@ -26,7 +28,7 @@
 	<div id="topnavi">
 		<div id="top">
 			<ul>
-				<li class="selected"><a href="#" title="itemUsuarios">Cuentas</a></li>
+				<li class="selected"><a href="/donBosquito/blue-ice-813371382/ClienteCuentas.jsf" title="itemUsuarios">Cuentas</a></li>
 				<li class="select"><a href="#" title="itemCerrarSesion">Cerrar Sesion</a></li>
 			</ul>
 		</div>
@@ -38,18 +40,18 @@
 		</div>
 		<div id="datos2">
 			<h2>
-				<h:inputText class="txtUsuario" value="#{clientesBean.newCliente.dni}" />
+				<h:inputText class="txtUsuario" value="#{clienteBean.registro.usuario}" />
 			</h2>
 		</div>
 		<div id="datos3">
 			<h2>
-				<h:inputText class="txtEmail" value="#{clientesBean.newCliente.dni}" />
+				<h:inputText class="txtEmail" value="#{clienteBean.registro.persona.correo}" />
 			</h2>
 		</div>
 		</h:form>
 	</div>
 	
-	<div id="sistemaCrearPoliza">
+	<div id="controlAcceso">
 		<h1 id="tituloCrearPoliza">Control de Acceso</h1>
 		
 		
@@ -57,12 +59,12 @@
 			<h:form id="frmTabla">
 				<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
 				
-				<p:dataTable var="car" value="#{cajeroBean.listaCuenta}" style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
+				<p:dataTable var="car" value="#{clienteBean.listaHistorial_Accesos}" scrollable="true" scrollHeight="250" style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
 					<p:column headerText="Fecha de Acceso" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-						<h:outputText value="#{car.numero_cuenta}" />
+						<h:outputText value="#{car.fecha_acceso}" />
 					</p:column>
 					<p:column headerText="Acceso" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-						<h:outputText value="#{car.tipo_cuenta}" />
+						<h:outputText value="#{car.tipo_acceso}" />
 					</p:column>
 							
 				</p:dataTable>

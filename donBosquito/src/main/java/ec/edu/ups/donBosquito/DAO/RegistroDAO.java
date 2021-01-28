@@ -41,6 +41,7 @@ public class RegistroDAO {
 		registro.setEstado(res.getString("estado"));
 		registro.setRol(res.getString("rol"));
 		registro.setUsuario(res.getString("usuario"));
+		registro.setIntento(res.getInt("intento"));
 		registro.setPersona(em.find(Persona.class, persona_id));
 		ps.execute();
 		ps.close();
@@ -67,10 +68,12 @@ public class RegistroDAO {
 			persona.setNombre(res.getString("nombre"));
 			persona.setTelefono(res.getString("telefono"));
 			registro.setPersona(persona);
+			registro.setRegistro_id(res.getInt("registro_id"));
 			registro.setContrasenia(res.getString("contrasenia"));
 			registro.setUsuario(res.getString("usuario"));
 			registro.setEstado(res.getString("estado"));
 			registro.setRol(res.getString("rol"));
+			registro.setIntento(res.getInt("intento"));
 			ps.execute();
 			ps.close();
 		} catch (SQLException e) {
@@ -93,6 +96,7 @@ public class RegistroDAO {
 		registro.setEstado(res.getString("estado"));
 		registro.setRol(res.getString("rol"));
 		registro.setUsuario(res.getString("usuario"));
+		registro.setIntento(res.getInt("intento"));
 		registro.setPersona(personaDAO.readPersona(res.getInt("persona_id")));
 		ps.execute();
 		ps.close();
@@ -111,6 +115,7 @@ public class RegistroDAO {
 		registro.setContrasenia(res.getString("contrasenia"));
 		registro.setEstado(res.getString("estado"));
 		registro.setRol(res.getString("rol"));
+		registro.setIntento(res.getInt("intento"));
 		registro.setUsuario(res.getString("usuario"));
 		ps.execute();
 		ps.close();
