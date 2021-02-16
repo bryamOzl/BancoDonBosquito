@@ -8,7 +8,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+
+
 
 @Entity
 public class Poliza implements Serializable {
@@ -30,10 +33,12 @@ public class Poliza implements Serializable {
 	private Double valor_neto;
 	private String estado;
 
-	@Column(name = "imagen_cedula")
+	@Lob 
+	@Column(name = "imagen_cedula",length=16777216)
 	private byte[] imagen_cedula;
 
-	@Column(name = "imagen_plantilla")
+	@Lob 
+	@Column(name = "imagen_plantilla",length=16777216)
 	private byte[] imagen_plantilla;
 
 	@ManyToOne
@@ -136,6 +141,10 @@ public class Poliza implements Serializable {
 		this.cuenta = cuenta;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public String toString() {
 		return "Poliza [poliza_id=" + poliza_id + ", capital=" + capital + ", fecha_creacion=" + fecha_creacion
@@ -144,5 +153,7 @@ public class Poliza implements Serializable {
 				+ Arrays.toString(imagen_cedula) + ", imagen_plantilla=" + Arrays.toString(imagen_plantilla)
 				+ ", cuenta=" + cuenta + "]";
 	}
+
+	
 
 }

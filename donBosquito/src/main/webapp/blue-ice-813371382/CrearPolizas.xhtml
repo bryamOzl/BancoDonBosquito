@@ -15,6 +15,8 @@
 	@import "/donBosquito/blue-ice-813371382/Label.css";
 	
 	@import "/donBosquito/blue-ice-813371382/IniciarSesion.css";
+	
+	@import "/donBosquito/blue-ice-813371382/ejemplo.css";
 	</style>
 </h:head> 
 <body> 
@@ -26,7 +28,7 @@
 	<div id="topnavi">
 		<div id="top">
 			<ul>
-				<li class="selected"><a href="#" title="itemUsuarios">Asistente</a></li>
+				<li class="selected"><a href="/donBosquito/blue-ice-813371382/PrincipalAsistente.jsf" title="itemUsuarios">Asistente</a></li>
 				<li class="select"><a href="#" title="itemCerrarSesion">Cerrar Sesion</a></li>
 			</ul>
 		</div>
@@ -38,12 +40,12 @@
 		</div>
 		<div id="datos2">
 			<h2>
-				<h:inputText class="txtUsuario" value="#{clientesBean.newCliente.dni}" />
+				<h:inputText class="txtUser" value="#{cuentaBean.registro.persona.nombre}" />
 			</h2>
 		</div>
 		<div id="datos3">
 			<h2>
-				<h:inputText class="txtEmail" value="#{clientesBean.newCliente.dni}" />
+				<h:inputText class="txtMail" value="#{cuentaBean.registro.persona.correo}" />
 			</h2>
 		</div>
 		</h:form>
@@ -69,10 +71,10 @@
 				<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
 				
 				<p:dataTable var="car" value="#{cajeroBean.listaCuenta}" style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
-					<p:column headerText="N. Cuenta" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+					<p:column headerText="N. Cuenta" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; width: 12%;">
 						<h:outputText value="#{car.numero_cuenta}" />
 					</p:column>
-					<p:column headerText="Cédula" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+					<p:column headerText="Cédula" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; width: 13%;">
 						<h:outputText value="#{car.registro.persona.cedula}" />
 					</p:column>
 					<p:column headerText="Nombre" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
@@ -81,10 +83,10 @@
 					<p:column headerText="T. Cuenta" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
 						<h:outputText value="#{car.tipo_cuenta}" />
 					</p:column>
-					<p:column headerText="Estado" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+					<p:column headerText="Estado" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;width: 14%;">
 						<h:outputText value="#{car.registro.estado}" />
 					</p:column>
-					<p:column headerText="Saldo" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+					<p:column headerText="Saldo" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; width: 16%;">
 						<h:outputText value="#{car.saldo}" />
 					</p:column>
 							
@@ -93,30 +95,27 @@
 		</div>
 		
 		<div id ="cuadroDatosCrearPoliza">
-			<h:form>
+			<h:form id ="mainForm">
 				<div id ="datosPolizaIzquierda">
+					<p:growl id="messages" showDetail="true"/>
 					<h:panelGrid columns="4" cellpadding="5">
 					
 						<h:outputLabel for="@next" value="Capital:" class= "form_field_CrearPoliza"/>
-						<h:inputText class="form__field2 " value="#{administracionBean.persona.cedula}" />
+						<h:inputText class="form__field2 " value="#{polizaBean.poliza.capital}" style="width:94%" />
 						<h:message for="@previous" />
 						<h:outputText  />
 						
 						<h:outputLabel for="@next" value="Plazo en Dias:" class= "form_field_CrearPoliza"/>
-						<h:inputText class="form__field2 " value="#{administracionBean.persona.cedula}" />
+						<p:selectOneMenu style="width:79% " value="#{polizaBean.poliza.plazo}" >
+							<f:selectItems value="#{polizaBean.listarValor_Polizas}" var="state"
+								itemLabel="#{state.plazo}" itemValue="#{state.plazo}" />
+						</p:selectOneMenu>
+						<h:commandButton class="btnCalcularPoliz" action="#{polizaBean.buscarIntere}" value="Buscar In" />
 						<h:message for="@previous" />
-						<h:outputText  />
+						
 						
 						<h:outputLabel for="@next" value="Tasa de Interes:" class= "form_field_CrearPoliza"/>
-						<h:inputText class="form__field2 " value="#{administracionBean.persona.cedula}" />
-						<h:message for="@previous" />
-						<h:outputText  />
-						
-						<h:outputLabel for="@next" value="Periodicidad de Pago de los Intereses:" class= "form_field_CrearPoliza"/>
-						<p:selectOneMenu id="console" value="#{cajeroBean.cuenta.tipo_cuenta}" style="width:69%">
-							<f:selectItem itemLabel="Vencimiento" itemValue="Vencimiento" />
-							<f:selectItem itemLabel="Mensual" itemValue="Mensual" />
-						</p:selectOneMenu>
+						<h:inputText   id="selectedItemText" class="form__field2 " value="#{polizaBean.valor_Poliza.tasa_interes}"  style="width:94%"/>
 						<h:message for="@previous" />
 						<h:outputText  />
 						
@@ -127,35 +126,47 @@
 					<h:panelGrid columns="4" cellpadding="5">
 					
 						<h:outputLabel for="@next" value="Vencimiento: " class= "form_field_CrearPoliza"/>
-						<h:inputText class="form__field2 " value="#{administracionBean.persona.cedula}" />
+						<h:inputText class="form__field2 " value="#{polizaBean.poliza.fecha_vencimiento}" />
 						<h:message for="@previous" />
 						<h:outputText  />
 						
 						<h:outputLabel for="@next" value="Interes: " class= "form_field_CrearPoliza"/>
-						<h:inputText class="form__field2 " value="#{administracionBean.persona.cedula}" />
+						<h:inputText class="form__field2 " value="#{polizaBean.poliza.interes}" />
 						<h:message for="@previous" />
 						<h:outputText  />
 						
 						<h:outputLabel for="@next" value="Neto o Resivir:" class= "form_field_CrearPoliza"/>
-						<h:inputText class="form__field2 " value="#{administracionBean.persona.cedula}" />
+						<h:inputText class="form__field2 " value="#{polizaBean.poliza.valor_neto}" />
 						<h:message for="@previous" />
 						<h:outputText  />
 						
 						<h:outputLabel for="@next" value="Estado:" class= "form_field_CrearPoliza"/>
-						<p:selectOneMenu id="consol" value="#{cajeroBean.cuenta.tipo_cuenta}" style="width:69%">
+						<p:selectOneMenu id="consol" value="#{polizaBean.poliza.estado}" style="width:69%">
 							<f:selectItem itemLabel="Solicitado" itemValue="Solicitado" />
 							<f:selectItem itemLabel="Aprobado" itemValue="Aprobado" />
 						</p:selectOneMenu>
 						<h:message for="@previous" />
 						<h:outputText  />
+			
 						
-						
-						<h:commandButton class="btnCargarPlantilla" value="Cargar Plantilla" update="@form"/>
-						<h:commandButton class="btnCargarCedula" value="Cargar Cedula" update="@form"/>
+						<p:fileUpload listener="#{polizaBean.archivo1}" mode="advanced"
+						 auto="true" sizeLimit="10485760"
+						label="Elegir Cedula" uploadLabel="Cargar" required="true"
+						requiredMessage="Archivo no seleccionado" />
+						<p:fileUpload listener="#{polizaBean.archivo1}" mode="advanced"
+						 auto="true" sizeLimit="10485760"
+						label="Elegir Planilla" uploadLabel="Cargar" required="true"
+						requiredMessage="Archivo no seleccionado" />
 						<h:outputText  />
 						<h:outputText  />
 					</h:panelGrid>
+					
+					<div>
+						
+						
+					</div>
 				</div>
+				
 				
 				
 			

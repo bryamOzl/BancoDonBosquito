@@ -46,6 +46,7 @@ public class LoginBean implements Serializable {
 		String contraAux = "";
 		String rol = "";
 		String estado = "";
+		
 		try {
 			registro = daoRegistro.leerNombre(username);
 			contraAux = registro.getContrasenia();
@@ -82,23 +83,22 @@ public class LoginBean implements Serializable {
 				HAcceso.setTipo_acceso("Fallido");
 				System.out.println(HAcceso);
 				daoHAcceso.insertHistorial(HAcceso);
-				if((registro.getIntento() + 1) >= 3) {
+				if ((registro.getIntento() + 1) >= 3) {
 					registro.setIntento(3);
 					registro.setEstado("Bloqueado");
 					daoRegistro.updateRegistro(registro);
-				}else {
+				} else {
 					registro.setIntento(registro.getIntento() + 1);
 					daoRegistro.updateRegistro(registro);
 				}
-				
+
 				login = false;
-				
 
 			}
 
-		} else if ( registro == null && estado.equals("Habilitado")){
+		} else if (registro == null && estado.equals("Habilitado")) {
 			login = false;
-		} else if (registro != null && estado.equals("Bloqueado")){
+		} else if (registro != null && estado.equals("Bloqueado")) {
 			login = false;
 			FacesUtils.msgError(null, "Usuario Bloqueado");
 		}
@@ -117,6 +117,8 @@ public class LoginBean implements Serializable {
 					FacesUtils.redirect("/blue-ice-813371382/PrincipalCajero.jsf");
 				} else if (rol.equals("Cliente")) {
 					FacesUtils.redirect("/blue-ice-813371382/ClienteCuentas.jsf");
+				} else if (rol.equals("Asistente")) {
+					FacesUtils.redirect("/blue-ice-813371382/ejemplo.jsf");
 				}
 			}
 		} else {

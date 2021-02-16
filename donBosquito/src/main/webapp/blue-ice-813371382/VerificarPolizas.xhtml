@@ -15,6 +15,8 @@
 	@import "/donBosquito/blue-ice-813371382/Label.css";
 	
 	@import "/donBosquito/blue-ice-813371382/IniciarSesion.css";
+	
+	@import "/donBosquito/blue-ice-813371382/ejemplo.css";
 	</style>
 </h:head> 
 <body> 
@@ -26,7 +28,7 @@
 	<div id="topnavi">
 		<div id="top">
 			<ul>
-				<li class="selected"><a href="#" title="itemUsuarios">Asistente</a></li>
+				<li class="selected"><a href="/donBosquito/blue-ice-813371382/PrincipalAsistente.jsf" title="itemUsuarios">Asistente</a></li>
 				<li class="select"><a href="#" title="itemCerrarSesion">Cerrar Sesion</a></li>
 			</ul>
 		</div>
@@ -38,12 +40,12 @@
 		</div>
 		<div id="datos2">
 			<h2>
-				<h:inputText class="txtUsuario" value="#{clientesBean.newCliente.dni}" />
+				<h:inputText class="txtUser" value="#{cuentaBean.registro.persona.nombre}" />
 			</h2>
 		</div>
 		<div id="datos3">
 			<h2>
-				<h:inputText class="txtEmail" value="#{clientesBean.newCliente.dni}" />
+				<h:inputText class="txtMail" value="#{cuentaBean.registro.persona.correo}" />
 			</h2>
 		</div>
 		</h:form>
@@ -57,27 +59,41 @@
 			<h:form id="frmTabla">
 				<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
 				
-				<p:dataTable var="car" value="#{cajeroBean.listaCuenta}" style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
-					<p:column headerText="# de Poliza" style="width:17%; color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-						<h:outputText value="#{car.numero_cuenta}" />
-					</p:column>
-					<p:column headerText="Plazo" style=" width:10%; color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-						<h:outputText value="#{car.registro.persona.cedula}" />
-					</p:column>
-					<p:column headerText="Valor Poliza" style=" width:18%; color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-						<h:outputText value="#{car.registro.persona.nombre}" />
-					</p:column>
-					<p:column headerText="Interés" style="width:10%;color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-						<h:outputText value="#{car.tipo_cuenta}" />
-					</p:column>
-					<p:column headerText="Fecha de vencimiento" style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-						<h:outputText value="#{car.registro.estado}" />
-					</p:column>
-					<p:column headerText="Estado" style=" width:16%; color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-						<h:outputText value="#{car.saldo}" />
-					</p:column>
-							
-				</p:dataTable>
+				<p:dataTable var="car" value="#{polizaBean}" scrollable="true" scrollHeight="220"
+						style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
+						
+						
+						<p:column headerText="# de Poliza "
+							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; ">
+							<h:outputText value="#{car}" />
+						</p:column>
+
+						<p:column headerText="Plazo"
+							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; width:10%;">
+							<h:outputText value="#{car}" />
+						</p:column>
+						
+						<p:column headerText="Valor Poliza"
+							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; ">
+							<h:outputText value="#{car}" />
+						</p:column>
+						
+						<p:column headerText="Interés "
+							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; width:12%;">
+							<h:outputText value="#{car}" />
+						</p:column>
+
+						<p:column headerText="Fecha Vencimiento"
+							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+							<h:outputText value="#{car}" />
+						</p:column>
+						
+						<p:column headerText="Estado"
+							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; width:14%;">
+							<h:outputText value="#{car}" />
+						</p:column>
+
+					</p:dataTable>
 			</h:form>
 		</div>
 	

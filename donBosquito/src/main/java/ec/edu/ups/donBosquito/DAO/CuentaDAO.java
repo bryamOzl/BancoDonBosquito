@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -32,6 +33,24 @@ public class CuentaDAO {
 	}
 
 	public Cuenta leerCuenta(int registro_id) throws SQLException {
+		Cuenta cuenta = new Cuenta();
+		String sql = "SELECT * FROM Cuenta WHERE  registro_id=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, registro_id);
+		ResultSet res = ps.executeQuery();
+		res.next();
+		cuenta.setCuenta_id(res.getInt("cuenta_id"));
+		cuenta.setFecha_apertura(res.getDate("fecha_apertura"));
+		cuenta.setNumero_cuenta(res.getString("numero_cuenta"));
+		cuenta.setSaldo(res.getDouble("saldo"));
+		cuenta.setTipo_cuenta(res.getString("tipo_cuenta"));
+		cuenta.setRegistro(em.find(Registro.class, registro_id));
+		ps.execute();
+		ps.close();
+		return cuenta;
+	}
+	
+	public Cuenta leerCuentaF(int registro_id, Date fechaInicio, Date fechaFinal) throws SQLException {
 		Cuenta cuenta = new Cuenta();
 		String sql = "SELECT * FROM Cuenta WHERE  registro_id=?";
 		PreparedStatement ps = con.prepareStatement(sql);

@@ -12,10 +12,12 @@ import javax.inject.Inject;
 
 import ec.edu.ups.donBosquito.DAO.CuentaDAO;
 import ec.edu.ups.donBosquito.DAO.HistorialAccesosDAO;
+import ec.edu.ups.donBosquito.DAO.PolizaDAO;
 import ec.edu.ups.donBosquito.DAO.RegistroDAO;
 import ec.edu.ups.donBosquito.core.FacesUtils;
 import ec.edu.ups.donBosquito.modelo.Cuenta;
 import ec.edu.ups.donBosquito.modelo.Historial_Acceso;
+import ec.edu.ups.donBosquito.modelo.Poliza;
 import ec.edu.ups.donBosquito.modelo.Registro;
 
 @ManagedBean
@@ -36,6 +38,8 @@ public class ClienteBean {
 	@Inject
 	private HistorialAccesosDAO daoHAcceso;
 
+
+	
 	@PostConstruct
 	public void init() {
 		FacesContext facesContext = FacesContext.getCurrentInstance();
@@ -44,11 +48,15 @@ public class ClienteBean {
 			FacesUtils.msgError("Error", "Usuario no cargado");
 		} else {
 			try {
+				System.out.println("-----------------------");
+				System.out.println(user);
+				System.out.println("-----------------------");
 				registro = daoRegistro.leerNombre(user);
 				
 				if (registro == null) {
 					FacesUtils.msgError("Error", "Usuario no existe");
 				} else {
+					
 					listaCuentas = daoCuenta.listarCuenta(registro.getRegistro_id());
 					listaHistorial_Accesos = daoHAcceso.listarHAcceso(registro.getRegistro_id());
 					registro = daoRegistro.leerRegistro(registro.getRegistro_id());

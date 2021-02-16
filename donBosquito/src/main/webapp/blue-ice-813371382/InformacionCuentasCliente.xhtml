@@ -102,9 +102,9 @@
 						<f:selectItem itemLabel="Retiros" itemValue="Retiros" />
 						<f:selectItem itemLabel="Depositos" itemValue="Depositos" />
 					</p:selectOneMenu>
-					<p:calendar id="button1" showOn="button" style="width:100%; " />
-					<p:calendar id="button" showOn="button" style="width:100%;" />
-					<h:commandButton class="btnConsultar" action="#{clientesBean.doGuardar()}"
+					<p:calendar id="button1" showOn="button" style="width:100%; " value="#{movimientoBean.fechaFinaL}" />
+					<p:calendar id="button" showOn="button" style="width:100%;" value="#{movimientoBean.fechaInicial}" />
+					<h:commandButton class="btnConsultar"  type="submit" update="form" action="#{movimientoBean.listarMovimient()}"
 						value="Consultar" />
 
 				</h:panelGrid>
@@ -113,8 +113,10 @@
 			</div>
 			<div style="margin-bottom: 60px;">
 				<h:form>
-					<p:dataTable var="car" value="#{movimientoBean.listaMovimiento}"
-						scrollable="true" scrollHeight="50"
+					<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
+					
+					<p:dataTable var="car" value="#{movimientoBean.listaMovimiento}" 
+						scrollable="true" scrollHeight="160"
 						style="margin: 20px 20px 20px 10px;">
 						<p:column headerText="Fecha"
 							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">

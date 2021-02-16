@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -13,6 +14,11 @@
 @import "Label.css";
 
 @import "IniciarSesion.css";
+
+@import "ejemplo.css";
+
+@import "EstiloCajones.css";
+
 </style>
 </h:head>
 <body>
@@ -56,40 +62,32 @@
 			<div id="ivaloresPolizasTitulo">
 				<h1>Tabla de Valores de Polizas</h1>
 			</div>
-			<div id="table">
-
-				<table style="margin: 0 auto;" border="1" WIDTH="30%">
-					<tr>
-						<th id="txtTable">Tiempo</th>
-						<th id="txtTable">Tasa de Interes</th>
-					</tr>
-					<tr class="fila_impar">
-						<td id="txtTable">30 - 59</td>
-						<td id="txtTable">5,50%</td>
-					</tr>
-					<tr class="fila_impar">
-						<td id="txtTable">60 - 89</td>
-						<td id="txtTable">5,75%</td>
-					</tr>
-					<tr class="fila_impar">
-						<td id="txtTable">90 - 179</td>
-						<td id="txtTable">6,25%</td>
-					</tr>
-					<tr class="fila_impar">
-						<td id="txtTable">180 - 269</td>
-						<td id="txtTable">7,00%</td>
-					</tr>
-					<tr class="fila_impar">
-						<td id="txtTable">270 - 359</td>
-						<td id="txtTable">7,50%</td>
-					</tr>
-					<tr class="fila_impar">
-						<td id="txtTable">Mas de 360</td>
-						<td id="txtTable">8,50%</td>
-					</tr>
-
-				</table>
-
+			<div id="bodybo2" >
+				<h:form id="frmTabla">
+					<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
+					
+					<p:dataTable var="car" value="#{polizaBean.listarPoliza}" scrollable="true" scrollHeight="200"
+							style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
+							
+							
+							<p:column headerText="Tiempo Inicio"
+								style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+								<h:outputText value="#{car.tiempoInicio}" />
+							</p:column>
+	
+							<p:column headerText="Tiempo Final"
+								style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
+								<h:outputText value="#{car.tiempoFinal}" />
+							</p:column>
+							
+							<p:column headerText="Tasa Interes"
+								style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; ">
+								<h:outputText value="#{car.tasa_interes}" />
+							</p:column>
+	
+						</p:dataTable>
+				</h:form>
+			
 			</div>
 			<div id="polizasCuadro">
 				<h:form>

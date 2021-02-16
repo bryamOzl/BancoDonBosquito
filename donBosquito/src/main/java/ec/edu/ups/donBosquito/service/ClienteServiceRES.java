@@ -19,11 +19,15 @@ import ec.edu.ups.donBosquito.DAO.CuentaDAO;
 import ec.edu.ups.donBosquito.core.FacesUtils;
 import ec.edu.ups.donBosquito.modelo.Cuenta;
 import ec.edu.ups.donBosquito.modelo.Movimiento;
+import ec.edu.ups.donBosquito.modelo.Persona;
+import ec.edu.ups.donBosquito.negocio.GestionPersonaON;
 import ec.edu.ups.donBosquito.negocio.MovimientoONLocal;
 
 @Path("movimientos")
 public class ClienteServiceRES {
 
+	
+	
 	@Inject
 	private MovimientoONLocal onMovimiento;
 
@@ -41,6 +45,7 @@ public class ClienteServiceRES {
 	public String saludar(String nombre) {
 		return "hola " + nombre;
 	}
+	
 
 	@GET
 	@Path("suma")
@@ -52,6 +57,28 @@ public class ClienteServiceRES {
 	@Path("multiplicacion/{a}/{b}")
 	public int multiplicacion(@PathParam("a") int a, @PathParam("b") int b) {
 		return a * b;
+	}
+	
+	@GET
+	@Path("inciarSesison/{user}/{pass}")
+	public Mensaje inciarSesison(@PathParam("user") String user, @PathParam("pass") String pass) {
+		Mensaje mensaje = new Mensaje();
+		
+		try {
+			onMovimiento.login(user, pass);
+			mensaje.setCode("OK");
+			mensaje.setMessage("Iniciar Session");
+			return mensaje;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			mensaje.setCode("OK");
+			mensaje.setMessage("Iniciar Session");
+			return mensaje;
+		}
+			
+		
+		
 	}
 
 	@GET

@@ -12,3 +12,27 @@
 	border-bottom: 2px solid black;
 	border-left: 2px solid black;
 }
+
+.bodybox111 {
+	width: 99.7%;
+	height: 280px;
+	margin: 3px auto;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	background-color: #FFFFFF;
+}
+
+#valoresPoliz {
+	width: 99.5%;
+	height: 200px;
+	overflow: hidden;
+	margin: 3px auto;
+	background-color: #ffff;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+

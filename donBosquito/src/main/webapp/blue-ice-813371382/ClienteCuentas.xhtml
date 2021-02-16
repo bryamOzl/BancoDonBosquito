@@ -10,11 +10,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Banco Don Bosquito</title>
 	<style type="text/css" media="all">
-@import "globa.css";
-
-@import "Label.css";
-
-@import "IniciarSesion.css";
+	@import "/donBosquito/blue-ice-813371382/globa.css";
+	
+	@import "/donBosquito/blue-ice-813371382/Label.css";
+	
+	@import "/donBosquito/blue-ice-813371382/IniciarSesion.css";
+	
+	@import "/donBosquito/blue-ice-813371382/ejemplo.css";
+	
 </style>
 </h:head>
 
@@ -65,7 +68,7 @@
 				<h:form>
 					<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
 
-					<p:dataTable var="car" value="#{clienteBean.listaCuentas}"
+					<p:dataTable var="car" value="#{movimientoBean.listaCuentas}"
 						style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
 						
 						<p:column style="width:32px;text-align: center">
@@ -105,29 +108,29 @@
 			<div>
 
 				<h:form>
-					<p:dataTable var="car" value="#{dtBasicView.cars}"
+					<p:dataTable var="car" value="#{movimientoBean.listarPoliza}"
 						style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
 						<p:column headerText="N. de Polizas"
 							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-							<h:outputText value="#{car.id}" />
+							<h:outputText value="#{car.poliza_id}" />
 						</p:column>
 						<p:column headerText="Plazo"
 							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; width: 12%;">
-							<h:outputText value="#{car.year}" />
+							<h:outputText value="#{car.plazo}" />
 						</p:column>
 
 						<p:column headerText="Valor Poliza"
 							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-							<h:outputText value="#{car.brand}" />
+							<h:outputText value="#{car.capital}" />
 						</p:column>
 
 						<p:column headerText="Interés"
 							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif; ">
-							<h:outputText value="#{car.color}" />
+							<h:outputText value="#{car.interes}" />
 						</p:column>
 						<p:column headerText="Fecha de vencimiento"
 							style="color: black; font-size: 1.1rem; font-family: 'Times New Roma', Times, serif;">
-							<h:outputText value="#{car.color}" />
+							<h:outputText value="#{car.fecha_vencimiento}" />
 						</p:column>
 
 					</p:dataTable>

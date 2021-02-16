@@ -1,10 +1,11 @@
 package ec.edu.ups.donBosquito.modelo;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -17,11 +18,12 @@ public class Valor_Poliza implements Serializable {
 
 	@Id
 	@Column(name = "valor_id")
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int valor_id;
 	private String plazo;
 	private Double tasa_interes;
-	private Date fechaInicio;
-	private Date fechaFinal;
+	private int tiempoInicio;
+	private int tiempoFinal;
 
 	public int getValor_id() {
 		return valor_id;
@@ -47,26 +49,27 @@ public class Valor_Poliza implements Serializable {
 		this.tasa_interes = tasa_interes;
 	}
 
-	public Date getFechaInicio() {
-		return fechaInicio;
+	public int getTiempoInicio() {
+		return tiempoInicio;
 	}
 
-	public void setFechaInicio(Date fechaInicio) {
-		this.fechaInicio = fechaInicio;
+	public void setTiempoInicio(int tiempoInicio) {
+		this.tiempoInicio = tiempoInicio;
 	}
 
-	public Date getFechaFinal() {
-		return fechaFinal;
+	public int getTiempoFinal() {
+		return tiempoFinal;
 	}
 
-	public void setFechaFinal(Date fechaFinal) {
-		this.fechaFinal = fechaFinal;
+	public void setTiempoFinal(int tiempoFinal) {
+		this.tiempoFinal = tiempoFinal;
 	}
 
 	@Override
 	public String toString() {
 		return "Valor_Poliza [valor_id=" + valor_id + ", plazo=" + plazo + ", tasa_interes=" + tasa_interes
-				+ ", fechaInicio=" + fechaInicio + ", fechaFinal=" + fechaFinal + "]";
+				+ ", tiempoInicio=" + tiempoInicio + ", tiempoFinal=" + tiempoFinal + "]";
 	}
 
+	
 }
