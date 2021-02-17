@@ -29,7 +29,9 @@
 		<div id="top">
 			<ul>
 				<li class="selected"><a href="/donBosquito/blue-ice-813371382/PrincipalAsistente.jsf" title="itemUsuarios">Asistente</a></li>
-				<li class="select"><a href="#" title="itemCerrarSesion">Cerrar Sesion</a></li>
+				<h:form>
+						<li class="select"><p:commandButton value="Cerrar Sesion" action="#{ctrSession.logout()}" styleClass="ui-button-flat"/></li>
+				</h:form>
 			</ul>
 		</div>
 	</div>

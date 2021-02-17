@@ -127,16 +127,17 @@ public class CuentaDAO {
 	
 	public Cuenta buscarCuenta(String numero_cuenta) throws SQLException {
 		Cuenta cuenta = new Cuenta();
-		String sql = "SELECT * FROM Cuenta WHERE  numero_cuenta=?";
+		String sql = "SELECT c.cuenta_id, c.fecha_apertura, c.saldo, c.tipo_cuenta, c.numero_cuenta, c.registro_id FROM Cuenta c WHERE  c.numero_cuenta=?";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, numero_cuenta);
 		ResultSet res = ps.executeQuery();
 		res.next();
 		cuenta.setCuenta_id(res.getInt("cuenta_id"));
 		cuenta.setFecha_apertura(res.getDate("fecha_apertura"));
-		cuenta.setNumero_cuenta(res.getString("numero_cuenta"));
 		cuenta.setSaldo(res.getDouble("saldo"));
 		cuenta.setTipo_cuenta(res.getString("tipo_cuenta"));
+		//cuenta.set
+		cuenta.setNumero_cuenta(res.getString("numero_cuenta"));
 		cuenta.setRegistro(registroDAO.readRegistro(res.getInt("registro_id")));
 		ps.execute();
 		ps.close();

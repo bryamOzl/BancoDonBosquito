@@ -30,9 +30,10 @@
 		<div id="topnavi">
 			<div id="top">
 				<ul>
-					<li class="selected"><a href="#" title="itemUsuarios">Administrador</a></li>
-					<li class="select"><a href="#" title="itemCerrarSesion">Cerrar
-							Sesion</a></li>
+					<li class="selected"><a href="/donBosquito/blue-ice-813371382/PrincipalAdministrador.jsf" title="itemUsuarios">Administrador</a></li>
+					<h:form>
+						<li class="select"><p:commandButton value="Cerrar Sesion" action="#{ctrSession.logout()}" styleClass="ui-button-flat"/></li>
+					</h:form>
 				</ul>
 			</div>
 		</div>
@@ -66,7 +67,7 @@
 				<h:form id="frmTabla">
 					<p:growl showDetail="true" skipDetailIfEqualsSummary="true" />
 					
-					<p:dataTable var="car" value="#{polizaBean.listarPoliza}" scrollable="true" scrollHeight="200"
+					<p:dataTable var="car" value="#{polizaBean.listarValor_Polizas}" scrollable="true" scrollHeight="200"
 							style="width:97.5%; height: 20px; margin: 20px 20px 20px 10px;">
 							
 							

@@ -2,17 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Banco Don Bosquito</title>
 	<style type="text/css" media="all">
-@import "/donBosquito/blue-ice-813371382/globa.css";
+	@import "/donBosquito/blue-ice-813371382/globa.css";
+	
+	@import "/donBosquito/blue-ice-813371382/Label.css";
+	
+	@import "/donBosquito/blue-ice-813371382/IniciarSesion.css";
+	
+	@import "/donBosquito/blue-ice-813371382/ejemplo.css";
 
-@import "/donBosquito/blue-ice-813371382/Label.css";
-
-@import "/donBosquito/blue-ice-813371382/IniciarSesion.css";
 </style>
 </h:head>
 <body>
@@ -27,8 +31,9 @@
 				<ul>
 					<li class="selected"><a href="/donBosquito/blue-ice-813371382/CRUDAdministrador.jsf" title="itemUsuarios">Usuarios</a></li>
 					<li class="selected"><a href="/donBosquito/blue-ice-813371382/PolizasAdministrador.jsf" title="itemPolizas">Polizas</a></li>
-					<li class="select"><a href="#" title="itemCerrarSesion">Cerrar
-							Sesion</a></li>
+					<h:form>
+						<li class="select"><p:commandButton value="Cerrar Sesion" action="#{ctrSession.logout()}" styleClass="ui-button-flat"/></li>
+					</h:form>
 				</ul>
 			</div>
 		</div>
@@ -40,14 +45,14 @@
 			</div>
 			<div id="datos2">
 				<h2>
-					<h:inputText class="txtUsuario"
-						value="#{clientesBean.newCliente.dni}" />
+					<h:inputText class="txtUser"
+						value="#{cuentaBean.registro.persona.nombre}" />
 				</h2>
 			</div>
 			<div id="datos3">
 				<h2>
-					<h:inputText class="txtEmail"
-						value="#{clientesBean.newCliente.dni}" />
+					<h:inputText class="txtMail"
+						value="#{cuentaBean.registro.persona.correo}" />
 				</h2>
 			</div>
 			</h:form>
@@ -56,17 +61,18 @@
 		<div id="bodybox1">
 			<h:form>
 			<div id="imagenAdministrador">
-				<h1>
-					<h:inputText class="txtFoto" value="#{clientesBean.newCliente.dni}" />
-				</h1>
+				<h3 id="margins" >
+					<a><img src="img/1.png" alt="Girl in a jacket" width="400"  height="200" style="margin: 0px 10px 0px -130px;"/></a>
+					
+				</h3>
 
 			</div>
 			</h:form>
 			<div id="descripcionAdministrador">
-				<h2>Somos un banco centrado en nuestros clientes, ofreciéndoles
+				<h2>Contamos con un personal totalmente capacitados para brindar un servicio de calidad a 
+				 nuestros clientes, ofreciéndoles
 					una experiencia de banca digital altamente eficiente que logre
-					superar sus expectativas,por lo cual nos convertiremos en uno de
-					los bancos más importantes del Ecuador</h2>
+					superar sus expectativas</h2>
 			</div>
 
 		</div>

@@ -26,8 +26,10 @@
 	<div id="topnavi">
 		<div id="top">
 			<ul>
-				<li class="selected"><a href="#" title="itemUsuarios">Asistente</a></li>
-				<li class="select"><a href="#" title="itemCerrarSesion">Cerrar Sesion</a></li>
+				<li class="selected"><a href="donBosquito/blue-ice-813371382/PrincipalAsistente.jsf" title="itemUsuarios">Asistente</a></li>
+				<h:form>
+					<li class="select"><p:commandButton value="Cerrar Sesion" action="#{ctrSession.logout()}" styleClass="ui-button-flat"/></li>
+				</h:form>
 			</ul>
 		</div>
 	</div>
@@ -37,15 +39,15 @@
 			<h1>Datos del Asistente</h1>
 		</div>
 		<div id="datos2">
-			<h2>
-				<h:inputText class="txtUsuario" value="#{clientesBean.newCliente.dni}" />
-			</h2>
-		</div>
-		<div id="datos3">
-			<h2>
-				<h:inputText class="txtEmail" value="#{clientesBean.newCliente.dni}" />
-			</h2>
-		</div>
+				<h2>
+					<h:inputText class="txtUser" value="#{cuentaBean.registro.persona.nombre}" />
+				</h2>
+			</div>
+			<div id="datos3">
+				<h2>
+					<h:inputText class="txtMail" value="#{cuentaBean.registro.persona.correo}" />
+				</h2>
+			</div>
 		</h:form>
 	</div>
 	

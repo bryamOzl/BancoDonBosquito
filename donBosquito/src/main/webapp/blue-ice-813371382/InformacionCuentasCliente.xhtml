@@ -26,16 +26,16 @@
 			<div id="headimg"></div>
 		</div>
 		<div id="topnavi">
-			<h:form>
 			<div id="top">
 				<ul>
-					<li class="selected"><a href="#" title="itemUsuarios">Polizas</a></li>
-					<li class="selected"><a href="#" title="itemPolizas">Historia de Acceso</a></li>
-					<p:commandButton value="Logout" icon="pi pi-home" action="#{ctrSession.logout()}" />
+					<li class="selected"><a href="/donBosquito/blue-ice-813371382/ClienteCuentas.jsf" title="itemUsuarios">Polizas</a></li>
+					<li class="selected"><a href="/donBosquito/blue-ice-813371382/ControlAcceso.jsf" title="itemPolizas">Historia de Acceso</a></li>
+					<h:form>
+						<li class="select"><p:commandButton value="Cerrar Sesion" action="#{ctrSession.logout()}" styleClass="ui-button-flat"/></li>
+					</h:form>
 
 				</ul>
 			</div>
-			</h:form>
 		</div>
 		<div id="datosUsuario">
 			<h:form>

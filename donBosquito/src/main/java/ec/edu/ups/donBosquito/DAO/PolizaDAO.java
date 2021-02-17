@@ -19,6 +19,7 @@ import org.primefaces.event.FileUploadEvent;
 
 import ec.edu.ups.donBosquito.modelo.Cuenta;
 import ec.edu.ups.donBosquito.modelo.Movimiento;
+import ec.edu.ups.donBosquito.modelo.Persona;
 import ec.edu.ups.donBosquito.modelo.Poliza;
 import ec.edu.ups.donBosquito.modelo.Registro;
 import ec.edu.ups.donBosquito.modelo.Valor_Poliza;
@@ -116,18 +117,28 @@ public class PolizaDAO {
 		return listarPoliza;
 	}
 	
-	
-	public Valor_Poliza buscarInteres(String plaz) throws SQLException {
-		Valor_Poliza valor = new Valor_Poliza();
-		String sql = "SELECT p.tasa_interes FROM Valor_Poliza p where p.plazo = ?";
-		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setString(1, plaz);
-		ResultSet res = ps.executeQuery();
-		res.next();
-		valor.setTasa_interes(res.getDouble("tasa_interes"));
-		ps.execute();
-		ps.close();
-		return valor;
+		
+	public Valor_Poliza buscarInteres(String dias) {
+
+		System.out.println(dias);
+		Valor_Poliza valor_Poliza = new Valor_Poliza();
+		String sql = "SELECT * FROM Valor_Poliza WHERE plazo=?";
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, dias);
+			ResultSet res = ps.executeQuery();
+			res.next();
+			valor_Poliza.setValor_id(res.getInt("valor_id"));
+			valor_Poliza.setPlazo(res.getString("plazo"));
+			valor_Poliza.setTasa_interes(res.getDouble("tasa_interes"));
+			valor_Poliza.setTiempoInicio(res.getInt("tiempoinicio"));
+			valor_Poliza.setTiempoFinal(res.getInt("tiempofinal"));
+			ps.execute();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println("Error al buscar el interes por la dias " + e.getMessage());
+		}
+		return valor_Poliza;
 	}
 	
 }

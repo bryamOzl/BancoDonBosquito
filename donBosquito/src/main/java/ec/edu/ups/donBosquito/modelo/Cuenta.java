@@ -28,6 +28,7 @@ public class Cuenta implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "registro_id")
 	private Registro registro;
+	
 
 	public int getCuenta_id() {
 		return cuenta_id;

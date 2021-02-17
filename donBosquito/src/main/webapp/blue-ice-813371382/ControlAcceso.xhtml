@@ -17,6 +17,8 @@
 	@import "/donBosquito/blue-ice-813371382/IniciarSesion.css";
 	
 	@import "/donBosquito/blue-ice-813371382/EstiloCajones.css";
+	
+	@import "/donBosquito/blue-ice-813371382/ejemplo.css";
 	</style>
 </h:head> 
 <body> 
@@ -29,7 +31,9 @@
 		<div id="top">
 			<ul>
 				<li class="selected"><a href="/donBosquito/blue-ice-813371382/ClienteCuentas.jsf" title="itemUsuarios">Cuentas</a></li>
-				<li class="select"><a href="#" title="itemCerrarSesion">Cerrar Sesion</a></li>
+				<h:form>
+					<li class="select"><p:commandButton value="Cerrar Sesion" action="#{ctrSession.logout()}" styleClass="ui-button-flat"/></li>
+				</h:form>
 			</ul>
 		</div>
 	</div>
@@ -40,12 +44,12 @@
 		</div>
 		<div id="datos2">
 			<h2>
-				<h:inputText class="txtUsuario" value="#{clienteBean.registro.usuario}" />
+				<h:inputText class="txtUser" value="#{clienteBean.registro.usuario}" />
 			</h2>
 		</div>
 		<div id="datos3">
 			<h2>
-				<h:inputText class="txtEmail" value="#{clienteBean.registro.persona.correo}" />
+				<h:inputText class="txtMail" value="#{clienteBean.registro.persona.correo}" />
 			</h2>
 		</div>
 		</h:form>

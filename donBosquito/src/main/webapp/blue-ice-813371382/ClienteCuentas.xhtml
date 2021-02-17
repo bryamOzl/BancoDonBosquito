@@ -32,11 +32,12 @@
 			<h:form>
 				<div id="top">
 					<ul>
-						<li class="selected"><a href="#" title="itemUsuarios">Polizas</a></li>
+						<li class="selected"><a href="/donBosquito/blue-ice-813371382/ClienteCuentas.jsf" title="itemUsuarios">Polizas</a></li>
 						<li class="selected"><a title="itemPolizas" href="/donBosquito/blue-ice-813371382/ControlAcceso.jsf">Historia
 								de Acceso</a></li>
-						<li class="select"><a href="#" title="itemCerrarSesion">Cerrar
-								Sesion</a></li>
+						<h:form>
+							<li class="select"><p:commandButton value="Cerrar Sesion" action="#{ctrSession.logout()}" styleClass="ui-button-flat"/></li>
+						</h:form>
 					</ul>
 				</div>
 			</h:form>

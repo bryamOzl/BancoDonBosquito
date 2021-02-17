@@ -27,9 +27,12 @@
 	</div>
 	<div id="topnavi">
 		<div id="top">
+		
 			<ul>
 				<li class="selected"><a href="/donBosquito/blue-ice-813371382/PrincipalAsistente.jsf" title="itemUsuarios">Asistente</a></li>
-				<li class="select"><a href="#" title="itemCerrarSesion">Cerrar Sesion</a></li>
+				<h:form>
+						<li class="select"><p:commandButton value="Cerrar Sesion" action="#{ctrSession.logout()}" styleClass="ui-button-flat"/></li>
+				</h:form>
 			</ul>
 		</div>
 	</div>
@@ -106,13 +109,16 @@
 						<h:outputText  />
 						
 						<h:outputLabel for="@next" value="Plazo en Dias:" class= "form_field_CrearPoliza"/>
-						<p:selectOneMenu style="width:79% " value="#{polizaBean.poliza.plazo}" >
-							<f:selectItems value="#{polizaBean.listarValor_Polizas}" var="state"
-								itemLabel="#{state.plazo}" itemValue="#{state.plazo}" />
+						<p:selectOneMenu style="width:79% " value="#{polizaBean.aux}" required="true">
+							<f:selectItems value="#{polizaBean.listarValor_Polizas}" var="poliza"
+								 itemLabel="#{poliza.plazo}" itemValue="#{poliza.plazo}" />
+							<p:ajax event="change" listener="#{polizaBean.buscarIntere()}" update="selectedItemText" />
+							
 						</p:selectOneMenu>
-						<h:commandButton class="btnCalcularPoliz" action="#{polizaBean.buscarIntere}" value="Buscar In" />
-						<h:message for="@previous" />
 						
+						<h:message for="@previous" />
+					    <h:outputText  />
+					    
 						
 						<h:outputLabel for="@next" value="Tasa de Interes:" class= "form_field_CrearPoliza"/>
 						<h:inputText   id="selectedItemText" class="form__field2 " value="#{polizaBean.valor_Poliza.tasa_interes}"  style="width:94%"/>

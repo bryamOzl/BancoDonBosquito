@@ -52,6 +52,8 @@ public class PolizaBean {
 	private Valor_Poliza valor_Poliza = new Valor_Poliza();
 	
 	public Registro registro = new Registro();
+	
+	private String aux = "";
 
 	@PostConstruct
 	public void init() {
@@ -61,12 +63,11 @@ public class PolizaBean {
 			FacesUtils.msgError("Error", "Usuario no cargado");
 		} else {
 			try {
-				System.out.println("-----------------------");
-				System.out.println(user);
-				System.out.println("-----------------------");
-				registro = daoRegistro.leerNombre(user);			
+				registro = daoRegistro.leerNombre(user);	
+				//listarValor_Polizas = polizaDAO.listarPoliz();
 				//listarPoliz();
-				//buscarIntere();
+				listarValor_Polizas = polizaDAO.listarPoliz();
+				buscarIntere();
 
 				
 			} catch (SQLException e) {
@@ -143,14 +144,13 @@ public class PolizaBean {
 		return null;
 	}
 
-	private void listarPoliz() {
-		listarValor_Polizas = polizaDAO.listarPoliz();
 
-	}
 
 	public void buscarIntere() throws SQLException {
-		System.out.println(valor_Poliza.getPlazo());
-		valor_Poliza=polizaDAO.buscarInteres(valor_Poliza.getPlazo());
+		System.out.println("-----------------------------");
+		System.out.println(aux);
+		System.out.println("-----------------------------");
+		valor_Poliza=polizaDAO.buscarInteres(aux);
 
 	}
 
@@ -202,10 +202,16 @@ public class PolizaBean {
 		this.registro = registro;
 	}
 
-	@Override
-	public String toString() {
-		return "PolizaBean [valor_Poliza=" + valor_Poliza + "]";
+	public String getAux() {
+		return aux;
 	}
+
+	public void setAux(String aux) {
+		this.aux = aux;
+	}
+	
+	
+	
 
 	
 }

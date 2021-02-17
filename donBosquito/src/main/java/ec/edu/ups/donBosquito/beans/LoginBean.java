@@ -118,7 +118,7 @@ public class LoginBean implements Serializable {
 				} else if (rol.equals("Cliente")) {
 					FacesUtils.redirect("/blue-ice-813371382/ClienteCuentas.jsf");
 				} else if (rol.equals("Asistente")) {
-					FacesUtils.redirect("/blue-ice-813371382/ejemplo.jsf");
+					FacesUtils.redirect("/blue-ice-813371382/PrincipalAsistente.jsf");
 				}
 			}
 		} else {

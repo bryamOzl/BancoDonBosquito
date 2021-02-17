@@ -42,7 +42,7 @@ public class RegistroDAO {
 		registro.setRol(res.getString("rol"));
 		registro.setUsuario(res.getString("usuario"));
 		registro.setIntento(res.getInt("intento"));
-		registro.setPersona(em.find(Persona.class, persona_id));
+		registro.setPersona(em.find(Persona.class, res.getInt("persona_id")));
 		ps.execute();
 		ps.close();
 		return registro;
